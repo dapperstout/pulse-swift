@@ -26,6 +26,7 @@ public class Message
         result.append(lengthBytes.1)
         result.append(lengthBytes.2)
         result.append(lengthBytes.3)
+        result.extend(contents)
         return result;
     }
 }
