@@ -4,9 +4,9 @@ import syncthing
 class MessageTests : XCTestCase {
 
     func testVersionIsZero() {
-        let message : Message = Message()
-        let bytes : [Byte] = message.serialize()
-        XCTAssertEqual(bytes[0], 0)
+        let bytes = Message().serialize()
+        let firstNibble = nibbles(bytes[0]).0
+        XCTAssertEqual(firstNibble, 0)
     }
 
 }

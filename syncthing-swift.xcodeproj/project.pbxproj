@@ -10,6 +10,8 @@
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79C19A497C8007EF37E /* MessageTests.swift */; };
 		4DDBE79F19A49906007EF37E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79E19A49906007EF37E /* Message.swift */; };
+		4DDBE7A419A4A24B007EF37E /* BytesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE7A219A4A1E1007EF37E /* BytesTests.swift */; };
+		4DDBE7A619A4A364007EF37E /* Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE7A519A4A364007EF37E /* Bytes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,13 +25,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4DDBE78319A48FBB007EF37E /* syncthing-swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "syncthing-swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDBE78319A48FBB007EF37E /* syncthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = syncthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78719A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
-		4DDBE78E19A48FBB007EF37E /* syncthing-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "syncthing-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDBE78E19A48FBB007EF37E /* syncthingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = syncthingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE79119A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE79C19A497C8007EF37E /* MessageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
 		4DDBE79E19A49906007EF37E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4DDBE7A219A4A1E1007EF37E /* BytesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BytesTests.swift; sourceTree = "<group>"; };
+		4DDBE7A519A4A364007EF37E /* Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bytes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,8 @@
 		4DDBE78419A48FBB007EF37E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DDBE78319A48FBB007EF37E /* syncthing-swift.framework */,
-				4DDBE78E19A48FBB007EF37E /* syncthing-swiftTests.xctest */,
+				4DDBE78319A48FBB007EF37E /* syncthing.framework */,
+				4DDBE78E19A48FBB007EF37E /* syncthingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +78,7 @@
 				4DDBE78819A48FBB007EF37E /* syncthing-swift.h */,
 				4DDBE78619A48FBB007EF37E /* Supporting Files */,
 				4DDBE79E19A49906007EF37E /* Message.swift */,
+				4DDBE7A519A4A364007EF37E /* Bytes.swift */,
 			);
 			path = "syncthing-swift";
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			children = (
 				4DDBE79019A48FBB007EF37E /* Supporting Files */,
 				4DDBE79C19A497C8007EF37E /* MessageTests.swift */,
+				4DDBE7A219A4A1E1007EF37E /* BytesTests.swift */,
 			);
 			path = "syncthing-swiftTests";
 			sourceTree = "<group>";
@@ -132,7 +138,7 @@
 			);
 			name = syncthing;
 			productName = "syncthing-swift";
-			productReference = 4DDBE78319A48FBB007EF37E /* syncthing-swift.framework */;
+			productReference = 4DDBE78319A48FBB007EF37E /* syncthing.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4DDBE78D19A48FBB007EF37E /* syncthingTests */ = {
@@ -150,7 +156,7 @@
 			);
 			name = syncthingTests;
 			productName = "syncthing-swiftTests";
-			productReference = 4DDBE78E19A48FBB007EF37E /* syncthing-swiftTests.xctest */;
+			productReference = 4DDBE78E19A48FBB007EF37E /* syncthingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -210,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DDBE79F19A49906007EF37E /* Message.swift in Sources */,
+				4DDBE7A619A4A364007EF37E /* Bytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */,
+				4DDBE7A419A4A24B007EF37E /* BytesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +407,7 @@
 				4DDBE79819A48FBB007EF37E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthingTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +416,7 @@
 				4DDBE79B19A48FBB007EF37E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
