@@ -3,6 +3,11 @@ import syncthing
 
 class BytesTest : XCTestCase {
 
+    func testDecompositionOfByteIntoBits() {
+        let eightBits = bits(0b10101010)
+        XCTAssertEqual(eightBits, [true, false, true, false, true, false, true, false])
+    }
+
     func testDecompositionOfByteIntoNibbles() {
         let (left, right) = nibbles(0b1010_0101);
         XCTAssertEqual(left, 0b1010);
@@ -13,6 +18,11 @@ class BytesTest : XCTestCase {
         let (left, right) = bytes(0b10101010_01010101)
         XCTAssertEqual(left, 0b10101010)
         XCTAssertEqual(right, 0b01010101)
+    }
+
+    func testConcatenationOfBitsIntoByte() {
+        let eightBits = [true, false, true, false, true, false, true, false]
+        XCTAssertEqual(concatenateBits(eightBits), 0b10101010)
     }
 
     func testConcatenationOfNibblesIntoByte() {

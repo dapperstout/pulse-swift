@@ -25,6 +25,26 @@ class MessageTests : XCTestCase {
         XCTAssertEqual(type, 3)
     }
 
+    func testReservedBitsAreZero() {
+        let message = SomeMessage()
+        let reservedBits = bits(message.serialize()[3])
+        for i in 0..<7 {
+            XCTAssertFalse(reservedBits[i])
+        }
+    }
+
+    func testCompressionIsEnabledByDefault() {
+        let message = SomeMessage()
+        let isCompressed = bits(message.serialize()[3])[7]
+        XCTAssertTrue(isCompressed)
+    }
+
+    func testCompressionIsIndicatedInLastBitOfFourthByte() {
+        let message = Message(type: 0, compress: false)
+        let isCompressed = bits(message.serialize()[3])[7]
+        XCTAssertFalse(isCompressed)
+    }
+
 }
 
 class SomeMessage : Message {
