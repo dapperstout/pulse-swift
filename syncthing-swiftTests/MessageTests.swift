@@ -45,6 +45,14 @@ class MessageTests : XCTestCase {
         XCTAssertFalse(isCompressed)
     }
 
+    func testUncompressedLengthIsIndicatedInBytesFiveThroughEight() {
+        let someContents : [UInt8] = [12, 34, 56, 78]
+        let message = Message(type: 0, contents: someContents)
+        let bytes = message.serialize()
+        let length = concatenateBytes(bytes[4], bytes[5], bytes[6], bytes[7])
+        XCTAssertEqual(length, UInt32(someContents.count))
+    }
+
 }
 
 class SomeMessage : Message {
