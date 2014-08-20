@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D321DAB19A52620006971D7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D321D8D19A52620006971D7 /* LICENSE */; };
+		4D321DAC19A52620006971D7 /* lz4.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D321D8E19A52620006971D7 /* lz4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
+		4D321DAD19A52620006971D7 /* lz4.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D8F19A52620006971D7 /* lz4.h */; };
+		4D321DB019A52620006971D7 /* lz4hc.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D321D9219A52620006971D7 /* lz4hc.c */; };
+		4D321DB119A52620006971D7 /* lz4hc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D9319A52620006971D7 /* lz4hc.h */; };
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79C19A497C8007EF37E /* MessageTests.swift */; };
 		4DDBE79F19A49906007EF37E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79E19A49906007EF37E /* Message.swift */; };
@@ -25,6 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D321D8D19A52620006971D7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4D321D8E19A52620006971D7 /* lz4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lz4.c; sourceTree = "<group>"; };
+		4D321D8F19A52620006971D7 /* lz4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4.h; sourceTree = "<group>"; };
+		4D321D9219A52620006971D7 /* lz4hc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lz4hc.c; sourceTree = "<group>"; };
+		4D321D9319A52620006971D7 /* lz4hc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4hc.h; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* syncthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = syncthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78719A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
@@ -54,11 +64,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D321D8719A52620006971D7 /* lz4 */ = {
+			isa = PBXGroup;
+			children = (
+				4D321D8D19A52620006971D7 /* LICENSE */,
+				4D321D8E19A52620006971D7 /* lz4.c */,
+				4D321D8F19A52620006971D7 /* lz4.h */,
+				4D321D9219A52620006971D7 /* lz4hc.c */,
+				4D321D9319A52620006971D7 /* lz4hc.h */,
+			);
+			path = lz4;
+			sourceTree = "<group>";
+		};
 		4DDBE77919A48FBB007EF37E = {
 			isa = PBXGroup;
 			children = (
 				4DDBE78519A48FBB007EF37E /* syncthing-swift */,
 				4DDBE78F19A48FBB007EF37E /* syncthing-swiftTests */,
+				4D321D8719A52620006971D7 /* lz4 */,
 				4DDBE78419A48FBB007EF37E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,7 +139,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D321DB119A52620006971D7 /* lz4hc.h in Headers */,
 				4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */,
+				4D321DAD19A52620006971D7 /* lz4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D321DAB19A52620006971D7 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D321DAC19A52620006971D7 /* lz4.c in Sources */,
+				4D321DB019A52620006971D7 /* lz4hc.c in Sources */,
 				4DDBE79F19A49906007EF37E /* Message.swift in Sources */,
 				4DDBE7A619A4A364007EF37E /* Bytes.swift in Sources */,
 			);
@@ -338,6 +366,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "syncthing-swift/syncthing-swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -355,6 +384,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "syncthing-swift/syncthing-swift.h";
 			};
 			name = Release;
 		};
