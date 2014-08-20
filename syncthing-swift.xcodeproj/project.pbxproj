@@ -8,8 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4DDBE79319A48FBB007EF37E /* syncthing_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79219A48FBB007EF37E /* syncthing_swiftTests.swift */; };
+		4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79C19A497C8007EF37E /* MessageTests.swift */; };
+		4DDBE79F19A49906007EF37E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79E19A49906007EF37E /* Message.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4DDBE7A019A49D16007EF37E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4DDBE77A19A48FBB007EF37E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4DDBE78219A48FBB007EF37E;
+			remoteInfo = syncthing;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4DDBE78319A48FBB007EF37E /* syncthing-swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "syncthing-swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -17,7 +28,8 @@
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
 		4DDBE78E19A48FBB007EF37E /* syncthing-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "syncthing-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE79119A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DDBE79219A48FBB007EF37E /* syncthing_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = syncthing_swiftTests.swift; sourceTree = "<group>"; };
+		4DDBE79C19A497C8007EF37E /* MessageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
+		4DDBE79E19A49906007EF37E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			children = (
 				4DDBE78819A48FBB007EF37E /* syncthing-swift.h */,
 				4DDBE78619A48FBB007EF37E /* Supporting Files */,
+				4DDBE79E19A49906007EF37E /* Message.swift */,
 			);
 			path = "syncthing-swift";
 			sourceTree = "<group>";
@@ -76,8 +89,8 @@
 		4DDBE78F19A48FBB007EF37E /* syncthing-swiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				4DDBE79219A48FBB007EF37E /* syncthing_swiftTests.swift */,
 				4DDBE79019A48FBB007EF37E /* Supporting Files */,
+				4DDBE79C19A497C8007EF37E /* MessageTests.swift */,
 			);
 			path = "syncthing-swiftTests";
 			sourceTree = "<group>";
@@ -104,9 +117,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4DDBE78219A48FBB007EF37E /* syncthing-swift */ = {
+		4DDBE78219A48FBB007EF37E /* syncthing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthing-swift" */;
+			buildConfigurationList = 4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthing" */;
 			buildPhases = (
 				4DDBE77E19A48FBB007EF37E /* Sources */,
 				4DDBE77F19A48FBB007EF37E /* Frameworks */,
@@ -117,14 +130,14 @@
 			);
 			dependencies = (
 			);
-			name = "syncthing-swift";
+			name = syncthing;
 			productName = "syncthing-swift";
 			productReference = 4DDBE78319A48FBB007EF37E /* syncthing-swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4DDBE78D19A48FBB007EF37E /* syncthing-swiftTests */ = {
+		4DDBE78D19A48FBB007EF37E /* syncthingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthing-swiftTests" */;
+			buildConfigurationList = 4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthingTests" */;
 			buildPhases = (
 				4DDBE78A19A48FBB007EF37E /* Sources */,
 				4DDBE78B19A48FBB007EF37E /* Frameworks */,
@@ -133,8 +146,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				4DDBE7A119A49D16007EF37E /* PBXTargetDependency */,
 			);
-			name = "syncthing-swiftTests";
+			name = syncthingTests;
 			productName = "syncthing-swiftTests";
 			productReference = 4DDBE78E19A48FBB007EF37E /* syncthing-swiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -167,8 +181,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DDBE78219A48FBB007EF37E /* syncthing-swift */,
-				4DDBE78D19A48FBB007EF37E /* syncthing-swiftTests */,
+				4DDBE78219A48FBB007EF37E /* syncthing */,
+				4DDBE78D19A48FBB007EF37E /* syncthingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DDBE79F19A49906007EF37E /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,11 +217,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDBE79319A48FBB007EF37E /* syncthing_swiftTests.swift in Sources */,
+				4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4DDBE7A119A49D16007EF37E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4DDBE78219A48FBB007EF37E /* syncthing */;
+			targetProxy = 4DDBE7A019A49D16007EF37E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4DDBE79419A48FBB007EF37E /* Debug */ = {
@@ -297,6 +320,7 @@
 		4DDBE79719A48FBB007EF37E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -306,12 +330,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4DDBE79819A48FBB007EF37E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -366,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthing-swift" */ = {
+		4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DDBE79719A48FBB007EF37E /* Debug */,
@@ -374,7 +400,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthing-swiftTests" */ = {
+		4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "syncthingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DDBE79A19A48FBB007EF37E /* Debug */,
