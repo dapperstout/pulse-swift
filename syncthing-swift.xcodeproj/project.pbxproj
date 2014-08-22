@@ -12,6 +12,8 @@
 		4D321DAD19A52620006971D7 /* lz4.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D8F19A52620006971D7 /* lz4.h */; };
 		4D321DB019A52620006971D7 /* lz4hc.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D321D9219A52620006971D7 /* lz4hc.c */; };
 		4D321DB119A52620006971D7 /* lz4hc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D9319A52620006971D7 /* lz4hc.h */; };
+		4D321DC719A52F99006971D7 /* LZ4Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D321DC619A52F99006971D7 /* LZ4Compression.swift */; };
+		4D321DC919A61E86006971D7 /* LZ4CompressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D321DC819A61E86006971D7 /* LZ4CompressionTests.swift */; };
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79C19A497C8007EF37E /* MessageTests.swift */; };
 		4DDBE79F19A49906007EF37E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBE79E19A49906007EF37E /* Message.swift */; };
@@ -35,6 +37,8 @@
 		4D321D8F19A52620006971D7 /* lz4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4.h; sourceTree = "<group>"; };
 		4D321D9219A52620006971D7 /* lz4hc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lz4hc.c; sourceTree = "<group>"; };
 		4D321D9319A52620006971D7 /* lz4hc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4hc.h; sourceTree = "<group>"; };
+		4D321DC619A52F99006971D7 /* LZ4Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZ4Compression.swift; sourceTree = "<group>"; };
+		4D321DC819A61E86006971D7 /* LZ4CompressionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZ4CompressionTests.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* syncthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = syncthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78719A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				4DDBE78619A48FBB007EF37E /* Supporting Files */,
 				4DDBE79E19A49906007EF37E /* Message.swift */,
 				4DDBE7A519A4A364007EF37E /* Bytes.swift */,
+				4D321DC619A52F99006971D7 /* LZ4Compression.swift */,
 			);
 			path = "syncthing-swift";
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				4DDBE79019A48FBB007EF37E /* Supporting Files */,
 				4DDBE79C19A497C8007EF37E /* MessageTests.swift */,
 				4DDBE7A219A4A1E1007EF37E /* BytesTests.swift */,
+				4D321DC819A61E86006971D7 /* LZ4CompressionTests.swift */,
 			);
 			path = "syncthing-swiftTests";
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				4D321DB019A52620006971D7 /* lz4hc.c in Sources */,
 				4DDBE79F19A49906007EF37E /* Message.swift in Sources */,
 				4DDBE7A619A4A364007EF37E /* Bytes.swift in Sources */,
+				4D321DC719A52F99006971D7 /* LZ4Compression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DDBE79D19A497C8007EF37E /* MessageTests.swift in Sources */,
+				4D321DC919A61E86006971D7 /* LZ4CompressionTests.swift in Sources */,
 				4DDBE7A419A4A24B007EF37E /* BytesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
