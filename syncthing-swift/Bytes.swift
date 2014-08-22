@@ -10,24 +10,24 @@ public func bits(eightBits : UInt8) -> [Bool] {
     return result
 }
 
-public func nibbles(twoNibbles : UInt8) -> (UInt8, UInt8) {
+public func nibbles(twoNibbles : UInt8) -> [UInt8] {
     let left = twoNibbles >> 4
     let right = twoNibbles & 0x0F
-    return (left, right)
+    return [left, right]
 }
 
-public func bytes(twoBytes : UInt16) -> (UInt8, UInt8) {
+public func bytes(twoBytes : UInt16) -> [UInt8] {
     let left = UInt8(twoBytes >> 8)
     let right = UInt8(twoBytes & 0xFF)
-    return (left, right)
+    return [left, right]
 }
 
-public func bytes(fourBytes : UInt32) -> (UInt8, UInt8, UInt8, UInt8) {
+public func bytes(fourBytes : UInt32) -> [UInt8] {
     let b0 = UInt8(fourBytes >> 24)
     let b1 = UInt8((fourBytes >> 16) & 0xFF)
     let b2 = UInt8((fourBytes >> 8) & 0xFF)
     let b3 = UInt8((fourBytes) & 0xFF)
-    return (b0, b1, b2, b3)
+    return [b0, b1, b2, b3]
 }
 
 public func concatenateBits(eightBits : Bool...)  -> UInt8 {

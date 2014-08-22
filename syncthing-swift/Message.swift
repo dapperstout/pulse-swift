@@ -18,14 +18,11 @@ public class Message
         var result : [UInt8] = []
         let idBytes = bytes(id)
         let lengthBytes = bytes(UInt32(contents.count))
-        result.append(concatenateNibbles(version, idBytes.0))
-        result.append(idBytes.1)
+        result.append(concatenateNibbles(version, idBytes[0]))
+        result.append(idBytes[1])
         result.append(type)
         result.append(concatenateBits(false, false, false, false, false, false, false, isCompressed))
-        result.append(lengthBytes.0)
-        result.append(lengthBytes.1)
-        result.append(lengthBytes.2)
-        result.append(lengthBytes.3)
+        result.extend(lengthBytes)
         result.extend(contents)
         return result;
     }

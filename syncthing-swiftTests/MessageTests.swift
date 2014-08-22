@@ -5,7 +5,7 @@ class MessageTests : XCTestCase {
 
     func testVersionIsZero() {
         let bytes = SomeMessage().serialize()
-        let firstNibble = nibbles(bytes[0]).0
+        let firstNibble = nibbles(bytes[0])[0]
         XCTAssertEqual(firstNibble, 0)
     }
 
@@ -13,7 +13,7 @@ class MessageTests : XCTestCase {
         var previousIds : [UInt16 : UInt16] = [:]
         for _ in 0..<4096 {
             let bytes = SomeMessage().serialize()
-            let id = concatenateBytes(nibbles(bytes[0]).1, bytes[1])
+            let id = concatenateBytes(nibbles(bytes[0])[1], bytes[1])
             XCTAssertTrue(previousIds[id] == nil)
             previousIds[id] = id
         }
