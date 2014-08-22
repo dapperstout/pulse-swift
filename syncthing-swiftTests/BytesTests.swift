@@ -45,4 +45,24 @@ class BytesTest : XCTestCase {
         XCTAssertEqual(concatenateBytes(b0, b1, b2, b3), 0xF00FA00A)
     }
 
+    func testUnsignedByte() {
+        let signed = Int8(bitPattern: 0xFF)
+        XCTAssertEqual(unsigned(signed), 0xFF)
+    }
+
+    func testUnsignedArray() {
+        let signed = [Int8(bitPattern: 0xF0), Int8(bitPattern: 0x0F)]
+        XCTAssertEqual(unsigned(signed), [0xF0, 0x0F])
+    }
+
+    func testSignedByte() {
+        let unsigned = UInt8(0xFF)
+        XCTAssertEqual(signed(unsigned), Int8(bitPattern: 0xFF))
+    }
+
+    func testSignedArray() {
+        let unsigned : [UInt8] = [0xF0, 0x0F]
+        XCTAssertEqual(signed(unsigned), [signed(0xF0), signed(0x0F)])
+    }
+
 }

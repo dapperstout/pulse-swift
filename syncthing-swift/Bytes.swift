@@ -56,3 +56,19 @@ public func concatenateBytes(left : UInt8, right : UInt8) -> UInt16 {
 public func concatenateBytes(b0 : UInt8, b1 : UInt8, b2 : UInt8, b3 : UInt8) -> UInt32 {
     return UInt32(b0) << 24 | UInt32(b1) << 16 | UInt32(b2) << 8 | UInt32(b3);
 }
+
+public func unsigned(byte: Int8) -> UInt8 {
+    return UInt8(bitPattern: byte)
+}
+
+public func unsigned(bytes : [Int8]) -> [UInt8] {
+    return bytes.map{ unsigned($0) }
+}
+
+public func signed(byte : UInt8) -> Int8 {
+    return Int8(bitPattern: byte)
+}
+
+public func signed(bytes: [UInt8]) -> [Int8] {
+    return bytes.map{ signed($0) }
+}
