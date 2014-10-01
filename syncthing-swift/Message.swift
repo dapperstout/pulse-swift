@@ -2,11 +2,11 @@ import Foundation
 
 public class Message
 {
+    public let type : UInt8
+    public let isCompressed : Bool
     private let version : UInt8 = 0
     private let id = getNextMessageId()
-    private let type : UInt8
     private let contents : [UInt8]
-    private let isCompressed : Bool
 
     public init(type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
         self.type = type
