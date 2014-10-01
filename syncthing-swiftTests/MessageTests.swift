@@ -19,7 +19,7 @@ class MessageTests : XCTestCase {
         }
     }
 
-    func testIsEncodedInThirdByte() {
+    func testTypeIsEncodedInThirdByte() {
         let message = Message(type: 3)
         let type = message.serialize()[2]
         XCTAssertEqual(type, 3)
