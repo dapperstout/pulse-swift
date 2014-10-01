@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D1B316F19DC7E080003ED3C /* PingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B316E19DC7E080003ED3C /* PingTests.swift */; };
 		4D1B317119DC7F180003ED3C /* Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B317019DC7F180003ED3C /* Ping.swift */; };
+		4D1B317319DC85430003ED3C /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B317219DC85430003ED3C /* PongTests.swift */; };
+		4D1B317519DC85840003ED3C /* Pong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B317419DC85840003ED3C /* Pong.swift */; };
 		4D321DAB19A52620006971D7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D321D8D19A52620006971D7 /* LICENSE */; };
 		4D321DAC19A52620006971D7 /* lz4.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D321D8E19A52620006971D7 /* lz4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		4D321DAD19A52620006971D7 /* lz4.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D8F19A52620006971D7 /* lz4.h */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		4D1B316E19DC7E080003ED3C /* PingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingTests.swift; sourceTree = "<group>"; };
 		4D1B317019DC7F180003ED3C /* Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ping.swift; sourceTree = "<group>"; };
+		4D1B317219DC85430003ED3C /* PongTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongTests.swift; sourceTree = "<group>"; };
+		4D1B317419DC85840003ED3C /* Pong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pong.swift; sourceTree = "<group>"; };
 		4D321D8D19A52620006971D7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4D321D8E19A52620006971D7 /* lz4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lz4.c; sourceTree = "<group>"; };
 		4D321D8F19A52620006971D7 /* lz4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4.h; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				4DDBE7A519A4A364007EF37E /* Bytes.swift */,
 				4D321DC619A52F99006971D7 /* LZ4Compression.swift */,
 				4D1B317019DC7F180003ED3C /* Ping.swift */,
+				4D1B317419DC85840003ED3C /* Pong.swift */,
 			);
 			path = "syncthing-swift";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				4DDBE7A219A4A1E1007EF37E /* BytesTests.swift */,
 				4D321DC819A61E86006971D7 /* LZ4CompressionTests.swift */,
 				4D1B316E19DC7E080003ED3C /* PingTests.swift */,
+				4D1B317219DC85430003ED3C /* PongTests.swift */,
 			);
 			path = "syncthing-swiftTests";
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1B317519DC85840003ED3C /* Pong.swift in Sources */,
 				4D321DAC19A52620006971D7 /* lz4.c in Sources */,
 				4D321DB019A52620006971D7 /* lz4hc.c in Sources */,
 				4DDBE79F19A49906007EF37E /* Message.swift in Sources */,
@@ -270,6 +277,7 @@
 				4D321DC919A61E86006971D7 /* LZ4CompressionTests.swift in Sources */,
 				4DDBE7A419A4A24B007EF37E /* BytesTests.swift in Sources */,
 				4D1B316F19DC7E080003ED3C /* PingTests.swift in Sources */,
+				4D1B317319DC85430003ED3C /* PongTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

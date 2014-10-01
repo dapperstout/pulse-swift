@@ -2,13 +2,14 @@ import Foundation
 
 public class Message
 {
+    public let id : UInt16
     public let type : UInt8
     public let isCompressed : Bool
     private let version : UInt8 = 0
-    private let id = getNextMessageId()
     private let contents : [UInt8]
 
-    public init(type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
+    public init(id: UInt16? = nil, type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
+        self.id = (id != nil) ? id! : getNextMessageId()
         self.type = type
         self.contents = compress ? syncthing.compress(contents) : contents
         self.isCompressed = compress
