@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0ECB0919DF27AE00405E0A /* syncthing-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-bridging-header.h"; sourceTree = "<group>"; };
 		4D1B316E19DC7E080003ED3C /* PingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingTests.swift; sourceTree = "<group>"; };
 		4D1B317019DC7F180003ED3C /* Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ping.swift; sourceTree = "<group>"; };
 		4D1B317219DC85430003ED3C /* PongTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PongTests.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				4DDBE78819A48FBB007EF37E /* syncthing-swift.h */,
+				4D0ECB0919DF27AE00405E0A /* syncthing-bridging-header.h */,
 				4DDBE78619A48FBB007EF37E /* Supporting Files */,
 				4DDBE79E19A49906007EF37E /* Message.swift */,
 				4DDBE7A519A4A364007EF37E /* Bytes.swift */,
@@ -390,7 +392,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "syncthing-swift/syncthing-swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "syncthing-swift/syncthing-bridging-header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -408,7 +410,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "syncthing-swift/syncthing-swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "syncthing-swift/syncthing-bridging-header.h";
 			};
 			name = Release;
 		};
