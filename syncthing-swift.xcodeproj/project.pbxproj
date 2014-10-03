@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3306C08C372967856ED3BB33 /* CloseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306C5481565F07B30DC376E /* CloseTests.swift */; };
+		3306CA968FF588FC19034469 /* Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306C243AA523A9A3F0DCF62 /* Close.swift */; };
 		4D1B316F19DC7E080003ED3C /* PingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B316E19DC7E080003ED3C /* PingTests.swift */; };
 		4D1B317119DC7F180003ED3C /* Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B317019DC7F180003ED3C /* Ping.swift */; };
 		4D1B317319DC85430003ED3C /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B317219DC85430003ED3C /* PongTests.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3306C243AA523A9A3F0DCF62 /* Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Close.swift; sourceTree = "<group>"; };
+		3306C5481565F07B30DC376E /* CloseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTests.swift; sourceTree = "<group>"; };
 		4D0ECB0919DF27AE00405E0A /* syncthing-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-bridging-header.h"; sourceTree = "<group>"; };
 		4D1B316E19DC7E080003ED3C /* PingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingTests.swift; sourceTree = "<group>"; };
 		4D1B317019DC7F180003ED3C /* Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ping.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				4D321DC619A52F99006971D7 /* LZ4Compression.swift */,
 				4D1B317019DC7F180003ED3C /* Ping.swift */,
 				4D1B317419DC85840003ED3C /* Pong.swift */,
+				3306C243AA523A9A3F0DCF62 /* Close.swift */,
 			);
 			path = "syncthing-swift";
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				4D321DC819A61E86006971D7 /* LZ4CompressionTests.swift */,
 				4D1B316E19DC7E080003ED3C /* PingTests.swift */,
 				4D1B317219DC85430003ED3C /* PongTests.swift */,
+				3306C5481565F07B30DC376E /* CloseTests.swift */,
 			);
 			path = "syncthing-swiftTests";
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				4D1B317119DC7F180003ED3C /* Ping.swift in Sources */,
 				4DDBE7A619A4A364007EF37E /* Bytes.swift in Sources */,
 				4D321DC719A52F99006971D7 /* LZ4Compression.swift in Sources */,
+				3306CA968FF588FC19034469 /* Close.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +287,7 @@
 				4DDBE7A419A4A24B007EF37E /* BytesTests.swift in Sources */,
 				4D1B316F19DC7E080003ED3C /* PingTests.swift in Sources */,
 				4D1B317319DC85430003ED3C /* PongTests.swift in Sources */,
+				3306C08C372967856ED3BB33 /* CloseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
