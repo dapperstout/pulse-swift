@@ -1,8 +1,6 @@
 Syncthing-Swift
 ==============
 
-[![Build Status](https://travis-ci.org/dapperstout/syncthing-swift.svg)](https://travis-ci.org/dapperstout/syncthing-swift)
-
 A port of the [Syncthing][1] synchronization protocol in Swift.
 
 ## Building
