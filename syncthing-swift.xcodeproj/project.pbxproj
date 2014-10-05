@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3306C08C372967856ED3BB33 /* CloseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306C5481565F07B30DC376E /* CloseTests.swift */; };
+		3306C32551CD1DD86620FD7C /* XdrReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306CFB75FE125DA6D483A80 /* XdrReaderTests.swift */; };
 		3306C35D562DD7745E256086 /* XdrWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306C0DB1C34157F0AD1EC92 /* XdrWriter.swift */; };
+		3306C77E5204C24BCD555139 /* XdrReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306CAF6D6F7034F4D348E91 /* XdrReader.swift */; };
 		3306CA968FF588FC19034469 /* Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306C243AA523A9A3F0DCF62 /* Close.swift */; };
 		3306CC2511FC88C40CEB859A /* XdrWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306C4008C43A3F9EAE8625E /* XdrWriterTests.swift */; };
 		3306CE9C21FEDA043C39B254 /* Utf8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3306CB2C0EFF095B40F152D3 /* Utf8.swift */; };
@@ -45,7 +47,9 @@
 		3306C243AA523A9A3F0DCF62 /* Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Close.swift; sourceTree = "<group>"; };
 		3306C4008C43A3F9EAE8625E /* XdrWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XdrWriterTests.swift; sourceTree = "<group>"; };
 		3306C5481565F07B30DC376E /* CloseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTests.swift; sourceTree = "<group>"; };
+		3306CAF6D6F7034F4D348E91 /* XdrReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XdrReader.swift; sourceTree = "<group>"; };
 		3306CB2C0EFF095B40F152D3 /* Utf8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utf8.swift; sourceTree = "<group>"; };
+		3306CFB75FE125DA6D483A80 /* XdrReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XdrReaderTests.swift; sourceTree = "<group>"; };
 		4D0ECB0919DF27AE00405E0A /* syncthing-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-bridging-header.h"; sourceTree = "<group>"; };
 		4D1B316E19DC7E080003ED3C /* PingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PingTests.swift; sourceTree = "<group>"; };
 		4D1B317019DC7F180003ED3C /* Ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ping.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				3306C243AA523A9A3F0DCF62 /* Close.swift */,
 				3306C0DB1C34157F0AD1EC92 /* XdrWriter.swift */,
 				3306CB2C0EFF095B40F152D3 /* Utf8.swift */,
+				3306CAF6D6F7034F4D348E91 /* XdrReader.swift */,
 			);
 			path = "syncthing-swift";
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 				4D1B317219DC85430003ED3C /* PongTests.swift */,
 				3306C5481565F07B30DC376E /* CloseTests.swift */,
 				3306C4008C43A3F9EAE8625E /* XdrWriterTests.swift */,
+				3306CFB75FE125DA6D483A80 /* XdrReaderTests.swift */,
 			);
 			path = "syncthing-swiftTests";
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				3306CA968FF588FC19034469 /* Close.swift in Sources */,
 				3306C35D562DD7745E256086 /* XdrWriter.swift in Sources */,
 				3306CE9C21FEDA043C39B254 /* Utf8.swift in Sources */,
+				3306C77E5204C24BCD555139 /* XdrReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +307,7 @@
 				4D1B317319DC85430003ED3C /* PongTests.swift in Sources */,
 				3306C08C372967856ED3BB33 /* CloseTests.swift in Sources */,
 				3306CC2511FC88C40CEB859A /* XdrWriterTests.swift in Sources */,
+				3306C32551CD1DD86620FD7C /* XdrReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
