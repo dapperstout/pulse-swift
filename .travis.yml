@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: syncthing-swift.xcodeproj
+xcode_scheme: syncthingTests
+xcode_sdk: iphonesimulator
