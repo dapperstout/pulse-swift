@@ -16,6 +16,11 @@ class LZ4CompressionTests : XCTestCase {
         XCTAssertEqual(decompress(compressed)!, someData)
     }
 
+    func testCanDecompressCompressedEmptyData() {
+        let compressed = compress([])
+        XCTAssertEqual(decompress(compressed)!, [])
+    }
+
     func testShouldNotDecompressInvalidData() {
         let compressed : [UInt8] = [0, 0, 0, 1, 12, 34, 56, 78]
         XCTAssertTrue(decompress(compressed) == nil)

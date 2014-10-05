@@ -24,7 +24,9 @@ private func compressionBuffer(uncompressed : [Int8]) -> [Int8] {
 public func decompress(compressed : [UInt8]) -> [UInt8]? {
     var result = decompressionBuffer(compressed)
     if result != nil {
-        decompress(signed(Array(compressed[4..<compressed.count])), &result)
+        if (result!.count > 0) {
+            decompress(signed(Array(compressed[4..<compressed.count])), &result)
+        }
         if result != nil {
             return unsigned(result!)
         }
