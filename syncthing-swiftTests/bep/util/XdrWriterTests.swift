@@ -53,7 +53,7 @@ class XdrWriterTests : XCTestCase {
         XCTAssertEqual(writer.xdrBytes, bytes(uint64))
     }
 
-}
+    let someString = "String with interesting unicode character \u{221E}"
+    let someData : [UInt8] = [12, 34]
 
-let someString = "String with interesting unicode character \u{221E}"
-let someData : [UInt8] = [12, 34]
+}
