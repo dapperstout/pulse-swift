@@ -28,4 +28,16 @@ class XdrWriterTests : XCTestCase {
         return concatenateBytes(bytes[0], bytes[1], bytes[2], bytes[3])
     }
 
+    func testWritesUInt32() {
+        let uint32 : UInt32 = 0xF00FA00A
+        writer.writeUInt32(uint32)
+        XCTAssertEqual(writer.xdrBytes, bytes(uint32))
+    }
+
+    func testWritesUInt64() {
+        let uint64 : UInt64 = 0xF00FA00AB00BC00C
+        writer.writeUInt64(uint64)
+        XCTAssertEqual(writer.xdrBytes, bytes(uint64))
+    }
+
 }

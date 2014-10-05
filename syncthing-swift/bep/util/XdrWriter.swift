@@ -15,4 +15,14 @@ public class XdrWriter {
         return self
     }
 
+    public func writeUInt32(uint32 : UInt32) -> XdrWriter {
+        xdrBytes += bytes(uint32)
+        return self
+    }
+
+    public func writeUInt64(uint64 : UInt64) -> XdrWriter {
+        xdrBytes += bytes(uint64)
+        return self
+    }
+
 }

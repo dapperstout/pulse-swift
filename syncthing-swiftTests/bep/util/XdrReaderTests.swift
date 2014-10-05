@@ -23,4 +23,18 @@ class XdrReaderTests : XCTestCase {
         XCTAssertNil(reader.readString())
     }
 
+    func testReadsUInt32() {
+        let xdrBytes = XdrWriter().writeUInt32(0xF00FA00A).xdrBytes
+        let reader = XdrReader(xdrBytes: xdrBytes)
+
+        XCTAssertEqual(reader.readUInt32()!, 0xF00FA00A)
+    }
+
+    func testReadsUInt64() {
+        let xdrBytes = XdrWriter().writeUInt64(0xF00FA00AB00BC00C).xdrBytes
+        let reader = XdrReader(xdrBytes: xdrBytes)
+
+        XCTAssertEqual(reader.readUInt64()!, 0xF00FA00AB00BC00C)
+    }
+
 }
