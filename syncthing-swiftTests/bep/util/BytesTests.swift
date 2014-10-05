@@ -16,8 +16,16 @@ class BytesTest : XCTestCase {
         XCTAssertEqual(bytes(UInt16(0b10101010_01010101)), [0b10101010, 0b01010101])
     }
 
-    func testDecompositionOfIntIntoBytes() {
+    func testDecompositionOfUInt32IntoBytes() {
         XCTAssertEqual(bytes(UInt32(0xF00FA00A)), [0xF0, 0x0F, 0xA0, 0x0A])
+    }
+
+    func testDecompositionOfUInt64IntoBytes() {
+        let uint64 : UInt64 = 0xF00FA00AB00BC00C
+        XCTAssertEqual(
+            bytes(uint64),
+            [0xF0, 0x0F, 0xA0, 0x0A, 0xB0, 0x0B, 0xC0, 0x0C]
+        )
     }
 
     func testConcatenationOfBitsIntoByte() {
@@ -37,12 +45,27 @@ class BytesTest : XCTestCase {
         XCTAssertEqual(concatenateBytes(left, right), 0b10101010_01010101)
     }
 
-    func testConcatenationOfBytesIntoInt() {
+    func testConcatenationOfBytesIntoUInt32() {
         let b0 = UInt8(0xF0)
         let b1 = UInt8(0x0F)
         let b2 = UInt8(0xA0)
         let b3 = UInt8(0x0A)
         XCTAssertEqual(concatenateBytes(b0, b1, b2, b3), 0xF00FA00A)
+    }
+
+    func testConcatenationOfBytesIntoUInt64() {
+        let b0 = UInt8(0xF0)
+        let b1 = UInt8(0x0F)
+        let b2 = UInt8(0xA0)
+        let b3 = UInt8(0x0A)
+        let b4 = UInt8(0xB0)
+        let b5 = UInt8(0x0B)
+        let b6 = UInt8(0xC0)
+        let b7 = UInt8(0x0C)
+        XCTAssertEqual(
+            concatenateBytes(b0, b1, b2, b3, b4, b5, b6, b7),
+            0xF00FA00AB00BC00C
+        )
     }
 
     func testUnsignedByte() {

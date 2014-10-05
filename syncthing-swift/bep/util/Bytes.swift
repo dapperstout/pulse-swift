@@ -30,6 +30,18 @@ public func bytes(fourBytes : UInt32) -> [UInt8] {
     return [b0, b1, b2, b3]
 }
 
+public func bytes(eightBytes : UInt64) -> [UInt8] {
+    let b0 = UInt8(eightBytes >> 56)
+    let b1 = UInt8((eightBytes >> 48) & 0xFF)
+    let b2 = UInt8((eightBytes >> 40) & 0xFF)
+    let b3 = UInt8((eightBytes >> 32) & 0xFF)
+    let b4 = UInt8((eightBytes >> 24) & 0xFF)
+    let b5 = UInt8((eightBytes >> 16) & 0xFF)
+    let b6 = UInt8((eightBytes >> 8) & 0xFF)
+    let b7 = UInt8((eightBytes) & 0xFF)
+    return [b0, b1, b2, b3, b4, b5, b6, b7]
+}
+
 public func concatenateBits(eightBits : Bool...)  -> UInt8 {
     return concatenateBits(eightBits)
 }
@@ -54,7 +66,21 @@ public func concatenateBytes(left : UInt8, right : UInt8) -> UInt16 {
 }
 
 public func concatenateBytes(b0 : UInt8, b1 : UInt8, b2 : UInt8, b3 : UInt8) -> UInt32 {
-    return UInt32(b0) << 24 | UInt32(b1) << 16 | UInt32(b2) << 8 | UInt32(b3);
+    return UInt32(b0) << 24 | UInt32(b1) << 16 | UInt32(b2) << 8 | UInt32(b3)
+}
+
+public func concatenateBytes(
+        b0 : UInt8, b1 : UInt8, b2 : UInt8, b3 : UInt8,
+        b4 : UInt8, b5 : UInt8, b6 : UInt8, b7 : UInt8) -> UInt64 {
+    return
+        UInt64(b0) << 56 |
+        UInt64(b1) << 48 |
+        UInt64(b2) << 40 |
+        UInt64(b3) << 32 |
+        UInt64(b4) << 24 |
+        UInt64(b5) << 16 |
+        UInt64(b6) << 8  |
+        UInt64(b7)
 }
 
 public func unsigned(byte: Int8) -> UInt8 {
