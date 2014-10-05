@@ -6,25 +6,29 @@ public class Message
     public let type : UInt8
     public let isCompressed : Bool
     private let version : UInt8 = 0
-    private let contents : [UInt8]
+    private let _contents : [UInt8]
 
     public init(id: UInt16? = nil, type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
         self.id = (id != nil) ? id! : getNextMessageId()
         self.type = type
-        self.contents = compress ? syncthing.compress(contents) : contents
+        self._contents = compress ? syncthing.compress(contents) : contents
         self.isCompressed = compress
+    }
+
+    public var contents : [UInt8] {
+        return isCompressed ? decompress(_contents)! : _contents
     }
 
     public func serialize() -> [UInt8] {
         var result : [UInt8] = []
         let idBytes = bytes(id)
-        let lengthBytes = bytes(UInt32(contents.count))
+        let lengthBytes = bytes(UInt32(_contents.count))
         result.append(concatenateNibbles(version, idBytes[0]))
         result.append(idBytes[1])
         result.append(type)
         result.append(concatenateBits(false, false, false, false, false, false, false, isCompressed))
         result.extend(lengthBytes)
-        result.extend(contents)
+        result.extend(_contents)
         return result;
     }
 }

@@ -71,6 +71,11 @@ class MessageTests : XCTestCase {
         XCTAssertEqual(compress(someContents), Array(bytes[8..<bytes.count]))
     }
 
+    func testContentReturnsUncompressedContent() {
+        let message = Message(type: 0, contents: someContents, compress: true)
+        XCTAssertEqual(someContents, message.contents)
+    }
+
     let someContents : [UInt8] = [12, 34, 56, 78]
 
 }
