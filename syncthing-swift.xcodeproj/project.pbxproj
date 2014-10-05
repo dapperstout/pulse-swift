@@ -31,6 +31,8 @@
 		4D321DB119A52620006971D7 /* lz4hc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D9319A52620006971D7 /* lz4hc.h */; };
 		4D5CF4EB19E1BAE60083F4CE /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4EA19E1BAE60083F4CE /* RequestTests.swift */; };
 		4D5CF4ED19E1BB3B0083F4CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4EC19E1BB3B0083F4CE /* Request.swift */; };
+		4D5CF4F119E1D37C0083F4CE /* XdrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4F019E1D37C0083F4CE /* XdrTests.swift */; };
+		4D5CF4F419E1D4A40083F4CE /* Xdr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4F219E1D49A0083F4CE /* Xdr.swift */; };
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		4D321D9319A52620006971D7 /* lz4hc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4hc.h; sourceTree = "<group>"; };
 		4D5CF4EA19E1BAE60083F4CE /* RequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		4D5CF4EC19E1BB3B0083F4CE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		4D5CF4F019E1D37C0083F4CE /* XdrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XdrTests.swift; sourceTree = "<group>"; };
+		4D5CF4F219E1D49A0083F4CE /* Xdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xdr.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* syncthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = syncthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78719A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 				3306C83B59302CE70B548018 /* LZ4CompressionTests.swift */,
 				3306C5E7C14E655DAA6DD2FD /* XdrReaderTests.swift */,
 				3306C4E0785E7B3E0662290E /* XdrWriterTests.swift */,
+				4D5CF4F019E1D37C0083F4CE /* XdrTests.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				3306CC43E69F5E87371820DD /* Utf8.swift */,
 				3306C3B992B960B5D8BAFC1E /* XdrReader.swift */,
 				3306C94CB0FBAA091EED70D1 /* XdrWriter.swift */,
+				4D5CF4F219E1D49A0083F4CE /* Xdr.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				3306C66D1A13665EA00D650E /* Bytes.swift in Sources */,
 				3306C72704A7475EAA890F88 /* LZ4Compression.swift in Sources */,
 				3306C4B04CE35E709A8A2419 /* Utf8.swift in Sources */,
+				4D5CF4F419E1D4A40083F4CE /* Xdr.swift in Sources */,
 				3306C5CA353D8714D18D735D /* XdrReader.swift in Sources */,
 				3306CEF23EABB06564888032 /* XdrWriter.swift in Sources */,
 				3306CC23BD4A7F3DDDAFF8EF /* Close.swift in Sources */,
@@ -363,6 +370,7 @@
 				3306C03F757A89E77F99763E /* CloseTests.swift in Sources */,
 				3306C1E70DE4AEB139020175 /* MessageTests.swift in Sources */,
 				3306CA6C3AF9D6DCD7492149 /* PingTests.swift in Sources */,
+				4D5CF4F119E1D37C0083F4CE /* XdrTests.swift in Sources */,
 				3306CE2C7E04AB5C62ED0EA7 /* PongTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

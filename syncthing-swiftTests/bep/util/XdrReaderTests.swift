@@ -4,7 +4,7 @@ import syncthing
 class XdrReaderTests : XCTestCase {
 
     func testReadsStrings() {
-        let xdrBytes = XdrWriter().writeString("String1").writeString("String2").xdrBytes
+        let xdrBytes = xdr("String1", "String2")!
         let reader = XdrReader(xdrBytes: xdrBytes)
 
         XCTAssertEqual(reader.readString()!, "String1")
@@ -24,22 +24,22 @@ class XdrReaderTests : XCTestCase {
     }
 
     func testReadsUInt32() {
-        let xdrBytes = XdrWriter().writeUInt32(0xF00FA00A).xdrBytes
-        let reader = XdrReader(xdrBytes: xdrBytes)
+        let uint32 : UInt32 = 0xF00FA00A
+        let reader = XdrReader(xdrBytes: xdr(uint32)!)
 
-        XCTAssertEqual(reader.readUInt32()!, 0xF00FA00A)
+        XCTAssertEqual(reader.readUInt32()!, uint32)
     }
 
     func testReadsUInt64() {
-        let xdrBytes = XdrWriter().writeUInt64(0xF00FA00AB00BC00C).xdrBytes
-        let reader = XdrReader(xdrBytes: xdrBytes)
+        let uint64 : UInt64 = 0xF00FA00AB00BC00C
+        let reader = XdrReader(xdrBytes: xdr(uint64)!)
 
-        XCTAssertEqual(reader.readUInt64()!, 0xF00FA00AB00BC00C)
+        XCTAssertEqual(reader.readUInt64()!, uint64)
     }
 
     func testReadsData() {
-        let xdrBytes = XdrWriter().writeData([12, 34]).xdrBytes
-        let reader = XdrReader(xdrBytes: xdrBytes)
+        let data : [UInt8] = [12, 34]
+        let reader = XdrReader(xdrBytes: xdr(data)!)
 
         XCTAssertEqual(reader.readData()!, [12, 34])
     }
