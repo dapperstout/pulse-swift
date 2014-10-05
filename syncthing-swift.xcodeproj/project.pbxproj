@@ -29,6 +29,8 @@
 		4D321DAD19A52620006971D7 /* lz4.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D8F19A52620006971D7 /* lz4.h */; };
 		4D321DB019A52620006971D7 /* lz4hc.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D321D9219A52620006971D7 /* lz4hc.c */; };
 		4D321DB119A52620006971D7 /* lz4hc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D9319A52620006971D7 /* lz4hc.h */; };
+		4D5CF4EB19E1BAE60083F4CE /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4EA19E1BAE60083F4CE /* RequestTests.swift */; };
+		4D5CF4ED19E1BB3B0083F4CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4EC19E1BB3B0083F4CE /* Request.swift */; };
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		4D321D8F19A52620006971D7 /* lz4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4.h; sourceTree = "<group>"; };
 		4D321D9219A52620006971D7 /* lz4hc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lz4hc.c; sourceTree = "<group>"; };
 		4D321D9319A52620006971D7 /* lz4hc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4hc.h; sourceTree = "<group>"; };
+		4D5CF4EA19E1BAE60083F4CE /* RequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
+		4D5CF4EC19E1BB3B0083F4CE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* syncthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = syncthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78719A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				3306CC429D9229DB094C8360 /* Message.swift */,
 				3306C9B1F627EF9D0142D2FB /* Ping.swift */,
 				3306C996183BE1410FD5F65A /* Pong.swift */,
+				4D5CF4EC19E1BB3B0083F4CE /* Request.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 				3306CEB351C4E985B0F6C79C /* MessageTests.swift */,
 				3306CA18761145DBD372C7D4 /* PingTests.swift */,
 				3306CA1934361D562BD42C22 /* PongTests.swift */,
+				4D5CF4EA19E1BAE60083F4CE /* RequestTests.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D321DAC19A52620006971D7 /* lz4.c in Sources */,
+				4D5CF4ED19E1BB3B0083F4CE /* Request.swift in Sources */,
 				4D321DB019A52620006971D7 /* lz4hc.c in Sources */,
 				3306C66D1A13665EA00D650E /* Bytes.swift in Sources */,
 				3306C72704A7475EAA890F88 /* LZ4Compression.swift in Sources */,
@@ -348,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5CF4EB19E1BAE60083F4CE /* RequestTests.swift in Sources */,
 				3306C8E80C89589FBA89F970 /* BytesTests.swift in Sources */,
 				3306CA62307BF868DF799A07 /* LZ4CompressionTests.swift in Sources */,
 				3306CCFA398A9272665F706E /* XdrReaderTests.swift in Sources */,
