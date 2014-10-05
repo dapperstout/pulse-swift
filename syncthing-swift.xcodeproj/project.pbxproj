@@ -33,6 +33,8 @@
 		4D5CF4ED19E1BB3B0083F4CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4EC19E1BB3B0083F4CE /* Request.swift */; };
 		4D5CF4F119E1D37C0083F4CE /* XdrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4F019E1D37C0083F4CE /* XdrTests.swift */; };
 		4D5CF4F419E1D4A40083F4CE /* Xdr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4F219E1D49A0083F4CE /* Xdr.swift */; };
+		4D5CF4F619E1DB170083F4CE /* ResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4F519E1DB170083F4CE /* ResponseTests.swift */; };
+		4D5CF4F819E1DBF70083F4CE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CF4F719E1DBF70083F4CE /* Response.swift */; };
 		4DDBE78919A48FBB007EF37E /* syncthing-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DDBE78819A48FBB007EF37E /* syncthing-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		4D5CF4EC19E1BB3B0083F4CE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		4D5CF4F019E1D37C0083F4CE /* XdrTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XdrTests.swift; sourceTree = "<group>"; };
 		4D5CF4F219E1D49A0083F4CE /* Xdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xdr.swift; sourceTree = "<group>"; };
+		4D5CF4F519E1DB170083F4CE /* ResponseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseTests.swift; sourceTree = "<group>"; };
+		4D5CF4F719E1DBF70083F4CE /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* syncthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = syncthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78719A48FBB007EF37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DDBE78819A48FBB007EF37E /* syncthing-swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncthing-swift.h"; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				3306C9B1F627EF9D0142D2FB /* Ping.swift */,
 				3306C996183BE1410FD5F65A /* Pong.swift */,
 				4D5CF4EC19E1BB3B0083F4CE /* Request.swift */,
+				4D5CF4F719E1DBF70083F4CE /* Response.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				3306CA18761145DBD372C7D4 /* PingTests.swift */,
 				3306CA1934361D562BD42C22 /* PongTests.swift */,
 				4D5CF4EA19E1BAE60083F4CE /* RequestTests.swift */,
+				4D5CF4F519E1DB170083F4CE /* ResponseTests.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				3306C66D1A13665EA00D650E /* Bytes.swift in Sources */,
 				3306C72704A7475EAA890F88 /* LZ4Compression.swift in Sources */,
 				3306C4B04CE35E709A8A2419 /* Utf8.swift in Sources */,
+				4D5CF4F819E1DBF70083F4CE /* Response.swift in Sources */,
 				4D5CF4F419E1D4A40083F4CE /* Xdr.swift in Sources */,
 				3306C5CA353D8714D18D735D /* XdrReader.swift in Sources */,
 				3306CEF23EABB06564888032 /* XdrWriter.swift in Sources */,
@@ -371,6 +378,7 @@
 				3306C1E70DE4AEB139020175 /* MessageTests.swift in Sources */,
 				3306CA6C3AF9D6DCD7492149 /* PingTests.swift in Sources */,
 				4D5CF4F119E1D37C0083F4CE /* XdrTests.swift in Sources */,
+				4D5CF4F619E1DB170083F4CE /* ResponseTests.swift in Sources */,
 				3306CE2C7E04AB5C62ED0EA7 /* PongTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
