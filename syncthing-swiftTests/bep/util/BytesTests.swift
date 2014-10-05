@@ -17,7 +17,8 @@ class BytesTest : XCTestCase {
     }
 
     func testDecompositionOfUInt32IntoBytes() {
-        XCTAssertEqual(bytes(UInt32(0xF00FA00A)), [0xF0, 0x0F, 0xA0, 0x0A])
+        let uint32 : UInt32 = 0xF00FA00A
+        XCTAssertEqual(bytes(uint32), [0xF0, 0x0F, 0xA0, 0x0A])
     }
 
     func testDecompositionOfUInt64IntoBytes() {
