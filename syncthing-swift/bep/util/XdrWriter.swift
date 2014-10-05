@@ -7,10 +7,14 @@ public class XdrWriter {
     public init() {}
 
     public func writeString(string : String) -> XdrWriter {
-        let utf8Bytes = string.utf8Bytes
-        let padding = Repeat<UInt8>(count: 4 - (utf8Bytes.count % 4), repeatedValue: 0)
-        xdrBytes += bytes(UInt32(utf8Bytes.count))
-        xdrBytes += utf8Bytes
+        writeData(string.utf8Bytes)
+        return self
+    }
+
+    public func writeData(data : [UInt8]) -> XdrWriter {
+        let padding = Repeat<UInt8>(count: 4 - (data.count % 4), repeatedValue: 0)
+        xdrBytes += bytes(UInt32(data.count))
+        xdrBytes += data
         xdrBytes += padding
         return self
     }

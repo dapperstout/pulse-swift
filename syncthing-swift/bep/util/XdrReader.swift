@@ -10,10 +10,17 @@ public class XdrReader {
     }
 
     public func readString() -> String? {
-        if let stringLength = readUInt32() {
-            if let stringBytes = read(Int(stringLength)) {
-                read(4 - (stringLength % 4))
-                return String.fromUtf8Bytes(stringBytes)
+        if let stringBytes = readData() {
+            return String.fromUtf8Bytes(stringBytes)
+        }
+        return nil
+    }
+
+    public func readData() -> [UInt8]? {
+        if let length = readUInt32() {
+            if let bytes = read(Int(length)) {
+                read(4 - (length % 4))
+                return [UInt8](bytes)
             }
         }
         return nil

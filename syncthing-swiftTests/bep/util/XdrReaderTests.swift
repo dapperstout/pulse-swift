@@ -37,4 +37,11 @@ class XdrReaderTests : XCTestCase {
         XCTAssertEqual(reader.readUInt64()!, 0xF00FA00AB00BC00C)
     }
 
+    func testReadsData() {
+        let xdrBytes = XdrWriter().writeData([12, 34]).xdrBytes
+        let reader = XdrReader(xdrBytes: xdrBytes)
+
+        XCTAssertEqual(reader.readData()!, [12, 34])
+    }
+
 }

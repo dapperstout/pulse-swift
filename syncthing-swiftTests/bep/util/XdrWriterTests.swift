@@ -4,7 +4,6 @@ import syncthing
 class XdrWriterTests : XCTestCase {
 
     let writer = XdrWriter()
-    let someString = "String with interesting unicode character \u{221E}"
 
     func testWritesStringLength() {
         writer.writeString(someString)
@@ -24,6 +23,20 @@ class XdrWriterTests : XCTestCase {
         XCTAssertEqual(writer.xdrBytes.count % 4, 0)
     }
 
+    func testWritesDataLength() {
+        writer.writeData(someData)
+        let dataLength = extractXdrDataLength(writer.xdrBytes)
+        XCTAssertEqual(Int(dataLength), someData.count)
+    }
+
+    func testWritesData() {
+        writer.writeData(someData)
+        let dataLength = extractXdrDataLength(writer.xdrBytes)
+        let data = [UInt8](writer.xdrBytes[4..<Int(4+dataLength)])
+        XCTAssertEqual(data, someData)
+
+    }
+
     func extractXdrDataLength(bytes : [UInt8]) -> UInt32 {
         return concatenateBytes(bytes[0], bytes[1], bytes[2], bytes[3])
     }
@@ -41,3 +54,6 @@ class XdrWriterTests : XCTestCase {
     }
 
 }
+
+let someString = "String with interesting unicode character \u{221E}"
+let someData : [UInt8] = [12, 34]
