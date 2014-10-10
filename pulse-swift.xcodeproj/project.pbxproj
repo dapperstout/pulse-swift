@@ -37,6 +37,8 @@
 		4D6A47A119E868AD005D7C23 /* Utf8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A479D19E868AD005D7C23 /* Utf8.swift */; };
 		4D6A47A219E868AD005D7C23 /* Xdr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A479E19E868AD005D7C23 /* Xdr.swift */; };
 		4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A478419E860E4005D7C23 /* PongTests.swift */; };
+		4D6A47A619E8696F005D7C23 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A519E8696F005D7C23 /* Device.swift */; };
+		4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A319E86969005D7C23 /* DeviceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		4D6A479C19E868AD005D7C23 /* LZ4Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZ4Compression.swift; sourceTree = "<group>"; };
 		4D6A479D19E868AD005D7C23 /* Utf8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utf8.swift; sourceTree = "<group>"; };
 		4D6A479E19E868AD005D7C23 /* Xdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xdr.swift; sourceTree = "<group>"; };
+		4D6A47A319E86969005D7C23 /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
+		4D6A47A519E8696F005D7C23 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4D6A475D19E860CF005D7C23 /* Close.swift */,
+				4D6A47A519E8696F005D7C23 /* Device.swift */,
 				4D6A475F19E860CF005D7C23 /* Message.swift */,
 				4D6A476019E860CF005D7C23 /* Ping.swift */,
 				4D6A476119E860CF005D7C23 /* Pong.swift */,
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				4D6A478019E860E4005D7C23 /* CloseTests.swift */,
+				4D6A47A319E86969005D7C23 /* DeviceTests.swift */,
 				4D6A478219E860E4005D7C23 /* MessageTests.swift */,
 				4D6A478319E860E4005D7C23 /* PingTests.swift */,
 				4D6A478419E860E4005D7C23 /* PongTests.swift */,
@@ -341,6 +347,7 @@
 				4D6A477019E860CF005D7C23 /* Ping.swift in Sources */,
 				4D6A47A119E868AD005D7C23 /* Utf8.swift in Sources */,
 				4D6A479919E86877005D7C23 /* Pong.swift in Sources */,
+				4D6A47A619E8696F005D7C23 /* Device.swift in Sources */,
 				4D6A477319E860CF005D7C23 /* Response.swift in Sources */,
 				4D321DB019A52620006971D7 /* lz4hc.c in Sources */,
 				4D6A476C19E860CF005D7C23 /* XdrWriter.swift in Sources */,
@@ -366,6 +373,7 @@
 				4D6A478B19E860E4005D7C23 /* XdrTests.swift in Sources */,
 				4D6A478919E860E4005D7C23 /* LZ4CompressionTests.swift in Sources */,
 				4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */,
+				4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
