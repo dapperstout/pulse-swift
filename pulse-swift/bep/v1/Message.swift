@@ -11,7 +11,7 @@ public class Message
     public init(id: UInt16? = nil, type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
         self.id = (id != nil) ? id! : getNextMessageId()
         self.type = type
-        self._contents = compress ? syncthing.compress(contents) : contents
+        self._contents = compress ? pulse.compress(contents) : contents
         self.isCompressed = compress
     }
 
@@ -43,5 +43,5 @@ private func getNextMessageId() -> UInt16 {
 }
 
 private var nextMessageId : UInt16 = 0
-private let nextMessageIdLock = dispatch_queue_create("syncthing.nextMessageId", nil)
+private let nextMessageIdLock = dispatch_queue_create("pulse.nextMessageId", nil)
 

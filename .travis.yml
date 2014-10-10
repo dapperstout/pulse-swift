@@ -1,4 +1,4 @@
 language: objective-c
-xcode_project: syncthing-swift.xcodeproj
-xcode_scheme: syncthingTests
+xcode_project: pulse-swift.xcodeproj
+xcode_scheme: pulseTests
 xcode_sdk: iphonesimulator

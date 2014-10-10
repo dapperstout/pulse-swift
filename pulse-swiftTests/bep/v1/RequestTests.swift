@@ -1,5 +1,5 @@
 import XCTest
-import syncthing
+import pulse
 
 class RequestsTests : XCTestCase {
 

@@ -1,7 +1,7 @@
-Syncthing-Swift
+Pulse-Swift
 ==============
 
-A port of the [Syncthing][1] synchronization protocol in Swift.
+A port of the [Pulse][1] synchronization protocol in Swift.
 
 ## Building
 
@@ -12,4 +12,4 @@ To build, you must first initialise and update the lz4 git submodule. From the f
 
 Now open the .xcodeproj and build normally.
 
-[1]: http://syncthing.net
+[1]: https://ind.ie/pulse/
