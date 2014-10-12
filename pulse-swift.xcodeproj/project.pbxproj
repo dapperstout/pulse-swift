@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D11A2C719EACC33002C6861 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11A2C619EACC33002C6861 /* Folder.swift */; };
+		4D11A2C919EACC5A002C6861 /* FolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11A2C819EACC5A002C6861 /* FolderTests.swift */; };
 		4D321DAB19A52620006971D7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D321D8D19A52620006971D7 /* LICENSE */; };
 		4D321DAC19A52620006971D7 /* lz4.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D321D8E19A52620006971D7 /* lz4.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		4D321DAD19A52620006971D7 /* lz4.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D321D8F19A52620006971D7 /* lz4.h */; };
@@ -36,9 +38,9 @@
 		4D6A47A019E868AD005D7C23 /* LZ4Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A479C19E868AD005D7C23 /* LZ4Compression.swift */; };
 		4D6A47A119E868AD005D7C23 /* Utf8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A479D19E868AD005D7C23 /* Utf8.swift */; };
 		4D6A47A219E868AD005D7C23 /* Xdr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A479E19E868AD005D7C23 /* Xdr.swift */; };
-		4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A478419E860E4005D7C23 /* PongTests.swift */; };
 		4D6A47A619E8696F005D7C23 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A519E8696F005D7C23 /* Device.swift */; };
 		4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A319E86969005D7C23 /* DeviceTests.swift */; };
+		4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A478419E860E4005D7C23 /* PongTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D11A2C619EACC33002C6861 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		4D11A2C819EACC5A002C6861 /* FolderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTests.swift; sourceTree = "<group>"; };
 		4D321D8D19A52620006971D7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4D321D8E19A52620006971D7 /* lz4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lz4.c; sourceTree = "<group>"; };
 		4D321D8F19A52620006971D7 /* lz4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lz4.h; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			children = (
 				4D6A475D19E860CF005D7C23 /* Close.swift */,
 				4D6A47A519E8696F005D7C23 /* Device.swift */,
+				4D11A2C619EACC33002C6861 /* Folder.swift */,
 				4D6A475F19E860CF005D7C23 /* Message.swift */,
 				4D6A476019E860CF005D7C23 /* Ping.swift */,
 				4D6A476119E860CF005D7C23 /* Pong.swift */,
@@ -202,6 +207,7 @@
 			children = (
 				4D6A478019E860E4005D7C23 /* CloseTests.swift */,
 				4D6A47A319E86969005D7C23 /* DeviceTests.swift */,
+				4D11A2C819EACC5A002C6861 /* FolderTests.swift */,
 				4D6A478219E860E4005D7C23 /* MessageTests.swift */,
 				4D6A478319E860E4005D7C23 /* PingTests.swift */,
 				4D6A478419E860E4005D7C23 /* PongTests.swift */,
@@ -343,6 +349,7 @@
 				4D321DAC19A52620006971D7 /* lz4.c in Sources */,
 				4D6A476B19E860CF005D7C23 /* XdrReader.swift in Sources */,
 				4D6A47A219E868AD005D7C23 /* Xdr.swift in Sources */,
+				4D11A2C719EACC33002C6861 /* Folder.swift in Sources */,
 				4D6A479F19E868AD005D7C23 /* Bytes.swift in Sources */,
 				4D6A477019E860CF005D7C23 /* Ping.swift in Sources */,
 				4D6A47A119E868AD005D7C23 /* Utf8.swift in Sources */,
@@ -362,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D11A2C919EACC5A002C6861 /* FolderTests.swift in Sources */,
 				4D6A478D19E860E4005D7C23 /* CloseTests.swift in Sources */,
 				4D6A478819E860E4005D7C23 /* BytesTests.swift in Sources */,
 				4D6A478A19E860E4005D7C23 /* XdrReaderTests.swift in Sources */,
