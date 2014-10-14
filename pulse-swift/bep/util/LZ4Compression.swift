@@ -36,15 +36,15 @@ public func decompress(compressed : [UInt8]) -> [UInt8]? {
 
 private func decompressionBuffer(compressed : [UInt8]) -> [Int8]? {
     let uncompressedLength = extractLength(compressed)
-    if uncompressedLength <= maxBufferLength {
-        return [Int8](count: uncompressedLength, repeatedValue:0)
+    if uncompressedLength <= UInt32(maxBufferLength) {
+        return [Int8](count: Int(uncompressedLength), repeatedValue:0)
     } else {
         return nil
     }
 }
 
-private func extractLength(data : [UInt8]) -> Int {
-    return Int(concatenateBytes(data[0], data[1], data[2], data[3]))
+private func extractLength(data : [UInt8]) -> UInt32 {
+    return concatenateBytes(data[0], data[1], data[2], data[3])
 }
 
 private func decompress(compressed : [Int8], inout decompressed : [Int8]?) {
