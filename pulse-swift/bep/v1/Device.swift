@@ -1,6 +1,6 @@
 import Foundation
 
-public class Device : Equatable {
+public class Device : Equatable, XdrWritable {
 
     public let id: String
     public let isTrusted: Bool

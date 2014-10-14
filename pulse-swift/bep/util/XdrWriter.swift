@@ -29,4 +29,20 @@ public class XdrWriter {
         return self
     }
 
+    public func write(writable: XdrWritable) -> XdrWriter {
+        writable.writeTo(self)
+        return self
+    }
+
+    public func write<W: XdrWritable>(writables: [W]) -> XdrWriter {
+        writeUInt32(UInt32(writables.count))
+        for writable in writables {
+            write(writable)
+        }
+        return self
+    }
+}
+
+public protocol XdrWritable {
+    func writeTo(writer: XdrWriter)
 }

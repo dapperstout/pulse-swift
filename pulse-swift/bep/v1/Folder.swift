@@ -1,6 +1,6 @@
 import Foundation
 
-public class Folder : Equatable {
+public class Folder : Equatable, XdrWritable {
 
     public let id: String
     public let devices: [Device]
@@ -35,10 +35,7 @@ public class Folder : Equatable {
 
     public func writeTo(writer: XdrWriter) {
         writer.writeString(id)
-        writer.writeUInt32(UInt32(devices.count))
-        for device in devices {
-            device.writeTo(writer)
-        }
+        writer.write(devices)
     }
 }
 
