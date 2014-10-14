@@ -1,4 +1,2 @@
 language: objective-c
-xcode_project: pulse-swift.xcodeproj
-xcode_scheme: pulseTests
-xcode_sdk: iphonesimulator
+script: xcodebuild -project pulse-swift.xcodeproj -scheme pulseTests test
