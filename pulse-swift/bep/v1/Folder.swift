@@ -1,41 +1,26 @@
 import Foundation
 
-public class Folder : Equatable, XdrWritable {
+public class Folder : Equatable, XdrWritable, XdrReadable {
 
     public let id: String
     public let devices: [Device]
 
-    public init(id: String, devices: [Device] = []) {
+    public required init(id: String, devices: [Device] = []) {
         self.id = id
         self.devices = devices
     }
-
-    public class func readFrom(reader: XdrReader) -> Folder? {
-        if let id = reader.readString() {
-        if let devices = readDevices(reader) {
-            return Folder(id: id, devices: devices)
-        }}
-        return nil
-    }
-
-    private class func readDevices(reader: XdrReader) -> [Device]? {
-        if let amountOfDevices = reader.readUInt32() {
-            var devices: [Device] = []
-            for i in 0..<amountOfDevices {
-                if let device = Device.readFrom(reader) {
-                    devices.append(device)
-                } else {
-                    return nil
-                }
-            }
-            return devices
-        }
-        return nil
-    }
-
     public func writeTo(writer: XdrWriter) {
         writer.writeString(id)
         writer.write(devices)
+    }
+
+    public class func readFrom(reader: XdrReader) -> Self? {
+        if let id = reader.readString() {
+            if let devices = reader.read([Device]) {
+                return self(id: id, devices: devices)
+            }
+        }
+        return nil
     }
 }
 

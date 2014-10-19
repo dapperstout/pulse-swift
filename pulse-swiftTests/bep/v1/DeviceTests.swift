@@ -47,12 +47,9 @@ class DeviceTests : XCTestCase {
     }
 
     func testCanBeReadFromXdr() {
-        let device = Device(
-            id: "Some Id", trusted: false, readOnly: true,
-            introducer: true, uploadPriority: .High, maxLocalVersion: 42
-        )
-        let reader = xdrReader(device)
-        XCTAssertEqual(Device.readFrom(reader)!, device)
+        let reader = xdrReader(someDevice)
+        let device = reader.read(Device)!
+        XCTAssertEqual(device, someDevice)
     }
 
     func readId(device: Device) -> String {
@@ -83,5 +80,9 @@ class DeviceTests : XCTestCase {
         return writer.xdrBytes
     }
 
+    let someDevice = Device(
+        id: "Some Id", trusted: false, readOnly: true,
+        introducer: true, uploadPriority: .High, maxLocalVersion: 42
+    )
 }
 

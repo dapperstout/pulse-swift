@@ -52,4 +52,28 @@ public class XdrReader {
         return nil
     }
 
+    public func read<T: XdrReadable>(T.Type) -> T? {
+        return T.readFrom(self)
+    }
+
+    public func read<T: XdrReadable>(Array<T>.Type) -> [T]? {
+        if let amount = self.readUInt32() {
+            var result: [T] = []
+            for i in 0..<amount {
+                if let t = read(T) {
+                    result.append(t)
+                } else {
+                    return nil
+                }
+            }
+            return result
+        }
+        return nil
+    }
+}
+
+public protocol XdrReadable {
+
+    class func readFrom(reader: XdrReader) -> Self?;
+
 }

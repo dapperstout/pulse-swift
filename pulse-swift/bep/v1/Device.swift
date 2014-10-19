@@ -1,6 +1,6 @@
 import Foundation
 
-public class Device : Equatable, XdrWritable {
+public class Device : Equatable, XdrWritable, XdrReadable {
 
     public let id: String
     public let isTrusted: Bool
@@ -9,7 +9,7 @@ public class Device : Equatable, XdrWritable {
     public let uploadPriority : UploadPriority
     public let maxLocalVersion : UInt64
 
-    public init(
+    public required init(
         id: String, trusted: Bool = true, readOnly: Bool = false,
         introducer: Bool = false, uploadPriority: UploadPriority = .Normal,
         maxLocalVersion: UInt64 = 0)
@@ -22,28 +22,6 @@ public class Device : Equatable, XdrWritable {
         self.maxLocalVersion = maxLocalVersion
     }
 
-    public class func readFrom(reader: XdrReader) -> Device? {
-        if let id = reader.readString() {
-        if let flags = reader.readUInt32() {
-        if let maxLocalVersion = reader.readUInt64() {
-
-            let isTrusted = bits(bytes(flags)[3])[7]
-            let isReadOnly = bits(bytes(flags)[3])[6]
-            let isIntroducer = bits(bytes(flags)[3])[5]
-            let priorityBits = bytes(flags)[1] & 0b11
-
-            return Device(
-                id: id,
-                trusted: isTrusted,
-                readOnly: isReadOnly,
-                introducer: isIntroducer,
-                uploadPriority: UploadPriority.fromRaw(priorityBits)!,
-                maxLocalVersion: maxLocalVersion
-            )
-        }}}
-        return nil;
-    }
-
     public func writeTo(writer: XdrWriter) {
         let prioFlags = uploadPriority.toRaw()
         let irtFlags = concatenateBits(
@@ -54,6 +32,28 @@ public class Device : Equatable, XdrWritable {
         writer.writeString(id)
         writer.writeUInt32(concatenateBytes(0, prioFlags, 0, irtFlags))
         writer.writeUInt64(self.maxLocalVersion)
+    }
+
+    public class func readFrom(reader: XdrReader) -> Self? {
+        if let id = reader.readString() {
+        if let flags = reader.readUInt32() {
+        if let maxLocalVersion = reader.readUInt64() {
+
+            let isTrusted = bits(bytes(flags)[3])[7]
+            let isReadOnly = bits(bytes(flags)[3])[6]
+            let isIntroducer = bits(bytes(flags)[3])[5]
+            let priorityBits = bytes(flags)[1] & 0b11
+
+            return self(
+                id: id,
+                trusted: isTrusted,
+                readOnly: isReadOnly,
+                introducer: isIntroducer,
+                uploadPriority: UploadPriority.fromRaw(priorityBits)!,
+                maxLocalVersion: maxLocalVersion
+            )
+        }}}
+        return nil;
     }
 }
 
