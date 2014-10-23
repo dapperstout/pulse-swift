@@ -43,6 +43,8 @@
 		4D6A47A619E8696F005D7C23 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A519E8696F005D7C23 /* Device.swift */; };
 		4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A319E86969005D7C23 /* DeviceTests.swift */; };
 		4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A478419E860E4005D7C23 /* PongTests.swift */; };
+		4D90356819F70C1D009C9A34 /* FileInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90356719F70C1D009C9A34 /* FileInfoTests.swift */; };
+		4D90356A19F70CE8009C9A34 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90356919F70CE8009C9A34 /* FileInfo.swift */; };
 		4D9D5A5919F532030058D1B8 /* OptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5819F532030058D1B8 /* OptionsTests.swift */; };
 		4D9D5A5B19F533F70058D1B8 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5A19F533F70058D1B8 /* Options.swift */; };
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
@@ -98,6 +100,8 @@
 		4D6A479E19E868AD005D7C23 /* Xdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xdr.swift; sourceTree = "<group>"; };
 		4D6A47A319E86969005D7C23 /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
 		4D6A47A519E8696F005D7C23 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		4D90356719F70C1D009C9A34 /* FileInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoTests.swift; sourceTree = "<group>"; };
+		4D90356919F70CE8009C9A34 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
 		4D9D5A5819F532030058D1B8 /* OptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTests.swift; sourceTree = "<group>"; };
 		4D9D5A5A19F533F70058D1B8 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfigTests.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				4D9D5A5A19F533F70058D1B8 /* Options.swift */,
 				4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */,
 				4D213DE919F70334005DAE61 /* BlockInfo.swift */,
+				4D90356919F70CE8009C9A34 /* FileInfo.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				4D9D5A5819F532030058D1B8 /* OptionsTests.swift */,
 				4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */,
 				4D213DE719F6FEAD005DAE61 /* BlockInfoTests.swift */,
+				4D90356719F70C1D009C9A34 /* FileInfoTests.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				4D321DAC19A52620006971D7 /* lz4.c in Sources */,
 				4D6A476B19E860CF005D7C23 /* XdrReader.swift in Sources */,
 				4D6A47A219E868AD005D7C23 /* Xdr.swift in Sources */,
+				4D90356A19F70CE8009C9A34 /* FileInfo.swift in Sources */,
 				4D11A2C719EACC33002C6861 /* Folder.swift in Sources */,
 				4D9D5A5B19F533F70058D1B8 /* Options.swift in Sources */,
 				4D6A479F19E868AD005D7C23 /* Bytes.swift in Sources */,
@@ -398,6 +405,7 @@
 				4D6A478A19E860E4005D7C23 /* XdrReaderTests.swift in Sources */,
 				4D6A479319E860E4005D7C23 /* ResponseTests.swift in Sources */,
 				4D213DE819F6FEAD005DAE61 /* BlockInfoTests.swift in Sources */,
+				4D90356819F70C1D009C9A34 /* FileInfoTests.swift in Sources */,
 				4D6A479219E860E4005D7C23 /* RequestTests.swift in Sources */,
 				4D6A479019E860E4005D7C23 /* PingTests.swift in Sources */,
 				4D6A478C19E860E4005D7C23 /* XdrWriterTests.swift in Sources */,
