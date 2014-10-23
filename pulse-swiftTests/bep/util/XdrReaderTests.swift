@@ -30,11 +30,25 @@ class XdrReaderTests : XCTestCase {
         XCTAssertEqual(reader.readUInt32()!, uint32)
     }
 
+    func testReadsInt32() {
+        let int32 = Int32(bitPattern: 0xF00FA00A)
+        let reader = XdrReader(xdrBytes: xdr(int32)!)
+
+        XCTAssertEqual(reader.readInt32()!, int32)
+    }
+
     func testReadsUInt64() {
         let uint64 : UInt64 = 0xF00FA00AB00BC00C
         let reader = XdrReader(xdrBytes: xdr(uint64)!)
 
         XCTAssertEqual(reader.readUInt64()!, uint64)
+    }
+
+    func testReadsInt64() {
+        let int64 = Int64(bitPattern: 0xF00FA00AB00BC00C)
+        let reader = XdrReader(xdrBytes: xdr(int64)!)
+
+        XCTAssertEqual(reader.readInt64()!, int64)
     }
 
     func testReadsData() {

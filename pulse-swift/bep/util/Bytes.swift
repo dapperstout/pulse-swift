@@ -87,12 +87,28 @@ public func unsigned(byte: Int8) -> UInt8 {
     return UInt8(bitPattern: byte)
 }
 
+public func unsigned(int32: Int32) -> UInt32 {
+    return UInt32(bitPattern: int32)
+}
+
+public func unsigned(int64: Int64) -> UInt64 {
+    return UInt64(bitPattern: int64)
+}
+
 public func unsigned(bytes : [Int8]) -> [UInt8] {
     return bytes.map{ unsigned($0) }
 }
 
 public func signed(byte : UInt8) -> Int8 {
     return Int8(bitPattern: byte)
+}
+
+public func signed(uint32: UInt32) -> Int32 {
+    return Int32(bitPattern: uint32)
+}
+
+public func signed(uint64: UInt64) -> Int64 {
+    return Int64(bitPattern: uint64)
 }
 
 public func signed(bytes: [UInt8]) -> [Int8] {

@@ -33,12 +33,26 @@ public class XdrReader {
         return nil
     }
 
+    public func readInt32() -> Int32? {
+        if let unsigned = readUInt32() {
+            return signed(unsigned)
+        }
+        return nil
+    }
+
     public func readUInt64() -> UInt64? {
         if let bytes = read(8) {
             return concatenateBytes(
                 bytes[0], bytes[1], bytes[2], bytes[3],
                 bytes[4], bytes[5], bytes[6], bytes[7]
             )
+        }
+        return nil
+    }
+
+    public func readInt64() -> Int64? {
+        if let unsigned = readUInt64() {
+            return signed(unsigned)
         }
         return nil
     }

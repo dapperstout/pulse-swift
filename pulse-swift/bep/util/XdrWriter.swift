@@ -24,9 +24,17 @@ public class XdrWriter {
         return self
     }
 
+    public func writeInt32(int32 : Int32) -> XdrWriter {
+        return writeUInt32(unsigned(int32))
+    }
+
     public func writeUInt64(uint64 : UInt64) -> XdrWriter {
         xdrBytes += bytes(uint64)
         return self
+    }
+
+    public func writeInt64(int64: Int64) -> XdrWriter {
+        return writeUInt64(unsigned(int64))
     }
 
     public func write(writable: XdrWritable) -> XdrWriter {

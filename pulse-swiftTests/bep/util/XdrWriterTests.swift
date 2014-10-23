@@ -42,15 +42,27 @@ class XdrWriterTests : XCTestCase {
     }
 
     func testWritesUInt32() {
-        let uint32 : UInt32 = 0xF00FA00A
+        let uint32: UInt32 = 0xF00FA00A
         writer.writeUInt32(uint32)
         XCTAssertEqual(writer.xdrBytes, bytes(uint32))
     }
 
+    func testWritesInt32() {
+        let int32: Int32 = signed(0xF00FA00A)
+        writer.writeInt32(int32)
+        XCTAssertEqual(writer.xdrBytes, bytes(unsigned(int32)))
+    }
+
     func testWritesUInt64() {
-        let uint64 : UInt64 = 0xF00FA00AB00BC00C
+        let uint64: UInt64 = 0xF00FA00AB00BC00C
         writer.writeUInt64(uint64)
         XCTAssertEqual(writer.xdrBytes, bytes(uint64))
+    }
+
+    func testWritesInt64() {
+        let int64: Int64 = signed(0xF00FA00AB00BC00C)
+        writer.writeInt64(int64)
+        XCTAssertEqual(writer.xdrBytes, bytes(unsigned(int64)))
     }
 
     let someString = "String with interesting unicode character \u{221E}"
