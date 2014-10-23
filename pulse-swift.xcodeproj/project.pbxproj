@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D11A2C719EACC33002C6861 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11A2C619EACC33002C6861 /* Folder.swift */; };
 		4D11A2C919EACC5A002C6861 /* FolderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D11A2C819EACC5A002C6861 /* FolderTests.swift */; };
+		4D213DE419F6F7FB005DAE61 /* IndexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D213DE319F6F7FB005DAE61 /* IndexTests.swift */; };
+		4D213DE619F6F863005DAE61 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D213DE519F6F863005DAE61 /* Index.swift */; };
 		4D213DE819F6FEAD005DAE61 /* BlockInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D213DE719F6FEAD005DAE61 /* BlockInfoTests.swift */; };
 		4D213DEA19F70334005DAE61 /* BlockInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D213DE919F70334005DAE61 /* BlockInfo.swift */; };
 		4D321DAB19A52620006971D7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D321D8D19A52620006971D7 /* LICENSE */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		4D11A2C619EACC33002C6861 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		4D11A2C819EACC5A002C6861 /* FolderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTests.swift; sourceTree = "<group>"; };
+		4D213DE319F6F7FB005DAE61 /* IndexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTests.swift; sourceTree = "<group>"; };
+		4D213DE519F6F863005DAE61 /* Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		4D213DE719F6FEAD005DAE61 /* BlockInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockInfoTests.swift; sourceTree = "<group>"; };
 		4D213DE919F70334005DAE61 /* BlockInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockInfo.swift; sourceTree = "<group>"; };
 		4D321D8D19A52620006971D7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				4D6A476319E860CF005D7C23 /* Response.swift */,
 				4D9D5A5A19F533F70058D1B8 /* Options.swift */,
 				4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */,
+				4D213DE519F6F863005DAE61 /* Index.swift */,
 				4D213DE919F70334005DAE61 /* BlockInfo.swift */,
 				4D90356919F70CE8009C9A34 /* FileInfo.swift */,
 			);
@@ -235,6 +240,7 @@
 				4D6A478619E860E4005D7C23 /* ResponseTests.swift */,
 				4D9D5A5819F532030058D1B8 /* OptionsTests.swift */,
 				4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */,
+				4D213DE319F6F7FB005DAE61 /* IndexTests.swift */,
 				4D213DE719F6FEAD005DAE61 /* BlockInfoTests.swift */,
 				4D90356719F70C1D009C9A34 /* FileInfoTests.swift */,
 			);
@@ -387,6 +393,7 @@
 				4D6A476F19E860CF005D7C23 /* Message.swift in Sources */,
 				4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */,
 				4D6A476D19E860CF005D7C23 /* Close.swift in Sources */,
+				4D213DE619F6F863005DAE61 /* Index.swift in Sources */,
 				4D213DEA19F70334005DAE61 /* BlockInfo.swift in Sources */,
 				4D6A477219E860CF005D7C23 /* Request.swift in Sources */,
 				4D6A47A019E868AD005D7C23 /* LZ4Compression.swift in Sources */,
@@ -403,6 +410,7 @@
 				4D6A478D19E860E4005D7C23 /* CloseTests.swift in Sources */,
 				4D6A478819E860E4005D7C23 /* BytesTests.swift in Sources */,
 				4D6A478A19E860E4005D7C23 /* XdrReaderTests.swift in Sources */,
+				4D213DE419F6F7FB005DAE61 /* IndexTests.swift in Sources */,
 				4D6A479319E860E4005D7C23 /* ResponseTests.swift in Sources */,
 				4D213DE819F6FEAD005DAE61 /* BlockInfoTests.swift in Sources */,
 				4D90356819F70C1D009C9A34 /* FileInfoTests.swift in Sources */,
