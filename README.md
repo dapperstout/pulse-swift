@@ -7,11 +7,7 @@ A port of the [Pulse][1] synchronization protocol in Swift.
 
 ## Building
 
-To build, you must first initialise and update the lz4 git submodule. From the folder you cloned the project into, run the following commands in Terminal:
-
-  * git submodule init
-  * git submodule update
-
-Now open the .xcodeproj and build normally.
+To build, you need XCode 6.1. 
+Open the .xcworkspace instead of the .xcodeproj, because it contains the CocoaPods dependencies.
 
 [1]: https://ind.ie/pulse/
