@@ -6,7 +6,7 @@ class MessageTests : XCTestCase {
     func testVersionIsZero() {
         let bytes = SomeMessage().serialize()
         let firstNibble = nibbles(bytes[0])[0]
-        XCTAssertEqual(firstNibble, 0)
+        XCTAssertEqual(firstNibble, UInt8(0))
     }
 
     func testIdIsUnique() {
@@ -22,7 +22,7 @@ class MessageTests : XCTestCase {
     func testTypeIsEncodedInThirdByte() {
         let message = Message(type: 3)
         let type = message.serialize()[2]
-        XCTAssertEqual(type, 3)
+        XCTAssertEqual(type, UInt8(3))
     }
 
     func testReservedBitsAreZero() {

@@ -32,7 +32,7 @@ class DeviceTests : XCTestCase {
     func testXdrEncodesUploadPriority() {
         for priority: UploadPriority in [.Normal, .High, .Low, .SharingDisabled] {
             let device = Device(id:"", uploadPriority:priority)
-            let expectedPriorityBits = bits(priority.toRaw())[6...7]
+            let expectedPriorityBits = bits(priority.rawValue)[6...7]
 
             let flags = readFlags(device)
             let actualPriorityBits = bits(bytes(flags)[1])[6...7]

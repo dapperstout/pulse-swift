@@ -6,7 +6,7 @@ class CloseTests : XCTestCase {
     let close = Close(reason: someReason)
 
     func testHasType7() {
-        XCTAssertEqual(close.type, 7)
+        XCTAssertEqual(close.type, UInt8(7))
     }
 
     func testHasXdrEncodedReason() {

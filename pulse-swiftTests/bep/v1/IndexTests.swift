@@ -4,7 +4,7 @@ import pulse
 class IndexTests : XCTestCase {
 
     func testIsType1() {
-        XCTAssertEqual(someIndex.type, 1)
+        XCTAssertEqual(someIndex.type, UInt8(1))
     }
 
     func testHasXdrEncodedFolder() {

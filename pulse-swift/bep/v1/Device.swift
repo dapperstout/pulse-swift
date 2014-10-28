@@ -23,7 +23,7 @@ public class Device : Equatable, XdrWritable, XdrReadable {
     }
 
     public func writeTo(writer: XdrWriter) {
-        let prioFlags = uploadPriority.toRaw()
+        let prioFlags = uploadPriority.rawValue
         let irtFlags = concatenateBits(
             false, false, false, false, false,
             isIntroducer, isReadOnly, isTrusted
@@ -49,7 +49,7 @@ public class Device : Equatable, XdrWritable, XdrReadable {
                 trusted: isTrusted,
                 readOnly: isReadOnly,
                 introducer: isIntroducer,
-                uploadPriority: UploadPriority.fromRaw(priorityBits)!,
+                uploadPriority: UploadPriority(rawValue: priorityBits)!,
                 maxLocalVersion: maxLocalVersion
             )
         }}}

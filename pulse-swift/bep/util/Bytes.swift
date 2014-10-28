@@ -72,15 +72,16 @@ public func concatenateBytes(b0 : UInt8, b1 : UInt8, b2 : UInt8, b3 : UInt8) -> 
 public func concatenateBytes(
         b0 : UInt8, b1 : UInt8, b2 : UInt8, b3 : UInt8,
         b4 : UInt8, b5 : UInt8, b6 : UInt8, b7 : UInt8) -> UInt64 {
-    return
-        UInt64(b0) << 56 |
-        UInt64(b1) << 48 |
-        UInt64(b2) << 40 |
-        UInt64(b3) << 32 |
-        UInt64(b4) << 24 |
-        UInt64(b5) << 16 |
-        UInt64(b6) << 8  |
-        UInt64(b7)
+    var result : UInt64 = 0
+    result = result | UInt64(b0) << 56
+    result = result | UInt64(b1) << 48
+    result = result | UInt64(b2) << 40
+    result = result | UInt64(b3) << 32
+    result = result | UInt64(b4) << 24
+    result = result | UInt64(b5) << 16
+    result = result | UInt64(b6) << 8
+    result = result | UInt64(b7)
+    return result
 }
 
 public func unsigned(byte: Int8) -> UInt8 {

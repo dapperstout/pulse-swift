@@ -4,7 +4,7 @@ import pulse
 class ClusterConfigTests: XCTestCase {
 
     func testIsType0() {
-        XCTAssertEqual(someConfig.type, 0)
+        XCTAssertEqual(someConfig.type, UInt8(0))
     }
 
     func testXdrEncodesClientName() {

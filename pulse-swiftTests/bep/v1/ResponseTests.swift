@@ -6,7 +6,7 @@ class ResponseTests : XCTestCase {
     let response = Response(request: someRequest, data: someData)
 
     func testIsType3() {
-        XCTAssertEqual(response.type, 2)
+        XCTAssertEqual(response.type, UInt8(2))
     }
 
     func testHasXdrEncodedData() {

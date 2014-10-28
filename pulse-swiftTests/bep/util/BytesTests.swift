@@ -31,7 +31,7 @@ class BytesTest : XCTestCase {
 
     func testConcatenationOfBitsIntoByte() {
         let eightBits = [true, false, true, false, true, false, true, false]
-        XCTAssertEqual(concatenateBits(eightBits), 0b10101010)
+        XCTAssertEqual(concatenateBits(eightBits), UInt8(0b10101010))
     }
 
     func testConcatenationOfNibblesIntoByte() {
@@ -43,7 +43,7 @@ class BytesTest : XCTestCase {
     func testConcatenationOfBytesIntoShort() {
         let left = UInt8(0b10101010)
         let right = UInt8(0b01010101)
-        XCTAssertEqual(concatenateBytes(left, right), 0b10101010_01010101)
+        XCTAssertEqual(concatenateBytes(left, right), UInt16(0b10101010_01010101))
     }
 
     func testConcatenationOfBytesIntoUInt32() {
@@ -51,7 +51,7 @@ class BytesTest : XCTestCase {
         let b1 = UInt8(0x0F)
         let b2 = UInt8(0xA0)
         let b3 = UInt8(0x0A)
-        XCTAssertEqual(concatenateBytes(b0, b1, b2, b3), 0xF00FA00A)
+        XCTAssertEqual(concatenateBytes(b0, b1, b2, b3), UInt32(0xF00FA00A))
     }
 
     func testConcatenationOfBytesIntoUInt64() {
@@ -63,25 +63,24 @@ class BytesTest : XCTestCase {
         let b5 = UInt8(0x0B)
         let b6 = UInt8(0xC0)
         let b7 = UInt8(0x0C)
-        XCTAssertEqual(
-            concatenateBytes(b0, b1, b2, b3, b4, b5, b6, b7),
-            0xF00FA00AB00BC00C
-        )
+        let expected: UInt64 = 0xF00FA00AB00BC00C
+        XCTAssertEqual(concatenateBytes(b0, b1, b2, b3, b4, b5, b6, b7), expected)
     }
 
     func testUnsignedByte() {
         let signed = Int8(bitPattern: 0xFF)
-        XCTAssertEqual(unsigned(signed), 0xFF)
+        XCTAssertEqual(unsigned(signed), UInt8(0xFF))
     }
 
     func testUnsignedInt32() {
         let signed = Int32(bitPattern: 0xF00FA00A)
-        XCTAssertEqual(unsigned(signed), 0xF00FA00A)
+        XCTAssertEqual(unsigned(signed), UInt32(0xF00FA00A))
     }
 
     func testUnsignedInt64() {
         let signed = Int64(bitPattern: 0xF00FA00AB00BC00C)
-        XCTAssertEqual(unsigned(signed), 0xF00FA00AB00BC00C)
+        let expected: UInt64 = 0xF00FA00AB00BC00C
+        XCTAssertEqual(unsigned(signed), expected)
     }
 
     func testUnsignedArray() {

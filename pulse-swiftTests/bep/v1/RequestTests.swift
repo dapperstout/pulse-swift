@@ -11,7 +11,7 @@ class RequestsTests : XCTestCase {
     )
 
     func testIsType2() {
-        XCTAssertEqual(request.type, 2)
+        XCTAssertEqual(request.type, UInt8(2))
     }
 
     func testHasXdrEncodedFields() {

@@ -12,7 +12,7 @@ class PongTests : XCTestCase {
     }
 
     func testHasType5() {
-        XCTAssertEqual(pong!.type, 5)
+        XCTAssertEqual(pong!.type, UInt8(5))
     }
 
     func testIsNotCompressed() {
