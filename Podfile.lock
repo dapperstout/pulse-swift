@@ -1,10 +1,13 @@
 PODS:
   - CocoaAsyncSocket (7.3.5)
+  - lz4 (123)
 
 DEPENDENCIES:
   - CocoaAsyncSocket (~> 7.3)
+  - lz4 (~> 123)
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
+  lz4: 316468bb1b748b046e7d4452e46ffc5c7fddccf0
 
 COCOAPODS: 0.34.4
