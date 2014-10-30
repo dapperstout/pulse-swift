@@ -51,7 +51,8 @@ class BytesTest : XCTestCase {
         let b1 = UInt8(0x0F)
         let b2 = UInt8(0xA0)
         let b3 = UInt8(0x0A)
-        XCTAssertEqual(concatenateBytes(b0, b1, b2, b3), UInt32(0xF00FA00A))
+        let expected: UInt32 = 0xF00FA00A
+        XCTAssertEqual(concatenateBytes(b0, b1, b2, b3), expected)
     }
 
     func testConcatenationOfBytesIntoUInt64() {
@@ -74,7 +75,8 @@ class BytesTest : XCTestCase {
 
     func testUnsignedInt32() {
         let signed = Int32(bitPattern: 0xF00FA00A)
-        XCTAssertEqual(unsigned(signed), UInt32(0xF00FA00A))
+        let expected: UInt32 = 0xF00FA00A
+        XCTAssertEqual(unsigned(signed), expected)
     }
 
     func testUnsignedInt64() {
