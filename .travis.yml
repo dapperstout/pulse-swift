@@ -1,2 +1,3 @@
 language: objective-c
-script: xcodebuild -project pulse-swift.xcodeproj -scheme pulseTests test
+osx_image: xcode61
+script: xcodebuild -workspace pulse-swift.xcworkspace -scheme pulseTests test
