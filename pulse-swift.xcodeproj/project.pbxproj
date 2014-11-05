@@ -41,6 +41,8 @@
 		4D6A47A619E8696F005D7C23 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A519E8696F005D7C23 /* Device.swift */; };
 		4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A47A319E86969005D7C23 /* DeviceTests.swift */; };
 		4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6A478419E860E4005D7C23 /* PongTests.swift */; };
+		4D8EFD291A02C73C00CB7E63 /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EFD281A02C73C00CB7E63 /* ConnectionTests.swift */; };
+		4D8EFD2B1A02DA2700CB7E63 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8EFD2A1A02DA2700CB7E63 /* Connection.swift */; };
 		4D90356819F70C1D009C9A34 /* FileInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90356719F70C1D009C9A34 /* FileInfoTests.swift */; };
 		4D90356A19F70CE8009C9A34 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90356919F70CE8009C9A34 /* FileInfo.swift */; };
 		4D90356C19F918FF009C9A34 /* IndexUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90356B19F918FF009C9A34 /* IndexUpdateTests.swift */; };
@@ -50,6 +52,7 @@
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
 		4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */; };
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
+		C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164DEA67658D40B51246C0 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,8 @@
 		4D6A479E19E868AD005D7C23 /* Xdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xdr.swift; sourceTree = "<group>"; };
 		4D6A47A319E86969005D7C23 /* DeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
 		4D6A47A519E8696F005D7C23 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		4D8EFD281A02C73C00CB7E63 /* ConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
+		4D8EFD2A1A02DA2700CB7E63 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		4D90356719F70C1D009C9A34 /* FileInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfoTests.swift; sourceTree = "<group>"; };
 		4D90356919F70CE8009C9A34 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
 		4D90356B19F918FF009C9A34 /* IndexUpdateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexUpdateTests.swift; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 		4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfig.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0164DEA67658D40B51246C0 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D3B93AAE95FF201365BA3D31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FC0D962A00CF4D71D726FFF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +146,8 @@
 				4D6A476419E860CF005D7C23 /* Info.plist */,
 				4D6A476519E860CF005D7C23 /* pulse-bridging-header.h */,
 				4D6A476619E860CF005D7C23 /* pulse-swift.h */,
+				4D8EFD2A1A02DA2700CB7E63 /* Connection.swift */,
+				C0164E9691517B24225C6C67 /* util */,
 			);
 			path = "pulse-swift";
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			children = (
 				4D6A477819E860E4005D7C23 /* bep */,
 				4D6A478719E860E4005D7C23 /* Info.plist */,
+				4D8EFD281A02C73C00CB7E63 /* ConnectionTests.swift */,
 			);
 			path = "pulse-swiftTests";
 			sourceTree = SOURCE_ROOT;
@@ -265,6 +274,14 @@
 				EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0164E9691517B24225C6C67 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				C0164DEA67658D40B51246C0 /* Enums.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		D96AEA376F37C2FDD7674128 /* Frameworks */ = {
@@ -462,6 +479,7 @@
 				4D6A47A619E8696F005D7C23 /* Device.swift in Sources */,
 				4D6A477319E860CF005D7C23 /* Response.swift in Sources */,
 				4D6A476C19E860CF005D7C23 /* XdrWriter.swift in Sources */,
+				4D8EFD2B1A02DA2700CB7E63 /* Connection.swift in Sources */,
 				4D6A476F19E860CF005D7C23 /* Message.swift in Sources */,
 				4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */,
 				4D6A476D19E860CF005D7C23 /* Close.swift in Sources */,
@@ -469,6 +487,7 @@
 				4D213DEA19F70334005DAE61 /* BlockInfo.swift in Sources */,
 				4D6A477219E860CF005D7C23 /* Request.swift in Sources */,
 				4D6A47A019E868AD005D7C23 /* LZ4Compression.swift in Sources */,
+				C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +506,7 @@
 				4D6A479319E860E4005D7C23 /* ResponseTests.swift in Sources */,
 				4D213DE819F6FEAD005DAE61 /* BlockInfoTests.swift in Sources */,
 				4D90356819F70C1D009C9A34 /* FileInfoTests.swift in Sources */,
+				4D8EFD291A02C73C00CB7E63 /* ConnectionTests.swift in Sources */,
 				4D6A479219E860E4005D7C23 /* RequestTests.swift in Sources */,
 				4D6A479019E860E4005D7C23 /* PingTests.swift in Sources */,
 				4D6A478C19E860E4005D7C23 /* XdrWriterTests.swift in Sources */,
