@@ -6,6 +6,12 @@
 // project.
 
 
+// Base32
+#define COCOAPODS_POD_AVAILABLE_Base32
+#define COCOAPODS_VERSION_MAJOR_Base32 1
+#define COCOAPODS_VERSION_MINOR_Base32 0
+#define COCOAPODS_VERSION_PATCH_Base32 2
+
 // CocoaAsyncSocket
 #define COCOAPODS_POD_AVAILABLE_CocoaAsyncSocket
 #define COCOAPODS_VERSION_MAJOR_CocoaAsyncSocket 7
