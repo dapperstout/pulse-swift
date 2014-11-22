@@ -52,7 +52,9 @@
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
 		4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */; };
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
+		C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164712178CC12D4D75B3D5 /* DeviceId.swift */; };
 		C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164DEA67658D40B51246C0 /* Enums.swift */; };
+		C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016425BED1B3F815C02095E /* DeviceIdTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfig.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C016425BED1B3F815C02095E /* DeviceIdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceIdTests.swift; sourceTree = "<group>"; };
+		C0164712178CC12D4D75B3D5 /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		C0164DEA67658D40B51246C0 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D3B93AAE95FF201365BA3D31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				4D6A476619E860CF005D7C23 /* pulse-swift.h */,
 				4D8EFD2A1A02DA2700CB7E63 /* Connection.swift */,
 				C0164E9691517B24225C6C67 /* util */,
+				C0164712178CC12D4D75B3D5 /* DeviceId.swift */,
 			);
 			path = "pulse-swift";
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				4D6A477819E860E4005D7C23 /* bep */,
 				4D6A478719E860E4005D7C23 /* Info.plist */,
 				4D8EFD281A02C73C00CB7E63 /* ConnectionTests.swift */,
+				C016425BED1B3F815C02095E /* DeviceIdTests.swift */,
 			);
 			path = "pulse-swiftTests";
 			sourceTree = SOURCE_ROOT;
@@ -488,6 +494,7 @@
 				4D6A477219E860CF005D7C23 /* Request.swift in Sources */,
 				4D6A47A019E868AD005D7C23 /* LZ4Compression.swift in Sources */,
 				C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */,
+				C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +522,7 @@
 				4D6A478919E860E4005D7C23 /* LZ4CompressionTests.swift in Sources */,
 				4D6A47A919E869D6005D7C23 /* PongTests.swift in Sources */,
 				4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */,
+				C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
