@@ -18,10 +18,11 @@ public class DeviceId: Printable {
 
     private var base32Groups: [String] {
         var result: [String] = []
-        for i in 0...7 {
-            let begin = advance(base32.startIndex, i*8)
+        var begin = base32.startIndex
+        for i in 0..<8 {
             let end = advance(begin, 8)
-            result.append(base32.substringWithRange(begin..<end))
+            result.append(base32[begin..<end])
+            begin = end
         }
         return result
     }
