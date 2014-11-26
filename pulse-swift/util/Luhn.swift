@@ -39,6 +39,16 @@ public class Luhn {
         let check = (-sum).modulo(alphabetSize)
         return codepointToCharacter[check]!;
     }
+
+    public func isValid(string: String) -> Bool {
+        if (countElements(string) < 1) {
+            return false
+        }
+
+        let indexOfLastCharacter = advance(string.endIndex, -1)
+        let toBeValidated = string[string.startIndex ..< indexOfLastCharacter]
+        return calculateCheckDigit(toBeValidated) == string[indexOfLastCharacter]
+    }
 }
 
 public let LuhnMod10 = Luhn("0123456789")

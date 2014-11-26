@@ -28,4 +28,14 @@ class LuhnTests: XCTestCase {
     func testEmulatesWrongAlgorithmFromGoVersion() {
         XCTAssertEqual(LuhnBase32Wrong.calculateCheckDigit("P56IOI7MZJNU2"), Character("Y"))
     }
+
+    func testChecksValidity() {
+        XCTAssertTrue(LuhnMod10.isValid("74583"))
+        XCTAssertFalse(LuhnMod10.isValid("74582"))
+        XCTAssertTrue(LuhnBase32Wrong.isValid("P56IOI7MZJNU2Y"))
+    }
+
+    func testValidityCheckHandlesEmptyString() {
+        XCTAssertFalse(LuhnMod10.isValid(""))
+    }
 }
