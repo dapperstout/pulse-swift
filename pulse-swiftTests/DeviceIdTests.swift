@@ -3,20 +3,20 @@ import pulse
 
 class DeviceIdTests: XCTestCase {
 
-    var certificateHash : [UInt8]!
-    var deviceId : DeviceId!
+    var certificateHash: [UInt8]!
+    var deviceId: DeviceId!
 
     override func setUp() {
-        certificateHash = [UInt8](count: 256, repeatedValue: 42)
+        certificateHash = [UInt8](count: 256 / 8, repeatedValue: 42)
         deviceId = DeviceId(hash: certificateHash)
     }
 
-    func testCanBeCreatedFromHashOfSize256() {
+    func testCanBeCreatedFromHashWith256Bits() {
         XCTAssertNotNil(deviceId)
     }
 
     func testDoesNotAcceptHashOfDifferentSize() {
-        let wrongHash = [UInt8](count: 242, repeatedValue: 42)
+        let wrongHash = [UInt8](count: 300 / 8, repeatedValue: 42)
         XCTAssertNil(DeviceId(hash: wrongHash))
     }
 

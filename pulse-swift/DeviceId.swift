@@ -7,7 +7,7 @@ public class DeviceId: Printable {
     public init!(hash: [UInt8]) {
         self.hash = hash
 
-        if (hash.count != 256) {
+        if (hash.count != 256 / 8) {
             return nil
         }
     }
