@@ -34,4 +34,12 @@ class DeviceIdTests: XCTestCase {
         let groups = "\(deviceId)".componentsSeparatedByString("-")
         XCTAssertEqual(8, groups.count);
     }
+
+    func testBase32StringHasFourCheckCharacters() {
+        let groups = "\(deviceId)".componentsSeparatedByString("-")
+        for i in 0 ..< 4 {
+            let stringToValidate = "\(groups[2*i])\(groups[2*i+1])"
+            XCTAssertTrue(LuhnBase32Wrong.isValid(stringToValidate))
+        }
+    }
 }

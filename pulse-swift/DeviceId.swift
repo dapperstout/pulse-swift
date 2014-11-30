@@ -18,11 +18,16 @@ public class DeviceId: Printable {
 
     private var base32Groups: [String] {
         var result: [String] = []
-        var begin = base32.startIndex
-        for i in 0..<8 {
-            let end = advance(begin, 8)
-            result.append(base32[begin..<end])
-            begin = end
+        base32PlusChecks.processChunksOfSize(7) {
+            result.append($0)
+        }
+        return result
+    }
+
+    private var base32PlusChecks: String {
+        var result = ""
+        base32.processChunksOfSize(13) {
+            result = result + $0 + String(LuhnBase32Wrong.calculateCheckDigit($0))
         }
         return result
     }
@@ -30,5 +35,21 @@ public class DeviceId: Printable {
     private var base32: String {
         var result = NSData(bytes: hash, length: hash.count).base32String()
         return result.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "="))
+    }
+}
+
+extension String {
+
+    func processChunksOfSize(chunkSize: Int, _ closure: (String)->()) {
+        let amountOfChunks = countElements(self) / chunkSize
+        var begin = self.startIndex
+        for i in 0..<amountOfChunks {
+            let end = advance(begin, chunkSize)
+            let chunk = self[begin..<end]
+
+            closure(chunk)
+
+            begin = end
+        }
     }
 }
