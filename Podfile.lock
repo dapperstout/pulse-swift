@@ -1,16 +1,19 @@
 PODS:
   - Base32 (1.0.2)
   - CocoaAsyncSocket (7.3.5)
+  - IGDigest (1.1.0)
   - lz4 (123)
 
 DEPENDENCIES:
   - Base32 (~> 1.0.2)
   - CocoaAsyncSocket (~> 7.3)
+  - IGDigest (~> 1.1.0)
   - lz4 (~> 123)
 
 SPEC CHECKSUMS:
   Base32: a0ef6e90e721130c474cc970a4d98a6cbf16ce85
   CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
+  IGDigest: 9d142a7926ecc2983e6208d938ac5dddd26ed9c2
   lz4: 316468bb1b748b046e7d4452e46ffc5c7fddccf0
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0
