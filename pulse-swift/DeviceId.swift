@@ -2,14 +2,18 @@ import Foundation
 
 public class DeviceId: Printable {
 
-    let hash: [UInt8]
+    let hash: NSData
 
-    public init!(hash: [UInt8]) {
+    public init!(hash: NSData) {
         self.hash = hash
 
-        if (hash.count != 256 / 8) {
+        if (hash.length != 256 / 8) {
             return nil
         }
+    }
+
+    public convenience init!(hash: [UInt8]) {
+        self.init(hash: NSData(bytes: hash, length: hash.count))
     }
 
     public var description: String {
@@ -33,7 +37,7 @@ public class DeviceId: Printable {
     }
 
     private var base32: String {
-        var result = NSData(bytes: hash, length: hash.count).base32String()
+        var result = hash.base32String()
         return result.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "="))
     }
 }
