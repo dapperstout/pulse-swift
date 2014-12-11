@@ -1,87 +1,81 @@
 import XCTest
 import pulse
 
-class ConnectionTests : XCTestCase {
+class ConnectionTests: XCTestCase {
 
     var connector: Connector!
     var socket: SocketSpy!
+    var gateKeeper: GateKeeperSpy!
+
+    let exampleHost = "1.2.3.4"
+    let examplePort = UInt16(1234)
+    let exampleDeviceId = "some id"
+
 
     override func setUp() {
         socket = SocketSpy()
-        connector = Connector(socket: socket!)
+        gateKeeper = GateKeeperSpy()
+        connector = Connector()
+        connector.socket = socket
+        connector.gateKeeper = gateKeeper
     }
 
     func testOpensConnection() {
-        let connection = connector.connect("1.2.3.4", port: 1234)
+        let connection = connect();
 
         XCTAssertNotNil(connection)
-        XCTAssertEqual(socket.latestHost!, "1.2.3.4")
-        XCTAssertEqual(socket.latestPort!, UInt16(1234))
+        XCTAssertEqual(socket.latestHost!, exampleHost)
+        XCTAssertEqual(socket.latestPort!, examplePort)
     }
 
-    func testReturnsNilWhenConnectionFails() {
+    func testShouldReturnNilWhenConnectionFails() {
         socket.connectShouldSucceed = false
 
-        let connection = connector.connect("1.2.3.4", port: 1234)
+        let connection = connect();
 
         XCTAssertNil(connection)
     }
 
-    func testStartsTLS() {
-        let connection = connector.connect("1.2.3.4", port: 1234)
+    func testShouldUseGateKeeperToSecureConnection() {
+        let connection = connect();
 
-        XCTAssertTrue(socket.tlsStarted)
+        XCTAssertTrue(gateKeeper.secureSocketWasCalled)
+        XCTAssertEqual(gateKeeper.latestSocket!, socket)
+        XCTAssertEqual(gateKeeper.latestDeviceId!, exampleDeviceId)
     }
 
-    func testShouldUseAtLeastTLSv1_2() {
-        let minimumVersion = getTlsSetting(GCDAsyncSocketSSLProtocolVersionMin) as NSNumber
-        XCTAssertEqual(minimumVersion, NSNumber(enumValue: kTLSProtocol12))
+    func testShouldReturnNilWhenSecuringSocketFails() {
+        gateKeeper.secureShouldSucceed = false
+
+        let connection = connect()
+
+        XCTAssertNil(connection)
     }
 
-    func testShouldUseStrongCypherSuites() {
-        let suites = getTlsSetting(GCDAsyncSocketSSLCipherSuites) as [NSNumber]
-        let expectedSuites = [
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_256_GCM_SHA384),
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384),
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256),
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
-        ]
-        XCTAssertEqual(suites, expectedSuites)
-    }
-
-    func testShouldAllowSelfSignedCertificates() {
-        let validates = getTlsSetting(kCFStreamSSLValidatesCertificateChain) as Bool
-        XCTAssertFalse(validates)
-    }
-
-    func getTlsSetting(key: NSObject) -> AnyObject {
-        let connection = connector.connect("1.2.3.4", port: 1234)
-        let tlsSettings = socket.latestTlsSettings!
-        return tlsSettings[key]!
-    }
-
-    class SocketSpy : GCDAsyncSocket {
-
-        var latestHost: String?
-        var latestPort: UInt16?
-        var latestTlsSettings: [NSObject : AnyObject]?
-
-        var connectShouldSucceed = true
-        var tlsStarted = false
-
-        override func connectToHost(host: String!, onPort port: UInt16, error errPtr: NSErrorPointer) -> Bool {
-            latestHost = host
-            latestPort = port
-            return connectShouldSucceed
+    func connect() -> Connection? {
+        var connection: Connection? = nil
+        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId) {
+            connection = $0
         }
+        return connection
+    }
+}
 
-        override func startTLS(tlsSettings: [NSObject : AnyObject]!) {
-            tlsStarted = true;
-            latestTlsSettings = tlsSettings
+class GateKeeperSpy: GateKeeper {
+
+    var secureShouldSucceed = true
+
+    var secureSocketWasCalled = false
+
+    var latestSocket: GCDAsyncSocket? = nil
+    var latestDeviceId: String? = nil
+
+    override func secureSocket(socket: GCDAsyncSocket, deviceId: String, onSuccess: () -> () = {}) {
+        secureSocketWasCalled = true
+        latestSocket = socket
+        latestDeviceId = deviceId
+        if (secureShouldSucceed) {
+            onSuccess()
         }
     }
 }

@@ -51,12 +51,19 @@
 		4D9D5A5B19F533F70058D1B8 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5A19F533F70058D1B8 /* Options.swift */; };
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
 		4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */; };
+		5C65B00F1A180F3E003E7BB5 /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = 5C65B00E1A180F3E003E7BB5 /* cert.der */; };
+		5C65B0101A180FF2003E7BB5 /* cert.der in Resources */ = {isa = PBXBuildFile; fileRef = 5C65B00E1A180F3E003E7BB5 /* cert.der */; };
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
+		C0164448F4288AB6249B4EBB /* GateKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */; };
 		C01644E92235CC75E1DC21DE /* LuhnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016480CFB38B8CBBCE2400E /* LuhnTests.swift */; };
+		C01645D4B882999C4280E055 /* SocketFunctionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */; };
 		C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164712178CC12D4D75B3D5 /* DeviceId.swift */; };
+		C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */; };
 		C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164DEA67658D40B51246C0 /* Enums.swift */; };
 		C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164CA3D78AB4A53A03E2CD /* Luhn.swift */; };
+		C0164DFF52ED64A886A18FD6 /* GateKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164846971609C0419133D5 /* GateKeeper.swift */; };
 		C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016425BED1B3F815C02095E /* DeviceIdTests.swift */; };
+		C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,11 +124,17 @@
 		4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfig.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C65B00E1A180F3E003E7BB5 /* cert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = cert.der; sourceTree = "<group>"; };
+		C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketSpy.swift; sourceTree = "<group>"; };
 		C016425BED1B3F815C02095E /* DeviceIdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceIdTests.swift; sourceTree = "<group>"; };
 		C0164712178CC12D4D75B3D5 /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		C016480CFB38B8CBBCE2400E /* LuhnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuhnTests.swift; sourceTree = "<group>"; };
+		C0164846971609C0419133D5 /* GateKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateKeeper.swift; sourceTree = "<group>"; };
+		C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateKeeperTests.swift; sourceTree = "<group>"; };
+		C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctionsMock.swift; sourceTree = "<group>"; };
 		C0164CA3D78AB4A53A03E2CD /* Luhn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Luhn.swift; sourceTree = "<group>"; };
 		C0164DEA67658D40B51246C0 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctions.swift; sourceTree = "<group>"; };
 		D3B93AAE95FF201365BA3D31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FC0D962A00CF4D71D726FFF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +170,7 @@
 				4D8EFD2A1A02DA2700CB7E63 /* Connection.swift */,
 				C0164E9691517B24225C6C67 /* util */,
 				C0164712178CC12D4D75B3D5 /* DeviceId.swift */,
+				C0164846971609C0419133D5 /* GateKeeper.swift */,
 			);
 			path = "pulse-swift";
 			sourceTree = "<group>";
@@ -207,11 +221,13 @@
 		4D6A477719E860E4005D7C23 /* pulse-swiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				5C65B00D1A180F3E003E7BB5 /* resources */,
 				4D6A477819E860E4005D7C23 /* bep */,
 				4D6A478719E860E4005D7C23 /* Info.plist */,
 				4D8EFD281A02C73C00CB7E63 /* ConnectionTests.swift */,
 				C016425BED1B3F815C02095E /* DeviceIdTests.swift */,
 				C01645DF6C8B6ED2980D9A6D /* util */,
+				C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */,
 			);
 			path = "pulse-swiftTests";
 			sourceTree = SOURCE_ROOT;
@@ -278,6 +294,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5C65B00D1A180F3E003E7BB5 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C65B00E1A180F3E003E7BB5 /* cert.der */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		9E0300D395712A78BD8FDF49 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				C016480CFB38B8CBBCE2400E /* LuhnTests.swift */,
+				C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */,
+				C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -300,6 +326,7 @@
 			children = (
 				C0164DEA67658D40B51246C0 /* Enums.swift */,
 				C0164CA3D78AB4A53A03E2CD /* Luhn.swift */,
+				C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -406,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C65B00F1A180F3E003E7BB5 /* cert.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C65B0101A180FF2003E7BB5 /* cert.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +539,8 @@
 				C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */,
 				C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */,
 				C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */,
+				C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */,
+				C0164DFF52ED64A886A18FD6 /* GateKeeper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +570,9 @@
 				4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */,
 				C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */,
 				C01644E92235CC75E1DC21DE /* LuhnTests.swift in Sources */,
+				C0164448F4288AB6249B4EBB /* GateKeeperTests.swift in Sources */,
+				C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */,
+				C01645D4B882999C4280E055 /* SocketFunctionsMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
