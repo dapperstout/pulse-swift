@@ -62,7 +62,6 @@
 		C01645D4B882999C4280E055 /* SocketFunctionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */; };
 		C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164712178CC12D4D75B3D5 /* DeviceId.swift */; };
 		C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */; };
-		C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164DEA67658D40B51246C0 /* Enums.swift */; };
 		C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164CA3D78AB4A53A03E2CD /* Luhn.swift */; };
 		C0164DFF52ED64A886A18FD6 /* GateKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164846971609C0419133D5 /* GateKeeper.swift */; };
 		C0164F54C3755DDB730E37CD /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F95C0289D50C2056D30 /* Keys.swift */; };
@@ -140,7 +139,6 @@
 		C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctionsMock.swift; sourceTree = "<group>"; };
 		C0164CA3D78AB4A53A03E2CD /* Luhn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Luhn.swift; sourceTree = "<group>"; };
 		C0164D39D18F557BA6C94C2A /* KeysTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysTests.swift; sourceTree = "<group>"; };
-		C0164DEA67658D40B51246C0 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctions.swift; sourceTree = "<group>"; };
 		C0164F95C0289D50C2056D30 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		D3B93AAE95FF201365BA3D31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 		C0164E9691517B24225C6C67 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				C0164DEA67658D40B51246C0 /* Enums.swift */,
 				C0164CA3D78AB4A53A03E2CD /* Luhn.swift */,
 				C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */,
 				C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */,
@@ -548,7 +545,6 @@
 				4D213DEA19F70334005DAE61 /* BlockInfo.swift in Sources */,
 				4D6A477219E860CF005D7C23 /* Request.swift in Sources */,
 				4D6A47A019E868AD005D7C23 /* LZ4Compression.swift in Sources */,
-				C0164D6ABE78E52CCF2CF1BF /* Enums.swift in Sources */,
 				C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */,
 				C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */,
 				C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */,

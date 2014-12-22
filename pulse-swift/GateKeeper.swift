@@ -25,7 +25,7 @@ class GateKeeperSession: GCDAsyncSocketDelegate {
     func secure() {
         socket.setDelegate(self)
         socket.startTLS([
-                GCDAsyncSocketSSLProtocolVersionMin: NSNumber(enumValue: kTLSProtocol12),
+                GCDAsyncSocketSSLProtocolVersionMin: NSNumber(unsignedInt: kTLSProtocol12.value),
                 GCDAsyncSocketSSLCipherSuites: acceptableCipherSuites,
                 kCFStreamSSLValidatesCertificateChain: false
         ])
@@ -64,14 +64,14 @@ class GateKeeperSession: GCDAsyncSocketDelegate {
     }
 
     let acceptableCipherSuites = [
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_256_GCM_SHA384),
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384),
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256),
-            NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256),
-            NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
+            NSNumber(integer: TLS_DHE_RSA_WITH_AES_256_GCM_SHA384),
+            NSNumber(integer: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256),
+            NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384),
+            NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384),
+            NSNumber(integer: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256),
+            NSNumber(integer: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256),
+            NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256),
+            NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
     ];
 
     var socketFunctions: SocketFunctions = SocketFunctions()

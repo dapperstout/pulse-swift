@@ -31,20 +31,20 @@ class GateKeeperTests: XCTestCase {
 
     func testShouldUseAtLeastTLSv1_2() {
         let minimumVersion = getTlsSetting(GCDAsyncSocketSSLProtocolVersionMin) as NSNumber
-        XCTAssertEqual(minimumVersion, NSNumber(enumValue: kTLSProtocol12))
+        XCTAssertEqual(minimumVersion, NSNumber(unsignedInt: kTLSProtocol12.value))
     }
 
     func testShouldUseStrongCypherSuites() {
         let suites = getTlsSetting(GCDAsyncSocketSSLCipherSuites) as [NSNumber]
         let expectedSuites = [
-                NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_256_GCM_SHA384),
-                NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256),
-                NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384),
-                NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384),
-                NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256),
-                NSNumber(enumValue: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256),
-                NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256),
-                NSNumber(enumValue: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
+                NSNumber(integer: TLS_DHE_RSA_WITH_AES_256_GCM_SHA384),
+                NSNumber(integer: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256),
+                NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384),
+                NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384),
+                NSNumber(integer: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256),
+                NSNumber(integer: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256),
+                NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256),
+                NSNumber(integer: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256)
         ]
         XCTAssertEqual(suites, expectedSuites)
     }
