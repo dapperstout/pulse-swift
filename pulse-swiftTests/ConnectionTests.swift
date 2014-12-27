@@ -10,12 +10,12 @@ class ConnectionTests: XCTestCase {
     let exampleHost = "1.2.3.4"
     let examplePort = UInt16(1234)
     let exampleDeviceId = "some id"
-
+    let exampleIdentity = Identities().example()
 
     override func setUp() {
         socket = SocketSpy()
         gateKeeper = GateKeeperSpy()
-        connector = Connector()
+        connector = Connector(identity: exampleIdentity)
         connector.socket = socket
         connector.gateKeeper = gateKeeper
     }
@@ -42,6 +42,7 @@ class ConnectionTests: XCTestCase {
         XCTAssertTrue(gateKeeper.secureSocketWasCalled)
         XCTAssertEqual(gateKeeper.latestSocket!, socket)
         XCTAssertEqual(gateKeeper.latestDeviceId!, exampleDeviceId)
+        XCTAssertTrue(gateKeeper.latestIdentity! === exampleIdentity)
     }
 
     func testShouldReturnNilWhenSecuringSocketFails() {
@@ -69,11 +70,13 @@ class GateKeeperSpy: GateKeeper {
 
     var latestSocket: GCDAsyncSocket? = nil
     var latestDeviceId: String? = nil
+    var latestIdentity: SecIdentity? = nil
 
-    override func secureSocket(socket: GCDAsyncSocket, deviceId: String, onSuccess: () -> () = {}) {
+    override func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
         secureSocketWasCalled = true
         latestSocket = socket
         latestDeviceId = deviceId
+        latestIdentity = identity
         if (secureShouldSucceed) {
             onSuccess()
         }

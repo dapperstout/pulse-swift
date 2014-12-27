@@ -2,7 +2,7 @@ public class GateKeeper {
 
     public init() {}
 
-    public func secureSocket(socket: GCDAsyncSocket, deviceId: String, onSuccess: () -> () = {}) {
+    public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
         let session = GateKeeperSession(socket, deviceId, onSuccess)
         session.socketFunctions = socketFunctions
         session.secure()
