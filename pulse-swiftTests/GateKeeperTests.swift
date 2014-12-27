@@ -10,6 +10,7 @@ class GateKeeperTests: XCTestCase {
     var readStream: CFReadStreamRef!
     var certificate: SecCertificate!
     var certificateData: NSData!
+    let identity = Identities().example()
 
     override func setUp() {
         certificateData = readTestCertificateData()
@@ -24,7 +25,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func testStartsTLS() {
-        gateKeeper.secureSocket(socket, deviceId: deviceId)
+        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity)
 
         XCTAssertTrue(socket.tlsStarted)
     }
@@ -52,6 +53,11 @@ class GateKeeperTests: XCTestCase {
     func testShouldAllowSelfSignedCertificates() {
         let validates = getTlsSetting(kCFStreamSSLValidatesCertificateChain) as Bool
         XCTAssertFalse(validates)
+    }
+
+    func testShouldUseOwnCertificateWhenNegotiatingTLS() {
+        let certificates = getTlsSetting(kCFStreamSSLCertificates) as [SecIdentity]
+        XCTAssertTrue(certificates[0] === identity)
     }
 
     func testShouldCloseConnectionWhenDeviceIdDoesntMatch() {
@@ -89,7 +95,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func secureSocket(deviceId: String, onSuccess: () -> () = {}) {
-        gateKeeper.secureSocket(socket, deviceId: deviceId, onSuccess)
+        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity, onSuccess)
         socket.latestDelegate!.socketDidSecure!(socket)
     }
 
@@ -103,7 +109,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func getTlsSetting(key: NSObject) -> AnyObject {
-        gateKeeper.secureSocket(socket, deviceId: deviceId)
+        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity)
         let tlsSettings = socket.latestTlsSettings!
         return tlsSettings[key]!
     }

@@ -3,7 +3,7 @@ public class GateKeeper {
     public init() {}
 
     public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
-        let session = GateKeeperSession(socket, deviceId, onSuccess)
+        let session = GateKeeperSession(socket, deviceId, identity, onSuccess)
         session.socketFunctions = socketFunctions
         session.secure()
     }
@@ -14,11 +14,13 @@ public class GateKeeper {
 class GateKeeperSession: GCDAsyncSocketDelegate {
     let deviceId: String
     let socket: GCDAsyncSocket
+    let identity: SecIdentity
     let onSuccess: () -> ()
 
-    init(_ socket: GCDAsyncSocket, _ deviceId: String, _ onSuccess: () -> ()) {
+    init(_ socket: GCDAsyncSocket, _ deviceId: String, _ identity: SecIdentity, _ onSuccess: () -> ()) {
         self.socket = socket
         self.deviceId = deviceId
+        self.identity = identity
         self.onSuccess = onSuccess
     }
 
@@ -27,7 +29,8 @@ class GateKeeperSession: GCDAsyncSocketDelegate {
         socket.startTLS([
                 GCDAsyncSocketSSLProtocolVersionMin: NSNumber(unsignedInt: kTLSProtocol12.value),
                 GCDAsyncSocketSSLCipherSuites: acceptableCipherSuites,
-                kCFStreamSSLValidatesCertificateChain: false
+                kCFStreamSSLValidatesCertificateChain: false,
+                kCFStreamSSLCertificates: [identity]
         ])
     }
 
