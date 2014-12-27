@@ -95,7 +95,7 @@ class GateKeeperTests: XCTestCase {
 
     func readTestCertificateData() -> NSData {
         let bundle = NSBundle(forClass: self.dynamicType)
-        return NSData(contentsOfFile: bundle.pathForResource("cert", ofType: "der")!)!
+        return NSData(contentsOfFile: bundle.pathForResource("certificate", ofType: "der")!)!
     }
 
     func createTestStream() -> CFReadStreamRef {
