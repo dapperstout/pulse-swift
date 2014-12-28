@@ -8,16 +8,12 @@ class GateKeeperTests: XCTestCase {
     var deviceId: String!
     var socketFunctions: SocketFunctionsMock!
     var readStream: CFReadStreamRef!
-    var certificate: SecCertificate!
-    var certificateData: NSData!
     let identity = Identities().example()
 
     override func setUp() {
-        certificateData = readTestCertificateData()
-        certificate = SecCertificateCreateWithData(nil, certificateData).takeUnretainedValue()
         readStream = createTestStream()
         socketFunctions = SocketFunctionsMock()
-        deviceId = "\(DeviceId(hash: certificateData.SHA256Digest()))"
+        deviceId = "\(DeviceId(hash: identity.certificate.data.SHA256Digest()))"
         socket = SocketSpy()
         socket.readStreamRef = Unmanaged.passUnretained(readStream)
         gateKeeper = GateKeeper()
@@ -67,7 +63,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func testShouldNotCloseConnectionWhenDeviceIdMatches() {
-        injectCorrectCertificateInSocket()
+        injectCorrectIdentityInSocket()
 
         secureSocket(deviceId)
 
@@ -75,7 +71,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func testCallsOnSuccessWhenDeviceIdMatches() {
-        injectCorrectCertificateInSocket()
+        injectCorrectIdentityInSocket()
 
         var onSuccessCalled = false
         secureSocket(deviceId) {
@@ -85,23 +81,15 @@ class GateKeeperTests: XCTestCase {
         XCTAssertTrue(onSuccessCalled)
     }
 
-    func injectCorrectCertificateInSocket() {
+    func injectCorrectIdentityInSocket() {
         socketFunctions.expectedStream = readStream
         socketFunctions.expectedPropertyName = kCFStreamPropertySSLSettings
-        socketFunctions.returnedStreamProperty = [String(kCFStreamSSLCertificates): [certificate]]
-
-        socketFunctions.expectedCertificate = certificate
-        socketFunctions.returnedCertificateData = Unmanaged.passRetained(certificateData)
+        socketFunctions.returnedStreamProperty = [String(kCFStreamSSLCertificates): [identity]]
     }
 
     func secureSocket(deviceId: String, onSuccess: () -> () = {}) {
         gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity, onSuccess)
         socket.latestDelegate!.socketDidSecure!(socket)
-    }
-
-    func readTestCertificateData() -> NSData {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        return NSData(contentsOfFile: bundle.pathForResource("certificate", ofType: "der")!)!
     }
 
     func createTestStream() -> CFReadStreamRef {

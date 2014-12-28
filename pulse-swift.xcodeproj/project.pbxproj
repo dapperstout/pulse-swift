@@ -52,6 +52,7 @@
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
 		4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */; };
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
+		C016431AF435931AAA764616 /* SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016483BE314D537FD81345D /* SecCertificate.swift */; };
 		C016442D8BB554DE0E4EAAA7 /* SecurityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */; };
 		C0164448F4288AB6249B4EBB /* GateKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */; };
 		C01644AA23E875CBA77D3DB6 /* KeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164D39D18F557BA6C94C2A /* KeysTests.swift */; };
@@ -68,6 +69,7 @@
 		C0164F54C3755DDB730E37CD /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F95C0289D50C2056D30 /* Keys.swift */; };
 		C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016425BED1B3F815C02095E /* DeviceIdTests.swift */; };
 		C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */; };
+		C0164FE06B299585178C5BA3 /* SecIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,12 +131,14 @@
 		4DDBE78319A48FBB007EF37E /* pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctions.swift; sourceTree = "<group>"; };
+		C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecIdentity.swift; sourceTree = "<group>"; };
 		C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketSpy.swift; sourceTree = "<group>"; };
 		C016425BED1B3F815C02095E /* DeviceIdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceIdTests.swift; sourceTree = "<group>"; };
 		C01643BCF9EA4375F7801290 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file.der; path = certificate.der; sourceTree = "<group>"; };
 		C016451175CDF77C39654050 /* identity.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = identity.p12; sourceTree = "<group>"; };
 		C0164712178CC12D4D75B3D5 /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		C016480CFB38B8CBBCE2400E /* LuhnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuhnTests.swift; sourceTree = "<group>"; };
+		C016483BE314D537FD81345D /* SecCertificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecCertificate.swift; sourceTree = "<group>"; };
 		C0164846971609C0419133D5 /* GateKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateKeeper.swift; sourceTree = "<group>"; };
 		C0164954F6AEBE525D36CC55 /* Identities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identities.swift; sourceTree = "<group>"; };
 		C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctionsMock.swift; sourceTree = "<group>"; };
@@ -341,6 +345,8 @@
 				C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */,
 				C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */,
 				C0164F95C0289D50C2056D30 /* Keys.swift */,
+				C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */,
+				C016483BE314D537FD81345D /* SecCertificate.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -556,6 +562,8 @@
 				C0164DFF52ED64A886A18FD6 /* GateKeeper.swift in Sources */,
 				C016442D8BB554DE0E4EAAA7 /* SecurityFunctions.swift in Sources */,
 				C0164F54C3755DDB730E37CD /* Keys.swift in Sources */,
+				C0164FE06B299585178C5BA3 /* SecIdentity.swift in Sources */,
+				C016431AF435931AAA764616 /* SecCertificate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

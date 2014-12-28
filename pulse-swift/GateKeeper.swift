@@ -59,8 +59,8 @@ class GateKeeperSession: GCDAsyncSocketDelegate {
         let s = self.socketFunctions
         if let sslSettings = s.CFReadStreamCopyProperty(stream, kCFStreamPropertySSLSettings) as? [String:AnyObject] {
             if let certificates = sslSettings[kCFStreamSSLCertificates] as? [AnyObject] {
-                let certificate = certificates[0] as SecCertificate
-                return s.SecCertificateCopyData(certificate).takeRetainedValue() as NSData
+                let identity = certificates[0] as SecIdentity
+                return identity.certificate.data
             }
         }
         return nil
