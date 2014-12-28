@@ -9,6 +9,7 @@ public class Connector {
     }
 
     public func connect(host: NSString, port: UInt16, deviceId: String, onSuccess: (Connection) -> ()) {
+        socket.setDelegateQueue(queue)
         if socket.connectToHost(host, onPort: port, error: nil) {
             secure(socket, deviceId: deviceId, onSuccess)
         }
@@ -23,6 +24,7 @@ public class Connector {
 
     public var socket: GCDAsyncSocket = GCDAsyncSocket()
     public var gateKeeper: GateKeeper = GateKeeper()
+    public var queue = dispatch_get_main_queue()
 }
 
 public class Connection {

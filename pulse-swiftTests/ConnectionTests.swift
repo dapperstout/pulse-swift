@@ -53,6 +53,19 @@ class ConnectionTests: XCTestCase {
         XCTAssertNil(connection)
     }
 
+    func testShouldUseSpecifiedQueueForSocketCallbacks() {
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
+        connector.queue = queue
+
+        connect()
+
+        XCTAssertEqual(queue, socket.latestDelegateQueue!)
+    }
+
+    func testShouldUseMainQueueByDefault() {
+        XCTAssertEqual(dispatch_get_main_queue(), connector.queue)
+    }
+
     func connect() -> Connection? {
         var connection: Connection? = nil
         connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId) {

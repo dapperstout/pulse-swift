@@ -12,9 +12,14 @@ class SocketSpy: GCDAsyncSocket {
     var latestPort: UInt16?
     var latestTlsSettings: [NSObject:AnyObject]?
     var latestDelegate: GCDAsyncSocketDelegate?
+    var latestDelegateQueue: dispatch_queue_t?
 
     override func setDelegate(delegate: AnyObject?) {
         latestDelegate = delegate as? GCDAsyncSocketDelegate
+    }
+
+    override func setDelegateQueue(queue: dispatch_queue_t) {
+        latestDelegateQueue = queue
     }
 
     override func connectToHost(host: String!, onPort port: UInt16, error errPtr: NSErrorPointer) -> Bool {
