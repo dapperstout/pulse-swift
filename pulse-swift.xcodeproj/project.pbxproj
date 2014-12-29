@@ -73,6 +73,7 @@
 		F89487731A516EE300A0892F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
 		F89487751A516EE300A0892F /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = C01643BCF9EA4375F7801290 /* certificate.der */; };
 		F89487761A516EE300A0892F /* identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C016451175CDF77C39654050 /* identity.p12 */; };
+		F89487801A5190AC00A0892F /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F894877F1A5190AC00A0892F /* ConnectionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F894877B1A516EE300A0892F /* pulseIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F894877C1A516EE300A0892F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F894877F1A5190AC00A0892F /* ConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTests.swift; sourceTree = "<group>"; };
 		FC0D962A00CF4D71D726FFF2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				F894877C1A516EE300A0892F /* Info.plist */,
+				F894877F1A5190AC00A0892F /* ConnectionTests.swift */,
 			);
 			path = "pulse-integrationTests";
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F89487801A5190AC00A0892F /* ConnectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,6 +877,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3B93AAE95FF201365BA3D31 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -884,6 +889,7 @@
 				INFOPLIST_FILE = "pulse-IntegrationTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = pulseIntegrationTests;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -891,6 +897,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
