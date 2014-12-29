@@ -1,15 +1,7 @@
-//
-//  ConnectionTests.swift
-//  pulse-swift
-//
-//  Created by Stefan on 29/12/14.
-//
-//
-
 import pulse
 import XCTest
 
-class ConnectionTests: XCTestCase {
+class ConnectionIntegrationTests: XCTestCase {
 
     var connector: Connector!
     let exampleDeviceId = "3XGRA4E-SSXHXPF-UA6V3L2-6IOJHHZ-5AOGWGJ-VOHWDPM-TTYWREL-Z56XNA7"
@@ -19,8 +11,6 @@ class ConnectionTests: XCTestCase {
     var connection: Connection? = nil
 
     override func setUp() {
-//        DDLog.addLogger(DDASLLogger.sharedInstance())
-//        DDLog.addLogger(DDTTYLogger.sharedInstance())
         connector = Connector(identity: exampleIdentity)
     }
     
