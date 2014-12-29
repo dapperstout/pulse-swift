@@ -74,6 +74,7 @@
 		F89487751A516EE300A0892F /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = C01643BCF9EA4375F7801290 /* certificate.der */; };
 		F89487761A516EE300A0892F /* identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C016451175CDF77C39654050 /* identity.p12 */; };
 		F89487801A5190AC00A0892F /* ConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F894877F1A5190AC00A0892F /* ConnectionTests.swift */; };
+		F89487811A5196C000A0892F /* Identities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164954F6AEBE525D36CC55 /* Identities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -700,6 +701,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F89487801A5190AC00A0892F /* ConnectionTests.swift in Sources */,
+				F89487811A5196C000A0892F /* Identities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

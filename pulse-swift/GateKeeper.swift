@@ -1,9 +1,11 @@
 public class GateKeeper {
 
+    var session: GateKeeperSession!
+    
     public init() {}
 
     public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
-        let session = GateKeeperSession(socket, deviceId, identity, onSuccess)
+        session = GateKeeperSession(socket, deviceId, identity, onSuccess)
         session.socketFunctions = socketFunctions
         session.secure()
     }
@@ -11,7 +13,7 @@ public class GateKeeper {
     public var socketFunctions = SocketFunctions()
 }
 
-class GateKeeperSession: GCDAsyncSocketDelegate {
+class GateKeeperSession: NSObject, GCDAsyncSocketDelegate {
     let deviceId: String
     let socket: GCDAsyncSocket
     let identity: SecIdentity

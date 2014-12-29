@@ -1,6 +1,6 @@
 import Foundation
 
-public class Connector {
+public class Connector : NSObject {
 
     let identity: SecIdentity
 
@@ -10,6 +10,7 @@ public class Connector {
 
     public func connect(host: NSString, port: UInt16, deviceId: String, onSuccess: (Connection) -> ()) {
         socket.setDelegateQueue(queue)
+        socket.synchronouslySetDelegate(self) // TODO: don't actually need delegate here, but without it, connectToHost doesn't work...
         if socket.connectToHost(host, onPort: port, error: nil) {
             secure(socket, deviceId: deviceId, onSuccess)
         }

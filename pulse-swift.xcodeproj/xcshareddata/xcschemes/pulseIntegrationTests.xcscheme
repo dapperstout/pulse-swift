@@ -32,7 +32,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "/tmp/pulse-swift/src/github.com/syncthing/syncthing/bin/syncthing -home=/tmp/pulse-swift/sthome -no-browser -gui-apikey=&quot;jobt7d8klok5l8n818q1noq2t683nu&quot; -gui-address=&quot;http://127.0.0.1:59296&quot; &amp;&#10;sleep 10">
+               scriptText = "# Start syncthing if it is not already running&#10;if ( ! curl -s -H &quot;X-API-Key:jobt7d8klok5l8n818q1noq2t683nu&quot; -X POST http://127.0.0.1:59296/rest/ping &gt; /dev/null ); then&#10;    /tmp/pulse-swift/src/github.com/syncthing/syncthing/bin/syncthing -home=/tmp/pulse-swift/sthome -no-browser -gui-apikey=&quot;jobt7d8klok5l8n818q1noq2t683nu&quot; -gui-address=&quot;http://127.0.0.1:59296&quot; &amp;&#10;    touch /tmp/pulse-swift/started-by-build-script&#10;    sleep 10&#10;fi">
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -41,7 +41,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "curl -s -H &quot;X-API-Key:jobt7d8klok5l8n818q1noq2t683nu&quot; -X POST http://127.0.0.1:59296/rest/shutdown&#10;sleep 3">
+               scriptText = "if ( test -f /tmp/pulse-swift/started-by-build-script ); then&#10;    curl -s -H &quot;X-API-Key:jobt7d8klok5l8n818q1noq2t683nu&quot; -X POST http://127.0.0.1:59296/rest/shutdown&#10;    sleep 3&#10;    rm /tmp/pulse-swift/started-by-build-script&#10;fi">
             </ActionContent>
          </ExecutionAction>
       </PostActions>
