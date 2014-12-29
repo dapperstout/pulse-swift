@@ -15,20 +15,13 @@ class ConnectionIntegrationTests: XCTestCase {
     }
     
     func testOpensConnection() {
-        connect();
-        wait(5);
-        XCTAssertNotNil(self.connection)
-    }
-    
-    func wait(delay:NSTimeInterval) {
-        let until = NSDate().dateByAddingTimeInterval(delay);
-        NSRunLoop.currentRunLoop().runUntilDate(until);
-    }
-    
-    func connect() {
-        connector.connect(host, port: port, deviceId: exampleDeviceId) {
-            self.connection = $0
-        }
-    }
+        let expectation = self.expectationWithDescription("connection succeeds")
 
+        connector.connect(host, port: port, deviceId: exampleDeviceId) {
+            XCTAssertNotNil($0)
+            expectation.fulfill()
+        }
+
+        self.waitForExpectationsWithTimeout(5, nil)
+    }
 }
