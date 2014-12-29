@@ -31,12 +31,12 @@ class ConnectionTests: XCTestCase {
 
     func testOpensConnection() {
         connect();
-        wait();
+        wait(5);
         XCTAssertNotNil(self.connection)
     }
     
-    func wait() {
-        let until = NSDate().dateByAddingTimeInterval(5);
+    func wait(delay:NSTimeInterval) {
+        let until = NSDate().dateByAddingTimeInterval(delay);
         NSRunLoop.currentRunLoop().runUntilDate(until);
     }
     
