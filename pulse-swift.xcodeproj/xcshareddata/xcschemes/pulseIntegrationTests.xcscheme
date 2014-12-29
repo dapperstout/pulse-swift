@@ -32,7 +32,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "&quot;$SOURCE_ROOT/pulse-integrationTests/pre-test.sh&quot;">
+               scriptText = "&quot;$SOURCE_ROOT/pulse-swiftIntegrationTests/pre-test.sh&quot;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -50,7 +50,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "&quot;$SOURCE_ROOT/pulse-integrationTests/post-test.sh&quot;">
+               scriptText = "&quot;$SOURCE_ROOT/pulse-swiftIntegrationTests/post-test.sh&quot;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
