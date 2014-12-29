@@ -49,6 +49,17 @@ absSyncthingDir="`absPath $syncthingDir`"
 gopath=""
 syncthing=""
 syncthinghome=""
+GO="$GOROOT/bin/go"
+
+installGo() {
+    mkdir -p "$testRoot"
+    curl -s -o "$testRoot/go1.4.darwin-amd64-osx10.8.tar.gz" https://storage.googleapis.com/golang/go1.4.darwin-amd64-osx10.8.tar.gz || fatal "Could not download go archive"
+    (
+        cd "$testRoot"
+        tar xzf go1.4.darwin-amd64-osx10.8.tar.gz || fatal "Could not expand go archive"
+        rm go1.4.darwin-amd64-osx10.8.tar.gz
+    )
+}
 
 checkPreconditions() {
     logStep "Check preconditions"
@@ -61,6 +72,14 @@ checkPreconditions() {
        fatal "Syncthing folder $syncthingDir already exists."
     else
         echo "syncthing doesn't already exist [ok]"
+    fi
+    if ( test -z "$GOROOT" || ! test -x "$GOROOT/bin/go" ); then
+        echo "go executable not found; downloading go... \c"
+        installGo
+        export GOROOT="$testRoot/go"
+        export PATH=$GOROOT/bin:$PATH
+        export GO=$GOROOT/bin/go
+        echo "[ok]"
     fi
     if ( test -z "$GOROOT" || ! test -x "$GOROOT/bin/go" ); then
         fatal "GOROOT must be set and contain executable go"
@@ -89,7 +108,7 @@ cloneSyncThing() {
         (
             cd syncthing || fatal "Could not change to cloned syncthing"
             echo "Building syncthing...\c "
-            ( go run build.go > $testRoot/syncthing-build.log 2>&1 ) || fatal "Could not build syncthing; check log file $testRoot/syncthing-build.log"
+            ( $GO run build.go > $testRoot/syncthing-build.log 2>&1 ) || fatal "Could not build syncthing; check log file $testRoot/syncthing-build.log"
             echo "[ok]"
         )
     )
