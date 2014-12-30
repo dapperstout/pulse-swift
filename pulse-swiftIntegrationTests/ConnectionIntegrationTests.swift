@@ -1,4 +1,4 @@
-import pulse
+import Pulse
 import XCTest
 
 class ConnectionIntegrationTests: XCTestCase {

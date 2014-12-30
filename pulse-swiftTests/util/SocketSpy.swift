@@ -1,4 +1,4 @@
-import pulse
+import Pulse
 
 class SocketSpy: GCDAsyncSocket {
 

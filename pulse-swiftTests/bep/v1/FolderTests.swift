@@ -1,5 +1,5 @@
 import XCTest
-import pulse
+import Pulse
 
 public class FolderTests : XCTestCase {
 

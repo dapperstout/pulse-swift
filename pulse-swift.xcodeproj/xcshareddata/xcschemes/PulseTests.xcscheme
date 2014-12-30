@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DDBE78D19A48FBB007EF37E"
-               BuildableName = "pulseTests.xctest"
-               BlueprintName = "pulseTests"
+               BuildableName = "PulseTests.xctest"
+               BlueprintName = "PulseTests"
                ReferencedContainer = "container:pulse-swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4DDBE78D19A48FBB007EF37E"
-               BuildableName = "pulseTests.xctest"
-               BlueprintName = "pulseTests"
+               BuildableName = "PulseTests.xctest"
+               BlueprintName = "PulseTests"
                ReferencedContainer = "container:pulse-swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DDBE78D19A48FBB007EF37E"
-            BuildableName = "pulseTests.xctest"
-            BlueprintName = "pulseTests"
+            BuildableName = "PulseTests.xctest"
+            BlueprintName = "PulseTests"
             ReferencedContainer = "container:pulse-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DDBE78D19A48FBB007EF37E"
-            BuildableName = "pulseTests.xctest"
-            BlueprintName = "pulseTests"
+            BuildableName = "PulseTests.xctest"
+            BlueprintName = "PulseTests"
             ReferencedContainer = "container:pulse-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4DDBE78D19A48FBB007EF37E"
-            BuildableName = "pulseTests.xctest"
-            BlueprintName = "pulseTests"
+            BuildableName = "PulseTests.xctest"
+            BlueprintName = "PulseTests"
             ReferencedContainer = "container:pulse-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

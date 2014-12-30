@@ -20,5 +20,5 @@ public class Keys {
         return nil
     }
 
-    public var SecurityFunctions = pulse.SecurityFunctions()
+    public var SecurityFunctions = Pulse.SecurityFunctions()
 }

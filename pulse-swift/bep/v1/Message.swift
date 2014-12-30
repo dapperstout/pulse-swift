@@ -11,7 +11,7 @@ public class Message
     public init(id: UInt16? = nil, type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
         self.id = (id != nil) ? id! : getNextMessageId()
         self.type = type
-        self._contents = compress ? pulse.compress(contents) : contents
+        self._contents = compress ? Pulse.compress(contents) : contents
         self.isCompressed = compress
     }
 

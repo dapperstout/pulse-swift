@@ -408,9 +408,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4DDBE78219A48FBB007EF37E /* pulse */ = {
+		4DDBE78219A48FBB007EF37E /* Pulse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "pulse" */;
+			buildConfigurationList = 4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "Pulse" */;
 			buildPhases = (
 				357723C5B6C568B7FAA0377F /* Check Pods Manifest.lock */,
 				4DDBE77E19A48FBB007EF37E /* Sources */,
@@ -423,14 +423,14 @@
 			);
 			dependencies = (
 			);
-			name = pulse;
+			name = Pulse;
 			productName = "pulse-swift";
 			productReference = 4DDBE78319A48FBB007EF37E /* pulse.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4DDBE78D19A48FBB007EF37E /* pulseTests */ = {
+		4DDBE78D19A48FBB007EF37E /* PulseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "pulseTests" */;
+			buildConfigurationList = 4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "PulseTests" */;
 			buildPhases = (
 				42DA01AC5F43A2F009F5A133 /* Check Pods Manifest.lock */,
 				4DDBE78A19A48FBB007EF37E /* Sources */,
@@ -443,14 +443,14 @@
 			dependencies = (
 				4DDBE7A119A49D16007EF37E /* PBXTargetDependency */,
 			);
-			name = pulseTests;
+			name = PulseTests;
 			productName = "pulse-swiftTests";
 			productReference = 4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F89487511A516EE300A0892F /* pulseIntegrationTests */ = {
+		F89487511A516EE300A0892F /* PulseIntegrationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F89487781A516EE300A0892F /* Build configuration list for PBXNativeTarget "pulseIntegrationTests" */;
+			buildConfigurationList = F89487781A516EE300A0892F /* Build configuration list for PBXNativeTarget "PulseIntegrationTests" */;
 			buildPhases = (
 				F89487541A516EE300A0892F /* Check Pods Manifest.lock */,
 				F89487551A516EE300A0892F /* Sources */,
@@ -463,7 +463,7 @@
 			dependencies = (
 				F89487521A516EE300A0892F /* PBXTargetDependency */,
 			);
-			name = pulseIntegrationTests;
+			name = PulseIntegrationTests;
 			productName = "pulse-swiftTests";
 			productReference = F894877B1A516EE300A0892F /* pulseIntegrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -496,9 +496,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4DDBE78219A48FBB007EF37E /* pulse */,
-				4DDBE78D19A48FBB007EF37E /* pulseTests */,
-				F89487511A516EE300A0892F /* pulseIntegrationTests */,
+				4DDBE78219A48FBB007EF37E /* Pulse */,
+				4DDBE78D19A48FBB007EF37E /* PulseTests */,
+				F89487511A516EE300A0892F /* PulseIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -710,12 +710,12 @@
 /* Begin PBXTargetDependency section */
 		4DDBE7A119A49D16007EF37E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DDBE78219A48FBB007EF37E /* pulse */;
+			target = 4DDBE78219A48FBB007EF37E /* Pulse */;
 			targetProxy = 4DDBE7A019A49D16007EF37E /* PBXContainerItemProxy */;
 		};
 		F89487521A516EE300A0892F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4DDBE78219A48FBB007EF37E /* pulse */;
+			target = 4DDBE78219A48FBB007EF37E /* Pulse */;
 			targetProxy = F89487531A516EE300A0892F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -922,7 +922,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "pulse" */ = {
+		4DDBE79619A48FBB007EF37E /* Build configuration list for PBXNativeTarget "Pulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DDBE79719A48FBB007EF37E /* Debug */,
@@ -931,7 +931,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "pulseTests" */ = {
+		4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "PulseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4DDBE79A19A48FBB007EF37E /* Debug */,
@@ -940,7 +940,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F89487781A516EE300A0892F /* Build configuration list for PBXNativeTarget "pulseIntegrationTests" */ = {
+		F89487781A516EE300A0892F /* Build configuration list for PBXNativeTarget "PulseIntegrationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F89487791A516EE300A0892F /* Debug */,

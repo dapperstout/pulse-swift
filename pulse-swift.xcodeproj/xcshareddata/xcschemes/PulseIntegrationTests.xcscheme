@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F89487511A516EE300A0892F"
                BuildableName = "pulseIntegrationTests.xctest"
-               BlueprintName = "pulseIntegrationTests"
+               BlueprintName = "PulseIntegrationTests"
                ReferencedContainer = "container:pulse-swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -38,7 +38,7 @@
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "F89487511A516EE300A0892F"
                      BuildableName = "pulseIntegrationTests.xctest"
-                     BlueprintName = "pulseIntegrationTests"
+                     BlueprintName = "PulseIntegrationTests"
                      ReferencedContainer = "container:pulse-swift.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -56,7 +56,7 @@
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "F89487511A516EE300A0892F"
                      BuildableName = "pulseIntegrationTests.xctest"
-                     BlueprintName = "pulseIntegrationTests"
+                     BlueprintName = "PulseIntegrationTests"
                      ReferencedContainer = "container:pulse-swift.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
@@ -70,7 +70,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F89487511A516EE300A0892F"
                BuildableName = "pulseIntegrationTests.xctest"
-               BlueprintName = "pulseIntegrationTests"
+               BlueprintName = "PulseIntegrationTests"
                ReferencedContainer = "container:pulse-swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -80,7 +80,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F89487511A516EE300A0892F"
             BuildableName = "pulseIntegrationTests.xctest"
-            BlueprintName = "pulseIntegrationTests"
+            BlueprintName = "PulseIntegrationTests"
             ReferencedContainer = "container:pulse-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -99,7 +99,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F89487511A516EE300A0892F"
             BuildableName = "pulseIntegrationTests.xctest"
-            BlueprintName = "pulseIntegrationTests"
+            BlueprintName = "PulseIntegrationTests"
             ReferencedContainer = "container:pulse-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -117,7 +117,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F89487511A516EE300A0892F"
             BuildableName = "pulseIntegrationTests.xctest"
-            BlueprintName = "pulseIntegrationTests"
+            BlueprintName = "PulseIntegrationTests"
             ReferencedContainer = "container:pulse-swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
