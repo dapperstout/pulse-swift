@@ -1,19 +1,19 @@
-public class GateKeeper {
+public class TLS {
 
-    var session: GateKeeperSession!
+    var negotiation: TLSNegotiation!
     
     public init() {}
 
     public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
-        session = GateKeeperSession(socket, deviceId, identity, onSuccess)
-        session.socketFunctions = socketFunctions
-        session.secure()
+        negotiation = TLSNegotiation(socket, deviceId, identity, onSuccess)
+        negotiation.socketFunctions = socketFunctions
+        negotiation.start()
     }
 
     public var socketFunctions = SocketFunctions()
 }
 
-class GateKeeperSession: NSObject, GCDAsyncSocketDelegate {
+class TLSNegotiation: NSObject, GCDAsyncSocketDelegate {
     let deviceId: String
     let socket: GCDAsyncSocket
     let identity: SecIdentity
@@ -26,7 +26,7 @@ class GateKeeperSession: NSObject, GCDAsyncSocketDelegate {
         self.onSuccess = onSuccess
     }
 
-    func secure() {
+    func start() {
         socket.setDelegate(self)
         socket.startTLS([
                 GCDAsyncSocketSSLProtocolVersionMin: NSNumber(unsignedInt: kTLSProtocol12.value),

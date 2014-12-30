@@ -17,14 +17,14 @@ public class Connector : NSObject {
     }
 
     func secure(socket: GCDAsyncSocket, deviceId: String, onSuccess: (Connection) -> ()) {
-        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity) {
+        tls.secureSocket(socket, deviceId: deviceId, identity: identity) {
             let connection = Connection(socket: self.socket)
             onSuccess(connection)
         }
     }
 
     public var socket: GCDAsyncSocket = GCDAsyncSocket()
-    public var gateKeeper: GateKeeper = GateKeeper()
+    public var tls: TLS = TLS()
     public var queue = dispatch_get_main_queue()
 }
 

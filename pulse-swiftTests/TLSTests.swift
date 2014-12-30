@@ -1,9 +1,9 @@
 import XCTest
 import pulse
 
-class GateKeeperTests: XCTestCase {
+class TLSTests: XCTestCase {
 
-    var gateKeeper: GateKeeper!
+    var tls: TLS!
     var socket: SocketSpy!
     var deviceId: String!
     var socketFunctions: SocketFunctionsMock!
@@ -16,12 +16,12 @@ class GateKeeperTests: XCTestCase {
         deviceId = "\(DeviceId(hash: identity.certificate.data.SHA256Digest()))"
         socket = SocketSpy()
         socket.readStreamRef = Unmanaged.passUnretained(readStream)
-        gateKeeper = GateKeeper()
-        gateKeeper.socketFunctions = socketFunctions
+        tls = TLS()
+        tls.socketFunctions = socketFunctions
     }
 
     func testStartsTLS() {
-        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity)
+        tls.secureSocket(socket, deviceId: deviceId, identity: identity)
 
         XCTAssertTrue(socket.tlsStarted)
     }
@@ -88,7 +88,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func secureSocket(deviceId: String, onSuccess: () -> () = {}) {
-        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity, onSuccess)
+        tls.secureSocket(socket, deviceId: deviceId, identity: identity, onSuccess)
         socket.latestDelegate!.socketDidSecure!(socket)
     }
 
@@ -97,7 +97,7 @@ class GateKeeperTests: XCTestCase {
     }
 
     func getTlsSetting(key: NSObject) -> AnyObject {
-        gateKeeper.secureSocket(socket, deviceId: deviceId, identity: identity)
+        tls.secureSocket(socket, deviceId: deviceId, identity: identity)
         let tlsSettings = socket.latestTlsSettings!
         return tlsSettings[key]!
     }

@@ -5,7 +5,7 @@ class ConnectionTests: XCTestCase {
 
     var connector: Connector!
     var socket: SocketSpy!
-    var gateKeeper: GateKeeperSpy!
+    var tls: TLSSpy!
 
     let exampleHost = "1.2.3.4"
     let examplePort = UInt16(1234)
@@ -14,10 +14,10 @@ class ConnectionTests: XCTestCase {
 
     override func setUp() {
         socket = SocketSpy()
-        gateKeeper = GateKeeperSpy()
+        tls = TLSSpy()
         connector = Connector(identity: exampleIdentity)
         connector.socket = socket
-        connector.gateKeeper = gateKeeper
+        connector.tls = tls
     }
 
     func testOpensConnection() {
@@ -36,17 +36,17 @@ class ConnectionTests: XCTestCase {
         XCTAssertNil(connection)
     }
 
-    func testShouldUseGateKeeperToSecureConnection() {
+    func testShouldUseTLSToSecureConnection() {
         let connection = connect();
 
-        XCTAssertTrue(gateKeeper.secureSocketWasCalled)
-        XCTAssertEqual(gateKeeper.latestSocket!, socket)
-        XCTAssertEqual(gateKeeper.latestDeviceId!, exampleDeviceId)
-        XCTAssertTrue(gateKeeper.latestIdentity! === exampleIdentity)
+        XCTAssertTrue(tls.secureSocketWasCalled)
+        XCTAssertEqual(tls.latestSocket!, socket)
+        XCTAssertEqual(tls.latestDeviceId!, exampleDeviceId)
+        XCTAssertTrue(tls.latestIdentity! === exampleIdentity)
     }
 
     func testShouldReturnNilWhenSecuringSocketFails() {
-        gateKeeper.secureShouldSucceed = false
+        tls.secureShouldSucceed = false
 
         let connection = connect()
 
@@ -75,7 +75,7 @@ class ConnectionTests: XCTestCase {
     }
 }
 
-class GateKeeperSpy: GateKeeper {
+class TLSSpy: TLS {
 
     var secureShouldSucceed = true
 

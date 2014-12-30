@@ -54,7 +54,7 @@
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
 		C016431AF435931AAA764616 /* SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016483BE314D537FD81345D /* SecCertificate.swift */; };
 		C016442D8BB554DE0E4EAAA7 /* SecurityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */; };
-		C0164448F4288AB6249B4EBB /* GateKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */; };
+		C0164448F4288AB6249B4EBB /* TLSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */; };
 		C01644AA23E875CBA77D3DB6 /* KeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164D39D18F557BA6C94C2A /* KeysTests.swift */; };
 		C01644E92235CC75E1DC21DE /* LuhnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016480CFB38B8CBBCE2400E /* LuhnTests.swift */; };
 		C0164553EF6A65E0F8F0F655 /* SecurityFunctionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */; };
@@ -65,7 +65,7 @@
 		C0164930C099A0B65C50FEE5 /* identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C016451175CDF77C39654050 /* identity.p12 */; };
 		C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */; };
 		C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164CA3D78AB4A53A03E2CD /* Luhn.swift */; };
-		C0164DFF52ED64A886A18FD6 /* GateKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164846971609C0419133D5 /* GateKeeper.swift */; };
+		C0164DFF52ED64A886A18FD6 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164846971609C0419133D5 /* TLS.swift */; };
 		C0164F54C3755DDB730E37CD /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F95C0289D50C2056D30 /* Keys.swift */; };
 		C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016425BED1B3F815C02095E /* DeviceIdTests.swift */; };
 		C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */; };
@@ -151,10 +151,10 @@
 		C0164712178CC12D4D75B3D5 /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		C016480CFB38B8CBBCE2400E /* LuhnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuhnTests.swift; sourceTree = "<group>"; };
 		C016483BE314D537FD81345D /* SecCertificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecCertificate.swift; sourceTree = "<group>"; };
-		C0164846971609C0419133D5 /* GateKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateKeeper.swift; sourceTree = "<group>"; };
+		C0164846971609C0419133D5 /* TLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
 		C0164954F6AEBE525D36CC55 /* Identities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identities.swift; sourceTree = "<group>"; };
 		C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctionsMock.swift; sourceTree = "<group>"; };
-		C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GateKeeperTests.swift; sourceTree = "<group>"; };
+		C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLSTests.swift; sourceTree = "<group>"; };
 		C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctionsMock.swift; sourceTree = "<group>"; };
 		C0164CA3D78AB4A53A03E2CD /* Luhn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Luhn.swift; sourceTree = "<group>"; };
 		C0164D39D18F557BA6C94C2A /* KeysTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysTests.swift; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 				4D8EFD2A1A02DA2700CB7E63 /* Connection.swift */,
 				C0164E9691517B24225C6C67 /* util */,
 				C0164712178CC12D4D75B3D5 /* DeviceId.swift */,
-				C0164846971609C0419133D5 /* GateKeeper.swift */,
+				C0164846971609C0419133D5 /* TLS.swift */,
 			);
 			path = "pulse-swift";
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 				4D8EFD281A02C73C00CB7E63 /* ConnectionTests.swift */,
 				C016425BED1B3F815C02095E /* DeviceIdTests.swift */,
 				C01645DF6C8B6ED2980D9A6D /* util */,
-				C0164C82B00BF6B2D5DCF14D /* GateKeeperTests.swift */,
+				C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */,
 			);
 			path = "pulse-swiftTests";
 			sourceTree = SOURCE_ROOT;
@@ -653,7 +653,7 @@
 				C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */,
 				C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */,
 				C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */,
-				C0164DFF52ED64A886A18FD6 /* GateKeeper.swift in Sources */,
+				C0164DFF52ED64A886A18FD6 /* TLS.swift in Sources */,
 				C016442D8BB554DE0E4EAAA7 /* SecurityFunctions.swift in Sources */,
 				C0164F54C3755DDB730E37CD /* Keys.swift in Sources */,
 				C0164FE06B299585178C5BA3 /* SecIdentity.swift in Sources */,
@@ -687,7 +687,7 @@
 				4D6A47A719E86975005D7C23 /* DeviceTests.swift in Sources */,
 				C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */,
 				C01644E92235CC75E1DC21DE /* LuhnTests.swift in Sources */,
-				C0164448F4288AB6249B4EBB /* GateKeeperTests.swift in Sources */,
+				C0164448F4288AB6249B4EBB /* TLSTests.swift in Sources */,
 				C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */,
 				C01645D4B882999C4280E055 /* SocketFunctionsMock.swift in Sources */,
 				C01644AA23E875CBA77D3DB6 /* KeysTests.swift in Sources */,
