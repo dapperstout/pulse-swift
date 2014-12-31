@@ -140,8 +140,8 @@
 		4D9D5A5A19F533F70058D1B8 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfigTests.swift; sourceTree = "<group>"; };
 		4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfig.swift; sourceTree = "<group>"; };
-		4DDBE78319A48FBB007EF37E /* pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDBE78319A48FBB007EF37E /* Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDBE78E19A48FBB007EF37E /* PulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctions.swift; sourceTree = "<group>"; };
 		C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecIdentity.swift; sourceTree = "<group>"; };
 		C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketSpy.swift; sourceTree = "<group>"; };
@@ -325,8 +325,8 @@
 		4DDBE78419A48FBB007EF37E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DDBE78319A48FBB007EF37E /* pulse.framework */,
-				4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */,
+				4DDBE78319A48FBB007EF37E /* Pulse.framework */,
+				4DDBE78E19A48FBB007EF37E /* PulseTests.xctest */,
 				F894877B1A516EE300A0892F /* pulseIntegrationTests.xctest */,
 			);
 			name = Products;
@@ -425,7 +425,7 @@
 			);
 			name = Pulse;
 			productName = "pulse-swift";
-			productReference = 4DDBE78319A48FBB007EF37E /* pulse.framework */;
+			productReference = 4DDBE78319A48FBB007EF37E /* Pulse.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4DDBE78D19A48FBB007EF37E /* PulseTests */ = {
@@ -445,7 +445,7 @@
 			);
 			name = PulseTests;
 			productName = "pulse-swiftTests";
-			productReference = 4DDBE78E19A48FBB007EF37E /* pulseTests.xctest */;
+			productReference = 4DDBE78E19A48FBB007EF37E /* PulseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		F89487511A516EE300A0892F /* PulseIntegrationTests */ = {

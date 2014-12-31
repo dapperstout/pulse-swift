@@ -1,7 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.0'
-link_with 'pulse', 'pulseTests', 'pulseIntegrationTests'
+link_with 'Pulse', 'PulseTests', 'PulseIntegrationTests'
 
 pod 'CocoaAsyncSocket', '~> 7.3.5', :inhibit_warnings => true
 pod 'lz4', '~> 123'
