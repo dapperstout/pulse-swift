@@ -15,11 +15,11 @@ class SocketSpy: GCDAsyncSocket {
     var latestDelegate: GCDAsyncSocketDelegate?
     var latestDelegateQueue: dispatch_queue_t?
 
-    override func setDelegate(delegate: AnyObject?) {
+    override func synchronouslySetDelegate(delegate: AnyObject?) {
         latestDelegate = delegate as? GCDAsyncSocketDelegate
     }
 
-    override func setDelegateQueue(queue: dispatch_queue_t) {
+    override func synchronouslySetDelegateQueue(queue: dispatch_queue_t) {
         latestDelegateQueue = queue
     }
 

@@ -45,7 +45,7 @@ class TLSNegotiation: NSObject, GCDAsyncSocketDelegate {
     }
 
     func start() {
-        socket.setDelegate(self)
+        socket.synchronouslySetDelegate(self)
         socket.startTLS([
                 GCDAsyncSocketSSLProtocolVersionMin: NSNumber(unsignedInt: kTLSProtocol12.value),
                 GCDAsyncSocketSSLCipherSuites: acceptableCipherSuites,

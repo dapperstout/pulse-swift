@@ -9,8 +9,8 @@ public class Connector : NSObject {
     }
 
     public func connect(host: NSString, port: UInt16, deviceId: String, onCompletion: (Connection?) -> () = {(connection: Connection?) in }) {
-        socket.setDelegateQueue(queue)
-        socket.synchronouslySetDelegate(self) // TODO: don't actually need delegate here, but without it, connectToHost doesn't work...
+        socket.synchronouslySetDelegateQueue(queue)
+        socket.synchronouslySetDelegate(self) // don't actually need delegate here, but without it, connectToHost doesn't work...
         if socket.connectToHost(host, onPort: port, error: nil) {
             secure(socket, deviceId: deviceId, onCompletion)
         } else {
