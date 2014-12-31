@@ -21,23 +21,32 @@ class ConnectionTests: XCTestCase {
     }
 
     func testOpensConnection() {
-        let connection = connect();
+        let expectation = expectationWithDescription("connects successfully")
 
-        XCTAssertNotNil(connection)
-        XCTAssertEqual(socket.latestHost!, exampleHost)
-        XCTAssertEqual(socket.latestPort!, examplePort)
+        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId) {
+            XCTAssertNotNil($0)
+            XCTAssertEqual(self.socket.latestHost!, self.exampleHost)
+            XCTAssertEqual(self.socket.latestPort!, self.examplePort)
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(1, nil)
     }
 
     func testShouldReturnNilWhenConnectionFails() {
+        let expectation = expectationWithDescription("returns nil")
         socket.connectShouldSucceed = false
 
-        let connection = connect();
+        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId) {
+            XCTAssertNil($0)
+            expectation.fulfill()
+        }
 
-        XCTAssertNil(connection)
+        waitForExpectationsWithTimeout(1, nil)
     }
 
     func testShouldUseTLSToSecureConnection() {
-        let connection = connect();
+        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId)
 
         XCTAssertTrue(tls.secureSocketWasCalled)
         XCTAssertEqual(tls.latestSocket!, socket)
@@ -46,32 +55,28 @@ class ConnectionTests: XCTestCase {
     }
 
     func testShouldReturnNilWhenSecuringSocketFails() {
+        let expectation = expectationWithDescription("returns nil")
         tls.secureShouldSucceed = false
 
-        let connection = connect()
+        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId) {
+            XCTAssertNil($0)
+            expectation.fulfill()
+        }
 
-        XCTAssertNil(connection)
+        waitForExpectationsWithTimeout(1, nil)
     }
 
     func testShouldUseSpecifiedQueueForSocketCallbacks() {
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
         connector.queue = queue
 
-        connect()
+        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId)
 
         XCTAssertEqual(queue, socket.latestDelegateQueue!)
     }
 
     func testShouldUseMainQueueByDefault() {
         XCTAssertEqual(dispatch_get_main_queue(), connector.queue)
-    }
-
-    func connect() -> Connection? {
-        var connection: Connection? = nil
-        connector.connect(exampleHost, port: examplePort, deviceId: exampleDeviceId) {
-            connection = $0
-        }
-        return connection
     }
 }
 
@@ -85,13 +90,11 @@ class TLSSpy: TLS {
     var latestDeviceId: String? = nil
     var latestIdentity: SecIdentity? = nil
 
-    override func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
+    override func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onCompletion: (Bool) -> ()) {
         secureSocketWasCalled = true
         latestSocket = socket
         latestDeviceId = deviceId
         latestIdentity = identity
-        if (secureShouldSucceed) {
-            onSuccess()
-        }
+        onCompletion(secureShouldSucceed)
     }
 }

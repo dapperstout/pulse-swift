@@ -70,15 +70,39 @@ class TLSTests: XCTestCase {
         XCTAssertFalse(socket.disconnected)
     }
 
-    func testCallsOnSuccessWhenDeviceIdMatches() {
+    func testReturnsSuccessWhenDeviceIdMatches() {
+        let expectation = expectationWithDescription("succeeds")
         injectCorrectIdentityInSocket()
 
-        var onSuccessCalled = false
         secureSocket(deviceId) {
-            onSuccessCalled = true
+            XCTAssertTrue($0)
+            expectation.fulfill()
         }
 
-        XCTAssertTrue(onSuccessCalled)
+        waitForExpectationsWithTimeout(1, nil)
+    }
+
+    func testIndicatesFailureWhenDeviceIdDoesNotMatch() {
+        let expectation = expectationWithDescription("indicates failure")
+
+        secureSocket("non matching id") {
+            XCTAssertFalse($0)
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(1, nil)
+    }
+
+    func testIndicatesFailureWhenTLSFails() {
+        let expectation = expectationWithDescription("indicates failure")
+        socket.startTLSShouldSucceed = false
+
+        secureSocket(deviceId) {
+            XCTAssertFalse($0)
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(1, nil)
     }
 
     func injectCorrectIdentityInSocket() {
@@ -87,9 +111,8 @@ class TLSTests: XCTestCase {
         socketFunctions.returnedStreamProperty = [String(kCFStreamSSLCertificates): [identity]]
     }
 
-    func secureSocket(deviceId: String, onSuccess: () -> () = {}) {
-        tls.secureSocket(socket, deviceId: deviceId, identity: identity, onSuccess)
-        socket.latestDelegate!.socketDidSecure!(socket)
+    func secureSocket(deviceId: String, onCompletion: (Bool) -> () = {(success: Bool) in}) {
+        tls.secureSocket(socket, deviceId: deviceId, identity: identity, onCompletion)
     }
 
     func createTestStream() -> CFReadStreamRef {

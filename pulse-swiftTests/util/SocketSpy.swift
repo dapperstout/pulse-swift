@@ -4,6 +4,7 @@ class SocketSpy: GCDAsyncSocket {
 
     var readStreamRef: Unmanaged<CFReadStreamRef>? = nil
     var connectShouldSucceed = true
+    var startTLSShouldSucceed = true
 
     var tlsStarted = false
     var disconnected = false
@@ -29,8 +30,13 @@ class SocketSpy: GCDAsyncSocket {
     }
 
     override func startTLS(tlsSettings: [NSObject:AnyObject]!) {
-        tlsStarted = true;
         latestTlsSettings = tlsSettings
+        if startTLSShouldSucceed {
+            latestDelegate?.socketDidSecure?(self)
+            tlsStarted = true;
+        } else {
+            latestDelegate?.socketDidDisconnect?(self, withError:nil)
+        }
     }
 
     override func disconnect() {

@@ -4,8 +4,8 @@ public class TLS {
     
     public init() {}
 
-    public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onSuccess: () -> () = {}) {
-        negotiation = TLSNegotiation(socket, deviceId, identity, onSuccess)
+    public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onCompletion: (Bool) -> () = {(success: Bool) in}) {
+        negotiation = TLSNegotiation(socket, deviceId, identity, onCompletion)
         negotiation.socketFunctions = socketFunctions
         negotiation.start()
     }
@@ -17,13 +17,13 @@ class TLSNegotiation: NSObject, GCDAsyncSocketDelegate {
     let deviceId: String
     let socket: GCDAsyncSocket
     let identity: SecIdentity
-    let onSuccess: () -> ()
+    let onCompletion: (Bool) -> ()
 
-    init(_ socket: GCDAsyncSocket, _ deviceId: String, _ identity: SecIdentity, _ onSuccess: () -> ()) {
+    init(_ socket: GCDAsyncSocket, _ deviceId: String, _ identity: SecIdentity, _ onCompletion: (Bool) -> ()) {
         self.socket = socket
         self.deviceId = deviceId
         self.identity = identity
-        self.onSuccess = onSuccess
+        self.onCompletion = onCompletion
     }
 
     func start() {
@@ -42,6 +42,10 @@ class TLSNegotiation: NSObject, GCDAsyncSocketDelegate {
         }
     }
 
+    func socketDidDisconnect(socket: GCDAsyncSocket, withError error: NSError) {
+        onCompletion(false)
+    }
+
     func checkCertificate(socket: GCDAsyncSocket) {
         var success = false
         if let certificateData = extractCertificateData(socket) {
@@ -50,9 +54,10 @@ class TLSNegotiation: NSObject, GCDAsyncSocketDelegate {
             }
         }
         if (success) {
-            onSuccess()
+            onCompletion(true)
         } else {
             socket.disconnect()
+            onCompletion(false)
         }
     }
 
