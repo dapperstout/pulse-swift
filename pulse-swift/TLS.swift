@@ -1,13 +1,31 @@
 public class TLS {
 
-    var negotiation: TLSNegotiation!
-    
+    var openNegotiations: [TLSNegotiation:TLSNegotiation] = [:]
+
     public init() {}
 
     public func secureSocket(socket: GCDAsyncSocket, deviceId: String, identity: SecIdentity, onCompletion: (Bool) -> () = {(success: Bool) in}) {
-        negotiation = TLSNegotiation(socket, deviceId, identity, onCompletion)
+        var negotiation : TLSNegotiation!
+
+        let completionHandler : (Bool) -> () = { (success: Bool) in
+            self.releaseNegotiation(negotiation)
+            onCompletion(success)
+        }
+
+        negotiation = TLSNegotiation(socket, deviceId, identity, completionHandler)
         negotiation.socketFunctions = socketFunctions
+
+        retainNegotiation(negotiation)
+
         negotiation.start()
+    }
+
+    func retainNegotiation(negotiation: TLSNegotiation) {
+        openNegotiations[negotiation] = negotiation
+    }
+
+    func releaseNegotiation(negotiation: TLSNegotiation) {
+        openNegotiations.removeValueForKey(negotiation)
     }
 
     public var socketFunctions = SocketFunctions()
