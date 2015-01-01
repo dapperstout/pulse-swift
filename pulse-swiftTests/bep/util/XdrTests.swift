@@ -26,6 +26,3 @@ class XdrTests : XCTestCase {
     }
 
 }
-
-
-
