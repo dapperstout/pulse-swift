@@ -15,6 +15,13 @@ public class Message
         self.isCompressed = compress
     }
 
+    init(id: UInt16, type: UInt8, contents: [UInt8], isCompressed: Bool) {
+        self.id = id
+        self.type = type
+        self._contents = contents
+        self.isCompressed = isCompressed
+    }
+
     public var contents : [UInt8] {
         return isCompressed ? decompress(_contents)! : _contents
     }
@@ -30,6 +37,10 @@ public class Message
         result.extend(lengthBytes)
         result.extend(_contents)
         return result;
+    }
+
+    public class func deserialize(bytes: [UInt8]) -> Message? {
+        return MessageParser().parse(bytes)
     }
 }
 

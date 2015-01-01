@@ -63,9 +63,11 @@
 		C0164743E7E3BB454303EFBA /* DeviceId.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164712178CC12D4D75B3D5 /* DeviceId.swift */; };
 		C01648E42B18F33A5E78999C /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = C01643BCF9EA4375F7801290 /* certificate.der */; };
 		C0164930C099A0B65C50FEE5 /* identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C016451175CDF77C39654050 /* identity.p12 */; };
+		C0164AE97DF749B11CA7EE13 /* MessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164AD5469DBEA004EAE156 /* MessageParser.swift */; };
 		C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */; };
 		C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164CA3D78AB4A53A03E2CD /* Luhn.swift */; };
 		C0164DFF52ED64A886A18FD6 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164846971609C0419133D5 /* TLS.swift */; };
+		C0164EEABF7C43FA1B3A1300 /* MessageParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016423E531776C180377566 /* MessageParserTests.swift */; };
 		C0164F54C3755DDB730E37CD /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F95C0289D50C2056D30 /* Keys.swift */; };
 		C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016425BED1B3F815C02095E /* DeviceIdTests.swift */; };
 		C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */; };
@@ -145,6 +147,7 @@
 		C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctions.swift; sourceTree = "<group>"; };
 		C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecIdentity.swift; sourceTree = "<group>"; };
 		C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketSpy.swift; sourceTree = "<group>"; };
+		C016423E531776C180377566 /* MessageParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageParserTests.swift; sourceTree = "<group>"; };
 		C016425BED1B3F815C02095E /* DeviceIdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceIdTests.swift; sourceTree = "<group>"; };
 		C01643BCF9EA4375F7801290 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file.der; path = certificate.der; sourceTree = "<group>"; };
 		C016451175CDF77C39654050 /* identity.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = identity.p12; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		C016483BE314D537FD81345D /* SecCertificate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecCertificate.swift; sourceTree = "<group>"; };
 		C0164846971609C0419133D5 /* TLS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
 		C0164954F6AEBE525D36CC55 /* Identities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identities.swift; sourceTree = "<group>"; };
+		C0164AD5469DBEA004EAE156 /* MessageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageParser.swift; sourceTree = "<group>"; };
 		C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctionsMock.swift; sourceTree = "<group>"; };
 		C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLSTests.swift; sourceTree = "<group>"; };
 		C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctionsMock.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				4D213DE919F70334005DAE61 /* BlockInfo.swift */,
 				4D90356919F70CE8009C9A34 /* FileInfo.swift */,
 				4D90356D19F91965009C9A34 /* IndexUpdate.swift */,
+				C0164AD5469DBEA004EAE156 /* MessageParser.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				4D213DE719F6FEAD005DAE61 /* BlockInfoTests.swift */,
 				4D90356719F70C1D009C9A34 /* FileInfoTests.swift */,
 				4D90356B19F918FF009C9A34 /* IndexUpdateTests.swift */,
+				C016423E531776C180377566 /* MessageParserTests.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				C0164F54C3755DDB730E37CD /* Keys.swift in Sources */,
 				C0164FE06B299585178C5BA3 /* SecIdentity.swift in Sources */,
 				C016431AF435931AAA764616 /* SecCertificate.swift in Sources */,
+				C0164AE97DF749B11CA7EE13 /* MessageParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +700,7 @@
 				C01644AA23E875CBA77D3DB6 /* KeysTests.swift in Sources */,
 				C0164553EF6A65E0F8F0F655 /* SecurityFunctionsMock.swift in Sources */,
 				C0164569BA58ED9B22C9D9EA /* Identities.swift in Sources */,
+				C0164EEABF7C43FA1B3A1300 /* MessageParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
