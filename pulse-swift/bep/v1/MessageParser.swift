@@ -1,7 +1,7 @@
 class MessageParser {
 
     func parse(bytes: [UInt8]) -> Message? {
-        if bytes.count < numberOfBytesInHeader {
+        if bytes.count < headerSize {
             return nil
         }
 
@@ -15,11 +15,16 @@ class MessageParser {
         let type = bytes[2]
 
         let length = concatenateBytes(bytes[4], bytes[5], bytes[6], bytes[7])
+
+        if bytes.count != headerSize + Int(length) {
+            return nil
+        }
+
         let isCompressed = bits(bytes[3])[7]
-        let contents = Array(bytes[8..<8+Int(length)])
+        let contents = Array(bytes[headerSize ..< headerSize + Int(length)])
 
         return Message(id: id, type: type, contents: contents, isCompressed: isCompressed)
     }
 
-    let numberOfBytesInHeader = 4
+    let headerSize = 8
 }

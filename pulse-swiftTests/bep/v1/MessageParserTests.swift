@@ -55,6 +55,20 @@ class MessageParserTests: XCTestCase {
         XCTAssertEqual(contents, message.contents)
     }
 
+    func testShouldFailToParseContentsOfInsufficientLength() {
+        var bytes = Message(type: 0, contents: [1,2,3]).serialize()
+        bytes.removeLast()
+
+        XCTAssertNil(Message.deserialize(bytes))
+    }
+
+    func testShouldFailToParseContentsWithExtraneousBytes() {
+        var bytes = Message(type: 0, contents: [1,2,3]).serialize()
+        bytes.append(42)
+
+        XCTAssertNil(Message.deserialize(bytes))
+    }
+
     func createHeader(#version: UInt8) -> [UInt8] {
         var header: [UInt8] = []
         header.append(concatenateNibbles(version, 0))
