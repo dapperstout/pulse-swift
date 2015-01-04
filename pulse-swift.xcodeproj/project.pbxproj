@@ -52,6 +52,7 @@
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
 		4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */; };
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
+		C00B585E7B5D1388B9570C15 /* X509CertificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B5D11CF5161A869906287 /* X509CertificateTests.swift */; };
 		C016431AF435931AAA764616 /* SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016483BE314D537FD81345D /* SecCertificate.swift */; };
 		C016442D8BB554DE0E4EAAA7 /* SecurityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */; };
 		C0164448F4288AB6249B4EBB /* TLSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */; };
@@ -72,6 +73,7 @@
 		C0164F5E221B47F73749AD02 /* DeviceIdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016425BED1B3F815C02095E /* DeviceIdTests.swift */; };
 		C0164F5FB969C7D28FB53889 /* SocketFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */; };
 		C0164FE06B299585178C5BA3 /* SecIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */; };
+		CACF6A4484329BA433BB9529 /* OpenSSLCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF63E441540BC8C3A0F4C0 /* OpenSSLCertificate.m */; };
 		F89487731A516EE300A0892F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
 		F89487751A516EE300A0892F /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = C01643BCF9EA4375F7801290 /* certificate.der */; };
 		F89487761A516EE300A0892F /* identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C016451175CDF77C39654050 /* identity.p12 */; };
@@ -144,6 +146,7 @@
 		4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterConfig.swift; sourceTree = "<group>"; };
 		4DDBE78319A48FBB007EF37E /* Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDBE78E19A48FBB007EF37E /* PulseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00B5D11CF5161A869906287 /* X509CertificateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = X509CertificateTests.swift; sourceTree = "<group>"; };
 		C01640F8CAA570442CD7B276 /* SecurityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctions.swift; sourceTree = "<group>"; };
 		C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecIdentity.swift; sourceTree = "<group>"; };
 		C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketSpy.swift; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 		C0164D39D18F557BA6C94C2A /* KeysTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysTests.swift; sourceTree = "<group>"; };
 		C0164F2539E097A4C0AAB4F4 /* SocketFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctions.swift; sourceTree = "<group>"; };
 		C0164F95C0289D50C2056D30 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		CACF63E441540BC8C3A0F4C0 /* OpenSSLCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSSLCertificate.m; sourceTree = "<group>"; };
+		CACF6C55733C06FF1916A606 /* OpenSSLCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSSLCertificate.h; sourceTree = "<group>"; };
 		D3B93AAE95FF201365BA3D31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		EF0E6CFDBEE938F9C7054DC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F894877B1A516EE300A0892F /* pulseIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pulseIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +370,7 @@
 				C0164D39D18F557BA6C94C2A /* KeysTests.swift */,
 				C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */,
 				C0164954F6AEBE525D36CC55 /* Identities.swift */,
+				C00B5D11CF5161A869906287 /* X509CertificateTests.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -378,6 +384,8 @@
 				C0164F95C0289D50C2056D30 /* Keys.swift */,
 				C016417AF821AC8ED55BAEC2 /* SecIdentity.swift */,
 				C016483BE314D537FD81345D /* SecCertificate.swift */,
+				CACF63E441540BC8C3A0F4C0 /* OpenSSLCertificate.m */,
+				CACF6C55733C06FF1916A606 /* OpenSSLCertificate.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -665,6 +673,7 @@
 				C0164FE06B299585178C5BA3 /* SecIdentity.swift in Sources */,
 				C016431AF435931AAA764616 /* SecCertificate.swift in Sources */,
 				C0164AE97DF749B11CA7EE13 /* MessageParser.swift in Sources */,
+				CACF6A4484329BA433BB9529 /* OpenSSLCertificate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +710,7 @@
 				C0164553EF6A65E0F8F0F655 /* SecurityFunctionsMock.swift in Sources */,
 				C0164569BA58ED9B22C9D9EA /* Identities.swift in Sources */,
 				C0164EEABF7C43FA1B3A1300 /* MessageParserTests.swift in Sources */,
+				C00B585E7B5D1388B9570C15 /* X509CertificateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
