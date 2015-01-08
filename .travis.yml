@@ -1,5 +1,0 @@
-language: objective-c
-osx_image: xcode61
-script:
-  - xcodebuild -workspace pulse-swift.xcworkspace -scheme PulseTests test
-  - xcodebuild -workspace pulse-swift.xcworkspace -scheme PulseIntegrationTests test

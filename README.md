@@ -1,7 +1,7 @@
 Pulse-Swift
 ==============
 
-[![Build Status](https://travis-ci.org/dapperstout/pulse-swift.svg)](https://travis-ci.org/dapperstout/pulse-swift)
+[![Build Status](https://ship.io/jobs/0NOWEAgLx-idgcJH/build_status.png)](https://ship.io/jobs/0NOWEAgLx-idgcJH/)
 
 A port of the [Pulse][1] synchronization protocol in Swift.
 
