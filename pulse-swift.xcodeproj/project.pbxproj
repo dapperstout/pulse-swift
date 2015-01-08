@@ -51,6 +51,8 @@
 		4D9D5A5B19F533F70058D1B8 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5A19F533F70058D1B8 /* Options.swift */; };
 		4D9D5A5D19F53AD50058D1B8 /* ClusterConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5C19F53AD50058D1B8 /* ClusterConfigTests.swift */; };
 		4D9D5A5F19F53BAD0058D1B8 /* ClusterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D5A5E19F53BAD0058D1B8 /* ClusterConfig.swift */; };
+		5C4CD4DC1A5F1C4D0046B384 /* Pulse.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDBE78319A48FBB007EF37E /* Pulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5C4CD4DF1A5F1CD60046B384 /* Pulse.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDBE78319A48FBB007EF37E /* Pulse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDF7A1C1A55FD3BEDE985719 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0D962A00CF4D71D726FFF2 /* libPods.a */; };
 		C00B585E7B5D1388B9570C15 /* X509CertificateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00B5D11CF5161A869906287 /* X509CertificateTests.swift */; };
 		C016431AF435931AAA764616 /* SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016483BE314D537FD81345D /* SecCertificate.swift */; };
@@ -97,6 +99,31 @@
 			remoteInfo = pulse;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C4CD4DB1A5F1C320046B384 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C4CD4DC1A5F1C4D0046B384 /* Pulse.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4CD4DD1A5F1CA20046B384 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C4CD4DF1A5F1CD60046B384 /* Pulse.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4D11A2C619EACC33002C6861 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
@@ -446,6 +473,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DDBE79919A48FBB007EF37E /* Build configuration list for PBXNativeTarget "PulseTests" */;
 			buildPhases = (
+				5C4CD4DB1A5F1C320046B384 /* Copy Frameworks */,
 				42DA01AC5F43A2F009F5A133 /* Check Pods Manifest.lock */,
 				4DDBE78A19A48FBB007EF37E /* Sources */,
 				4DDBE78B19A48FBB007EF37E /* Frameworks */,
@@ -466,6 +494,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F89487781A516EE300A0892F /* Build configuration list for PBXNativeTarget "PulseIntegrationTests" */;
 			buildPhases = (
+				5C4CD4DD1A5F1CA20046B384 /* Copy Frameworks */,
 				F89487541A516EE300A0892F /* Check Pods Manifest.lock */,
 				F89487551A516EE300A0892F /* Sources */,
 				F89487721A516EE300A0892F /* Frameworks */,
