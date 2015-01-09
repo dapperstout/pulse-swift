@@ -1,6 +1,6 @@
 import Foundation
 
-public class Index : Message {
+public class Index : EncodedMessage {
 
     public convenience init(folder: String, files: [FileInfo]) {
         self.init(type: 1, folder: folder, files: files)

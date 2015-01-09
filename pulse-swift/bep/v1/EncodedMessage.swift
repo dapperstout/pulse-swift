@@ -1,6 +1,6 @@
 import Foundation
 
-public class Message
+public class EncodedMessage
 {
     public let id : UInt16
     public let type : UInt8
@@ -39,7 +39,7 @@ public class Message
         return result;
     }
 
-    public class func deserialize(bytes: [UInt8]) -> Message? {
+    public class func deserialize(bytes: [UInt8]) -> EncodedMessage? {
         return MessageParser().parse(bytes)
     }
 }

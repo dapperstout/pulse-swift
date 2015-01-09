@@ -1,6 +1,6 @@
 import Foundation
 
-public class Ping : Message {
+public class Ping : EncodedMessage {
 
     public init() {
         super.init(type: 4, compress: false);

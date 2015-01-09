@@ -1,7 +1,7 @@
 import XCTest
 import Pulse
 
-class MessageTests : XCTestCase {
+class EncodedMessageTests: XCTestCase {
 
     func testVersionIsZero() {
         let bytes = SomeMessage().serialize()
@@ -20,7 +20,7 @@ class MessageTests : XCTestCase {
     }
 
     func testTypeIsEncodedInThirdByte() {
-        let message = Message(type: 3)
+        let message = EncodedMessage(type: 3)
         let type = message.serialize()[2]
         XCTAssertEqual(type, UInt8(3))
     }
@@ -40,39 +40,39 @@ class MessageTests : XCTestCase {
     }
 
     func testCompressionIsIndicatedInLastBitOfFourthByte() {
-        let message = Message(type: 0, compress: false)
+        let message = EncodedMessage(type: 0, compress: false)
         let isCompressed = bits(message.serialize()[3])[7]
         XCTAssertFalse(isCompressed)
     }
 
     func testUncompressedLengthIsIndicatedInBytesFiveThroughEight() {
-        let message = Message(type: 0, contents: someContents, compress: false)
+        let message = EncodedMessage(type: 0, contents: someContents, compress: false)
         let bytes = message.serialize()
         let length = concatenateBytes(bytes[4], bytes[5], bytes[6], bytes[7])
         XCTAssertEqual(length, UInt32(someContents.count))
     }
 
     func testCompressedLengthIsIndicatedInBytesFiveThroughEight() {
-        let message = Message(type: 0, contents: someContents)
+        let message = EncodedMessage(type: 0, contents: someContents)
         let bytes = message.serialize()
         let length = concatenateBytes(bytes[4], bytes[5], bytes[6], bytes[7])
         XCTAssertEqual(length, UInt32(compress(someContents).count))
     }
 
     func testUncompressedContentsIsPresentInBytesNineAndForward() {
-        let message = Message(type: 0, contents: someContents, compress: false)
+        let message = EncodedMessage(type: 0, contents: someContents, compress: false)
         let bytes = message.serialize()
         XCTAssertEqual(someContents, Array(bytes[8..<bytes.count]))
     }
 
     func testCompressedContentsIsPresentInBytesNineAndForward() {
-        let message = Message(type: 0, contents: someContents)
+        let message = EncodedMessage(type: 0, contents: someContents)
         let bytes = message.serialize()
         XCTAssertEqual(compress(someContents), Array(bytes[8..<bytes.count]))
     }
 
     func testContentReturnsUncompressedContent() {
-        let message = Message(type: 0, contents: someContents, compress: true)
+        let message = EncodedMessage(type: 0, contents: someContents, compress: true)
         XCTAssertEqual(someContents, message.contents)
     }
 
@@ -80,7 +80,7 @@ class MessageTests : XCTestCase {
 
 }
 
-class SomeMessage : Message {
+class SomeMessage : EncodedMessage {
     init() {
         super.init(type: 0)
     }

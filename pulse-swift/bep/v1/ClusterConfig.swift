@@ -1,6 +1,6 @@
 import Foundation
 
-public class ClusterConfig: Message {
+public class ClusterConfig: EncodedMessage {
 
     public init(clientName: String, clientVersion: String, folders: [Folder], options: Options) {
         let contents = XdrWriter()

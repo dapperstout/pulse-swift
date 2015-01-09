@@ -1,6 +1,6 @@
 class MessageParser {
 
-    func parse(bytes: [UInt8]) -> Message? {
+    func parse(bytes: [UInt8]) -> EncodedMessage? {
         if bytes.count < headerSize {
             return nil
         }
@@ -23,7 +23,7 @@ class MessageParser {
         let isCompressed = bits(bytes[3])[7]
         let contents = Array(bytes[headerSize ..< headerSize + Int(length)])
 
-        return Message(id: id, type: type, contents: contents, isCompressed: isCompressed)
+        return EncodedMessage(id: id, type: type, contents: contents, isCompressed: isCompressed)
     }
 
     let headerSize = 8
