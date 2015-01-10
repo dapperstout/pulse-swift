@@ -1,14 +1,13 @@
 import Foundation
 
-public class EncodedMessage
-{
-    public let id : UInt16
-    public let type : UInt8
-    public let isCompressed : Bool
-    private let version : UInt8 = 0
-    private let _contents : [UInt8]
+public class EncodedMessage {
+    public let id: UInt16
+    public let type: UInt8
+    public let isCompressed: Bool
+    private let version: UInt8 = 0
+    private let _contents: [UInt8]
 
-    public init(id: UInt16? = nil, type : UInt8, contents : [UInt8] =  [], compress : Bool = true) {
+    public init(id: UInt16? = nil, type: UInt8, contents: [UInt8] = [], compress: Bool = true) {
         self.id = (id != nil) ? id! : getNextMessageId()
         self.type = type
         self._contents = compress ? Pulse.compress(contents) : contents
@@ -22,12 +21,12 @@ public class EncodedMessage
         self.isCompressed = isCompressed
     }
 
-    public var contents : [UInt8] {
+    public var contents: [UInt8] {
         return isCompressed ? decompress(_contents)! : _contents
     }
 
     public func serialize() -> [UInt8] {
-        var result : [UInt8] = []
+        var result: [UInt8] = []
         let idBytes = bytes(id)
         let lengthBytes = bytes(UInt32(_contents.count))
         result.append(concatenateNibbles(version, idBytes[0]))
@@ -53,6 +52,6 @@ private func getNextMessageId() -> UInt16 {
     return result
 }
 
-private var nextMessageId : UInt16 = 0
+private var nextMessageId: UInt16 = 0
 private let nextMessageIdLock = dispatch_queue_create("pulse.nextMessageId", nil)
 
