@@ -3,10 +3,10 @@ import Pulse
 
 class CloseTests : XCTestCase {
 
-    let close = Close(reason: someReason)
+    let message = Close(reason: someReason).encode()
 
     func testHasType7() {
-        XCTAssertEqual(close.type, UInt8(7))
+        XCTAssertEqual(message.type, UInt8(7))
     }
 
     func testHasXdrEncodedReason() {
@@ -15,7 +15,7 @@ class CloseTests : XCTestCase {
     }
 
     func extractReasonFromClose() -> String {
-        let reader = XdrReader(xdrBytes: close.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         return reader.readString()!
     }
 

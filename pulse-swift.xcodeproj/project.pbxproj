@@ -68,6 +68,7 @@
 		C0164930C099A0B65C50FEE5 /* identity.p12 in Resources */ = {isa = PBXBuildFile; fileRef = C016451175CDF77C39654050 /* identity.p12 */; };
 		C0164AE97DF749B11CA7EE13 /* MessageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164AD5469DBEA004EAE156 /* MessageParser.swift */; };
 		C0164CF02308A00FF83AAC97 /* SocketSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01641BA7DB49DAE37F9F7E0 /* SocketSpy.swift */; };
+		C0164D1C745C63FBEECBA042 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164BD55E62206876EB86DD /* Message.swift */; };
 		C0164D76FAA209A4FE5BD2A9 /* Luhn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164CA3D78AB4A53A03E2CD /* Luhn.swift */; };
 		C0164DFF52ED64A886A18FD6 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164846971609C0419133D5 /* TLS.swift */; };
 		C0164EEABF7C43FA1B3A1300 /* MessageParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016423E531776C180377566 /* MessageParserTests.swift */; };
@@ -188,6 +189,7 @@
 		C0164954F6AEBE525D36CC55 /* Identities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identities.swift; sourceTree = "<group>"; };
 		C0164AD5469DBEA004EAE156 /* MessageParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageParser.swift; sourceTree = "<group>"; };
 		C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityFunctionsMock.swift; sourceTree = "<group>"; };
+		C0164BD55E62206876EB86DD /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLSTests.swift; sourceTree = "<group>"; };
 		C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketFunctionsMock.swift; sourceTree = "<group>"; };
 		C0164CA3D78AB4A53A03E2CD /* Luhn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Luhn.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				4D90356919F70CE8009C9A34 /* FileInfo.swift */,
 				4D90356D19F91965009C9A34 /* IndexUpdate.swift */,
 				C0164AD5469DBEA004EAE156 /* MessageParser.swift */,
+				C0164BD55E62206876EB86DD /* Message.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				C016431AF435931AAA764616 /* SecCertificate.swift in Sources */,
 				C0164AE97DF749B11CA7EE13 /* MessageParser.swift in Sources */,
 				CACF6A4484329BA433BB9529 /* OpenSSLCertificate.m in Sources */,
+				C0164D1C745C63FBEECBA042 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

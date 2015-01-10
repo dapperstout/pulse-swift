@@ -1,16 +1,24 @@
 import Foundation
 
-public class Index : EncodedMessage {
+public class Index : Message {
 
-    public convenience init(folder: String, files: [FileInfo]) {
-        self.init(type: 1, folder: folder, files: files)
+    let folder: String
+    let files: [FileInfo]
+
+    public init(folder: String, files: [FileInfo]) {
+        self.folder = folder
+        self.files = files
     }
 
-    init(type: UInt8, folder: String, files: [FileInfo]) {
+    override public func encode() -> EncodedMessage {
+        return encode(type: 1)
+    }
+
+    func encode(#type: UInt8) -> EncodedMessage {
         let contents = XdrWriter()
             .writeString(folder)
             .write(files).xdrBytes
-        super.init(type: type, contents: contents)
+        return EncodedMessage(type: type, contents: contents)
     }
 
 }

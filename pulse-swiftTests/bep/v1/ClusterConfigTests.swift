@@ -4,29 +4,29 @@ import Pulse
 class ClusterConfigTests: XCTestCase {
 
     func testIsType0() {
-        XCTAssertEqual(someConfig.type, UInt8(0))
+        XCTAssertEqual(message.type, UInt8(0))
     }
 
     func testXdrEncodesClientName() {
-        let reader = XdrReader(xdrBytes: someConfig.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         XCTAssertEqual(reader.readString()!, someClientName)
     }
 
     func testXdrEncodesClientVersion() {
-        let reader = XdrReader(xdrBytes: someConfig.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         reader.readString()
         XCTAssertEqual(reader.readString()!, someClientVersion)
     }
 
     func testXdrEncodesFolders() {
-        let reader = XdrReader(xdrBytes: someConfig.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         reader.readString()
         reader.readString()
         XCTAssertEqual(reader.read([Folder])!, someFolders)
     }
 
     func testXdrEncodesOptions() {
-        let reader = XdrReader(xdrBytes: someConfig.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         reader.readString()
         reader.readString()
         reader.read([Folder])
@@ -34,12 +34,12 @@ class ClusterConfigTests: XCTestCase {
         XCTAssertEqual(options, someOptions)
     }
 
-    let someConfig = ClusterConfig(
+    let message = ClusterConfig(
         clientName: someClientName,
         clientVersion: someClientVersion,
         folders: someFolders,
         options: someOptions
-    )
+    ).encode()
 }
 
 let someClientName = "Some Client Name"

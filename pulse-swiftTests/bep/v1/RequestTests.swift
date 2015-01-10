@@ -3,19 +3,19 @@ import Pulse
 
 class RequestsTests : XCTestCase {
 
-    let request = Request(
+    let message = Request(
             repository: someRepository,
             name: someName,
             offset: someOffset,
             size: someSize
-    )
+    ).encode()
 
     func testIsType2() {
-        XCTAssertEqual(request.type, UInt8(2))
+        XCTAssertEqual(message.type, UInt8(2))
     }
 
     func testHasXdrEncodedFields() {
-        let reader = XdrReader(xdrBytes: request.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         XCTAssertEqual(reader.readString()!, someRepository)
         XCTAssertEqual(reader.readString()!, someName)
         XCTAssertEqual(reader.readUInt64()!, someOffset)

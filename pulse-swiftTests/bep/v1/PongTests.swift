@@ -3,8 +3,8 @@ import Pulse
 
 class PongTests : XCTestCase {
 
-    var ping : Ping?
-    var pong : Pong?
+    var ping : Ping!
+    var pong : Pong!
 
     override func setUp() {
         ping = Ping()
@@ -12,15 +12,15 @@ class PongTests : XCTestCase {
     }
 
     func testHasType5() {
-        XCTAssertEqual(pong!.type, UInt8(5))
+        XCTAssertEqual(pong.encode().type, UInt8(5))
     }
 
     func testIsNotCompressed() {
-        XCTAssertFalse(pong!.isCompressed)
+        XCTAssertFalse(pong.encode().isCompressed)
     }
 
     func testHasSameIdAsPing() {
-        XCTAssertEqual(ping!.id, pong!.id)
+        XCTAssertEqual(pong.encode().id, ping.id)
     }
 
 }

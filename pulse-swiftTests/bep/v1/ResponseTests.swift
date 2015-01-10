@@ -3,19 +3,19 @@ import Pulse
 
 class ResponseTests : XCTestCase {
 
-    let response = Response(request: someRequest, data: someData)
+    let message = Response(request: someRequest, data: someData).encode()
 
     func testIsType3() {
-        XCTAssertEqual(response.type, UInt8(2))
+        XCTAssertEqual(message.type, UInt8(2))
     }
 
     func testHasXdrEncodedData() {
-        let reader = XdrReader(xdrBytes: response.contents)
+        let reader = XdrReader(xdrBytes: message.contents)
         XCTAssertEqual(reader.readData()!, someData)
     }
 
     func testHasSameMessageIdAsRequest() {
-        XCTAssertEqual(response.id, someRequest.id)
+        XCTAssertEqual(message.id, someRequest.id)
     }
 
 }

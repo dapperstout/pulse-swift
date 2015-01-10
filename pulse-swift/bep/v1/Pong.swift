@@ -1,9 +1,15 @@
 import Foundation
 
-public class Pong : EncodedMessage {
+public class Pong : Message {
+
+    let ping: Ping
 
     public init(ping : Ping) {
-        super.init(id: ping.id, type: 5, compress: false)
+        self.ping = ping
+    }
+
+    override public func encode() -> EncodedMessage {
+        return EncodedMessage(id: ping.id, type: 5, compress: false)
     }
 
 }
