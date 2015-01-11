@@ -11,10 +11,17 @@ class MessageTests: XCTestCase {
     }
 
     func testCanDecodeIndex() {
-        let index = Index.example
+        let index = Index.exampleIndex
         let encodedMessage = index.encode()
         let decodedMessage = Message.decode(encodedMessage)!
         XCTAssertEqual(decodedMessage as Index, index)
+    }
+
+    func testCanDecodeIndexUpdate() {
+        let update = IndexUpdate.exampleIndexUpdate
+        let encodedMessage = update.encode()
+        let decodedMessage = Message.decode(encodedMessage)!
+        XCTAssertEqual(decodedMessage as IndexUpdate, update)
     }
 
 }

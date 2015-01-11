@@ -7,6 +7,14 @@ class IndexUpdateTests : XCTestCase {
         XCTAssertEqual(message.type, UInt8(6))
     }
 
-    let message = IndexUpdate(folder: "", files: []).encode()
+    let message = IndexUpdate.exampleIndexUpdate.encode()
+
+}
+
+extension IndexUpdate {
+
+    public class var exampleIndexUpdate: IndexUpdate {
+        return IndexUpdate(folder: "", files: [])
+    }
 
 }

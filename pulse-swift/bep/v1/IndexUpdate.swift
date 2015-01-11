@@ -6,4 +6,11 @@ public class IndexUpdate: Index {
         return encode(type: 6)
     }
 
+    override public class func decode(encodedMessage: EncodedMessage) -> IndexUpdate? {
+        if let index = super.decode(encodedMessage) {
+            return IndexUpdate(folder: index.folder, files: index.files)
+        }
+        return nil
+    }
+
 }

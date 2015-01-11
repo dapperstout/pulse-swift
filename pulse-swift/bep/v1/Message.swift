@@ -14,6 +14,8 @@ public class Message {
                 return ClusterConfig.decode(encodedMessage)
             case 1:
                 return Index.decode(encodedMessage)
+            case 6:
+                return IndexUpdate.decode(encodedMessage)
             default:
                 return nil
         }

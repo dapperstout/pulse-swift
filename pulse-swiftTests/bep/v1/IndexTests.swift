@@ -18,13 +18,13 @@ class IndexTests : XCTestCase {
         XCTAssertEqual(reader.read([FileInfo])!, index.files)
     }
 
-    let index = Index.example
-    let message = Index.example.encode()
+    let index = Index.exampleIndex
+    let message = Index.exampleIndex.encode()
 }
 
 extension Index {
 
-    class var example: Index {
+    class var exampleIndex: Index {
         let someFolder = "Some Folder"
         let someFiles = [FileInfo(name: "one"), FileInfo(name: "two")]
         return Index(folder: someFolder, files: someFiles)
