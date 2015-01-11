@@ -16,6 +16,14 @@ public class Request : Message, Equatable {
         self.size = size
     }
 
+    init(encodedMessage: EncodedMessage, repository: String, name: String, offset: UInt64, size: UInt32) {
+        self.repository = repository
+        self.name = name
+        self.offset = offset
+        self.size = size
+        self.encodedMessage = encodedMessage
+    }
+
     override public func encode() -> EncodedMessage {
         if (encodedMessage == nil) {
             encodedMessage = EncodedMessage(type: 2, contents: xdr(repository, name, offset, size)!)
@@ -29,7 +37,13 @@ public class Request : Message, Equatable {
         if let name = reader.readString() {
         if let offset = reader.readUInt64() {
         if let size = reader.readUInt32() {
-            return Request(repository: repository, name: name, offset: offset, size: size)
+            return Request(
+                encodedMessage: encodedMessage,
+                repository: repository,
+                name: name,
+                offset: offset,
+                size: size
+            )
         }}}}
         return nil
     }
@@ -45,5 +59,6 @@ public func == (lhs: Request, rhs: Request) -> Bool {
         lhs.repository == rhs.repository &&
         lhs.name == rhs.name &&
         lhs.offset == rhs.offset &&
-        lhs.size == rhs.size
+        lhs.size == rhs.size &&
+        lhs.id == rhs.id
 }
