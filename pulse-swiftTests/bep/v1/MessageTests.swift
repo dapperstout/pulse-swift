@@ -31,4 +31,18 @@ class MessageTests: XCTestCase {
         XCTAssertEqual(decodedMessage as Request, request)
     }
 
+    func testCanDecodeResponse() {
+        let response = Response.example
+        let encodedMessage = response.encode()
+        let decodedMessage = Message.decode(encodedMessage)!
+        XCTAssertEqual(decodedMessage as Response, response)
+    }
+
+    func testCanDecodePing() {
+        let ping = Ping()
+        let encodedMessage = ping.encode()
+        let decodedMessage = Message.decode(encodedMessage)!
+        XCTAssertEqual(decodedMessage as Ping, ping)
+    }
+
 }
