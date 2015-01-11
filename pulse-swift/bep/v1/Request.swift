@@ -1,11 +1,11 @@
 import Foundation
 
-public class Request : Message {
+public class Request : Message, Equatable {
 
-    let repository: String
-    let name: String
-    let offset: UInt64
-    let size: UInt32
+    public let repository: String
+    public let name: String
+    public let offset: UInt64
+    public let size: UInt32
 
     var encodedMessage: EncodedMessage?
 
@@ -23,8 +23,27 @@ public class Request : Message {
         return encodedMessage!
     }
 
+    override public class func decode(encodedMessage: EncodedMessage) -> Request? {
+        let reader = XdrReader(xdrBytes: encodedMessage.contents)
+        if let repository = reader.readString() {
+        if let name = reader.readString() {
+        if let offset = reader.readUInt64() {
+        if let size = reader.readUInt32() {
+            return Request(repository: repository, name: name, offset: offset, size: size)
+        }}}}
+        return nil
+    }
+
     public var id: UInt16 {
         return encode().id
     }
 
+}
+
+public func == (lhs: Request, rhs: Request) -> Bool {
+    return
+        lhs.repository == rhs.repository &&
+        lhs.name == rhs.name &&
+        lhs.offset == rhs.offset &&
+        lhs.size == rhs.size
 }

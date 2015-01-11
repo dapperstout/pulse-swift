@@ -24,4 +24,11 @@ class MessageTests: XCTestCase {
         XCTAssertEqual(decodedMessage as IndexUpdate, update)
     }
 
+    func testCanDecodeRequest() {
+        let request = Request.example
+        let encodedMessage = request.encode()
+        let decodedMessage = Message.decode(encodedMessage)!
+        XCTAssertEqual(decodedMessage as Request, request)
+    }
+
 }

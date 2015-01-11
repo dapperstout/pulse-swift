@@ -7,13 +7,14 @@ public class Message {
         return EncodedMessage(type: 255)
     }
 
-    // override in subclass
     public class func decode(encodedMessage: EncodedMessage) -> Message? {
         switch(encodedMessage.type) {
             case 0:
                 return ClusterConfig.decode(encodedMessage)
             case 1:
                 return Index.decode(encodedMessage)
+            case 2:
+                return Request.decode(encodedMessage)
             case 6:
                 return IndexUpdate.decode(encodedMessage)
             default:
