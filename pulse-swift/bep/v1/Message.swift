@@ -9,7 +9,14 @@ public class Message {
 
     // override in subclass
     public class func decode(encodedMessage: EncodedMessage) -> Message? {
-        return ClusterConfig.decode(encodedMessage)
+        switch(encodedMessage.type) {
+            case 0:
+                return ClusterConfig.decode(encodedMessage)
+            case 1:
+                return Index.decode(encodedMessage)
+            default:
+                return nil
+        }
     }
 
 }

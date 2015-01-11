@@ -1,9 +1,9 @@
 import Foundation
 
-public class Index : Message {
+public class Index : Message, Equatable {
 
-    let folder: String
-    let files: [FileInfo]
+    public let folder: String
+    public let files: [FileInfo]
 
     public init(folder: String, files: [FileInfo]) {
         self.folder = folder
@@ -21,4 +21,18 @@ public class Index : Message {
         return EncodedMessage(type: type, contents: contents)
     }
 
+    override public class func decode(encodedMessage: EncodedMessage) -> Index? {
+        let reader = XdrReader(xdrBytes: encodedMessage.contents)
+        if let folder = reader.readString() {
+        if let files = reader.read([FileInfo]) {
+            return Index(folder: folder, files: files)
+        }}
+        return nil
+    }
+}
+
+public func == (lhs: Index, rhs: Index) -> Bool {
+    return
+        lhs.folder == rhs.folder &&
+        lhs.files == rhs.files
 }
