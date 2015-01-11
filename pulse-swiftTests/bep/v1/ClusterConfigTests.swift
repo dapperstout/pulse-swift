@@ -9,20 +9,20 @@ class ClusterConfigTests: XCTestCase {
 
     func testXdrEncodesClientName() {
         let reader = XdrReader(xdrBytes: message.contents)
-        XCTAssertEqual(reader.readString()!, someClientName)
+        XCTAssertEqual(reader.readString()!, config.clientName)
     }
 
     func testXdrEncodesClientVersion() {
         let reader = XdrReader(xdrBytes: message.contents)
         reader.readString()
-        XCTAssertEqual(reader.readString()!, someClientVersion)
+        XCTAssertEqual(reader.readString()!, config.clientVersion)
     }
 
     func testXdrEncodesFolders() {
         let reader = XdrReader(xdrBytes: message.contents)
         reader.readString()
         reader.readString()
-        XCTAssertEqual(reader.read([Folder])!, someFolders)
+        XCTAssertEqual(reader.read([Folder])!, config.folders)
     }
 
     func testXdrEncodesOptions() {
@@ -31,29 +31,32 @@ class ClusterConfigTests: XCTestCase {
         reader.readString()
         reader.read([Folder])
         let options = reader.read(Options)!
-        XCTAssertEqual(options, someOptions)
+        XCTAssertEqual(options, config.options)
     }
 
-    let message = ClusterConfig(
-        clientName: someClientName,
-        clientVersion: someClientVersion,
-        folders: someFolders,
-        options: someOptions
-    ).encode()
+    let config = ClusterConfig.example
+    let message = ClusterConfig.example.encode()
 }
 
-let someClientName = "Some Client Name"
-let someClientVersion = "v0.4.2"
-let someFolders = [
-    Folder(id: "Folder 1", devices: [
-        Device(id: "Device 1"),
-        Device(id: "Device 2")
-    ]),
-    Folder(id: "Folder 2", devices: [
-        Device(id: "Device 3")
-    ])
-]
-let someOptions = Options([
-    "Key 1" : "Value 1",
-    "Key 2" : "Value 2"
-])
+extension ClusterConfig {
+    public class var example: ClusterConfig {
+        let someFolders = [
+                Folder(id: "Folder 1", devices: [
+                        Device(id: "Device 1"),
+                        Device(id: "Device 2")
+                ]),
+                Folder(id: "Folder 2", devices: [
+                        Device(id: "Device 3")
+                ])
+        ]
+        let someOptions = Options([
+                "Key 1" : "Value 1",
+                "Key 2" : "Value 2"
+        ])
+        return ClusterConfig(clientName: "Some Client Name",
+                clientVersion: "v04.2",
+                folders: someFolders,
+                options: someOptions
+        )
+    }
+}

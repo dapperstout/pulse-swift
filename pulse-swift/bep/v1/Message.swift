@@ -7,4 +7,9 @@ public class Message {
         return EncodedMessage(type: 0)
     }
 
+    // override in subclass
+    public class func decode(encodedMessage: EncodedMessage) -> Message? {
+        return ClusterConfig.decode(encodedMessage)
+    }
+
 }

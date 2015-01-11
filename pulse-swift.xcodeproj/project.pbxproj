@@ -60,6 +60,7 @@
 		C0164448F4288AB6249B4EBB /* TLSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C82B00BF6B2D5DCF14D /* TLSTests.swift */; };
 		C01644AA23E875CBA77D3DB6 /* KeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164D39D18F557BA6C94C2A /* KeysTests.swift */; };
 		C01644E92235CC75E1DC21DE /* LuhnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016480CFB38B8CBBCE2400E /* LuhnTests.swift */; };
+		C016452729D38E8A9152C89C /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01643EB67650A1B18B68C39 /* MessageTests.swift */; };
 		C0164553EF6A65E0F8F0F655 /* SecurityFunctionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164AF08F0603D91E1FBAD1 /* SecurityFunctionsMock.swift */; };
 		C0164569BA58ED9B22C9D9EA /* Identities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164954F6AEBE525D36CC55 /* Identities.swift */; };
 		C01645D4B882999C4280E055 /* SocketFunctionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0164C83AD1AEF22B18BB5BE /* SocketFunctionsMock.swift */; };
@@ -181,6 +182,7 @@
 		C016423E531776C180377566 /* MessageParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageParserTests.swift; sourceTree = "<group>"; };
 		C016425BED1B3F815C02095E /* DeviceIdTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceIdTests.swift; sourceTree = "<group>"; };
 		C01643BCF9EA4375F7801290 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file.der; path = certificate.der; sourceTree = "<group>"; };
+		C01643EB67650A1B18B68C39 /* MessageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
 		C016451175CDF77C39654050 /* identity.p12 */ = {isa = PBXFileReference; lastKnownFileType = file.p12; path = identity.p12; sourceTree = "<group>"; };
 		C0164712178CC12D4D75B3D5 /* DeviceId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceId.swift; sourceTree = "<group>"; };
 		C016480CFB38B8CBBCE2400E /* LuhnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LuhnTests.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				4D90356719F70C1D009C9A34 /* FileInfoTests.swift */,
 				4D90356B19F918FF009C9A34 /* IndexUpdateTests.swift */,
 				C016423E531776C180377566 /* MessageParserTests.swift */,
+				C01643EB67650A1B18B68C39 /* MessageTests.swift */,
 			);
 			path = v1;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				C0164569BA58ED9B22C9D9EA /* Identities.swift in Sources */,
 				C0164EEABF7C43FA1B3A1300 /* MessageParserTests.swift in Sources */,
 				C00B585E7B5D1388B9570C15 /* X509CertificateTests.swift in Sources */,
+				C016452729D38E8A9152C89C /* MessageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
