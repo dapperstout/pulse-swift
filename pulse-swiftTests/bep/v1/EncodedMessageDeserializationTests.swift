@@ -1,7 +1,7 @@
 import XCTest
 import Pulse
 
-class MessageParserTests: XCTestCase {
+class EncodedMessageDeserializationTests: XCTestCase {
 
     func testShouldParseMessagesWithVersionZero() {
         let message = EncodedMessage.deserialize(createHeader(version: 0))

@@ -39,7 +39,28 @@ public class EncodedMessage {
     }
 
     public class func deserialize(bytes: [UInt8]) -> EncodedMessage? {
-        return MessageParser().parse(bytes)
+        let headerSize = 8
+        if bytes.count < headerSize {
+            return nil
+        }
+
+        let version = nibbles(bytes[0])[0]
+        if (version != 0) {
+            return nil
+        }
+
+        let id = concatenateBytes(nibbles(bytes[0])[1], bytes[1])
+        let type = bytes[2]
+
+        let length = concatenateBytes(bytes[4], bytes[5], bytes[6], bytes[7])
+        if bytes.count != headerSize + Int(length) {
+            return nil
+        }
+
+        let isCompressed = bits(bytes[3])[7]
+        let contents = Array(bytes[headerSize ..< headerSize + Int(length)])
+
+        return EncodedMessage(id: id, type: type, contents: contents, isCompressed: isCompressed)
     }
 }
 
