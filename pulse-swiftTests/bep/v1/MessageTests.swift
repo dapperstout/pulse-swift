@@ -45,4 +45,11 @@ class MessageTests: XCTestCase {
         XCTAssertEqual(decodedMessage as Ping, ping)
     }
 
+    func testCanDecodePong() {
+        let pong = Pong.example
+        let encodedMessage = pong.encode()
+        let decodedMessage = Message.decode(encodedMessage)!
+        XCTAssertEqual(decodedMessage as Pong, pong)
+    }
+
 }

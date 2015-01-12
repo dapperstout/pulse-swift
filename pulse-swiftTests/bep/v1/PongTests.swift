@@ -24,3 +24,11 @@ class PongTests : XCTestCase {
     }
 
 }
+
+extension Pong {
+
+    class var example: Pong {
+        return Pong(ping: Ping())
+    }
+
+}

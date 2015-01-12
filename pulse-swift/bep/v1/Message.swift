@@ -19,6 +19,8 @@ public class Message {
                 return Response.decode(encodedMessage)
             case 4:
                 return Ping.decode(encodedMessage)
+            case 5:
+                return Pong.decode(encodedMessage)
             case 6:
                 return IndexUpdate.decode(encodedMessage)
             default:

@@ -1,15 +1,27 @@
 import Foundation
 
-public class Pong : Message {
+public class Pong : Message, Equatable {
 
-    let ping: Ping
+    let id: UInt16
 
-    public init(ping : Ping) {
-        self.ping = ping
+    public convenience init(ping : Ping) {
+        self.init(id: ping.id)
+    }
+
+    public init(id: UInt16) {
+        self.id = id
     }
 
     override public func encode() -> EncodedMessage {
-        return EncodedMessage(id: ping.id, type: 5, compress: false)
+        return EncodedMessage(id: id, type: 5, compress: false)
     }
 
+    override public class func decode(encodedMessage: EncodedMessage) -> Pong? {
+        return Pong(id: encodedMessage.id)
+    }
+
+}
+
+public func == (lhs: Pong, rhs: Pong) -> Bool {
+    return lhs.id == rhs.id
 }
