@@ -23,6 +23,8 @@ public class Message {
                 return Pong.decode(encodedMessage)
             case 6:
                 return IndexUpdate.decode(encodedMessage)
+            case 7:
+                return Close.decode(encodedMessage)
             default:
                 return nil
         }

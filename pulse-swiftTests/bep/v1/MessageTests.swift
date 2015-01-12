@@ -52,4 +52,11 @@ class MessageTests: XCTestCase {
         XCTAssertEqual(decodedMessage as Pong, pong)
     }
 
+    func testCanDecodeClose() {
+        let close = Close.example
+        let encodedMessage = close.encode()
+        let decodedMessage = Message.decode(encodedMessage)!
+        XCTAssertEqual(decodedMessage as Close, close)
+    }
+
 }
